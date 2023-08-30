@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="userinfo">
+        <block wx:if="{{!hasUserInfo}}">
+            <button class="userinfo-btn" bindtap="getUserProfile">
+                <image class="userinfo-avatar" src="https://leexiaop.github.io/static/ibadgers/world.png" mode="cover"></image>
+            </button>
+        </block>
+        <block wx:else>
+            <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        </block>
+    </view>
+    <view class="usermotto" bind:tap="bindViewTap">
+        <text class="user-motto">{{motto}}</text>
+    </view>
+</view>

@@ -1,0 +1,16 @@
+.list {
+    width: 100%;
+    padding: 24rpx;
+    box-sizing: border-box;
+}
+.list > .title {
+    height: 64rpx;
+    font-size: 36rpx;
+    color: #333;
+}
+.list > .cell {
+    font-size: 28rpx;
+    color: #666;
+    height: 48rpx;
+    border-bottom: 1rpx solid #999;
+}
