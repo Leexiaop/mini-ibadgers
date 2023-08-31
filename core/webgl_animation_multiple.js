@@ -81,6 +81,7 @@ module.exports = (canvas) => {
         controls.enablePan = true
         controls.enableDamping = true
         animate()
+        window.addEventListener('resize', onWindowResize, false)
     }
     const animate = () => {
         canvas.requestAnimationFrame(animate)
@@ -88,6 +89,11 @@ module.exports = (canvas) => {
         mixers.forEach(mixer => mixer.update(delta))
         controls.update()
         renderer.render(scene, camera)
+    }
+    const onWindowResize = () => {
+        camera.aspect = window.innerWidth / window.innerHeight
+        camera.updateProjectionMatrix()
+        renderer.setSize(window.innerWidth, window.innerHeight)
     }
     return {init}
 }
