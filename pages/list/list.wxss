@@ -1,9 +1,8 @@
 .list {
     width: 100%;
-    padding: 24rpx;
     box-sizing: border-box;
 }
-.list > .title {
+/* .list > .title {
     height: 64rpx;
     font-size: 36rpx;
     color: #333;
@@ -22,4 +21,4 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-}
+} */

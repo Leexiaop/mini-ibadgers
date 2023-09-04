@@ -53,3 +53,7 @@
     border-bottom-left-radius: 24rpx;
     border-bottom-right-radius: 24rpx;
 }
+.van-goods-action-button {
+    display: flex!important;
+    justify-content: center!important;
+}

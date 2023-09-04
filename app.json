@@ -4,7 +4,8 @@
         "pages/list/list",
         "pages/canvas/canvas",
         "pages/code/code",
-        "pages/center/center"
+        "pages/center/center",
+        "pages/advanced/advanced"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -19,18 +20,18 @@
         "list": [
             {
                 "pagePath": "pages/index/index",
-                "iconPath": "./assets/h.png",
-                "selectedIconPath": "./assets/h_s.png"
+                "iconPath": "./assets/img/h.png",
+                "selectedIconPath": "./assets/img/h_s.png"
             },
             {
-                "pagePath": "pages/code/code",
-                "iconPath": "./assets/c.png",
-                "selectedIconPath": "./assets/c_s.png"
+                "pagePath": "pages/advanced/advanced",
+                "iconPath": "./assets/img/c.png",
+                "selectedIconPath": "./assets/img/c_s.png"
             },
             {
                 "pagePath": "pages/center/center",
-                "iconPath": "./assets/p.png",
-                "selectedIconPath": "./assets/p_s.png"
+                "iconPath": "./assets/img/p.png",
+                "selectedIconPath": "./assets/img/p_s.png"
             }
         ]
     },

@@ -1,15 +1,23 @@
 <!--list.wxml-->
-<view class="list" wx:for="{{list}}" wx:key="index" wx:for-item="item" wx:for-index="index">
-    <view class="title">{{item.name}}</view>
-    <view class="cell"
-        wx:for="{{item.children}}"
-        wx:key="idx"
-        wx:for-item="child"
-        wx:for-index="idx"
-        bind:tap="onCellClick"
-        data-cell="{{child}}"
+<view class="list">
+    <van-cell-group
+        wx:for="{{list}}"
+        wx:key="index"
+        wx:for-item="item"
+        border="{{false}}"
+        wx:for-index="index"
+        title="{{item.name}}"
     >
-        <view>{{child}}</view>
-        <button size="mini" plain type="primary" catch:tap="onCodeCheck" data-cell="{{child}}">源码</button>
-    </view>
+        <van-cell
+            title="{{child}}"
+            class="cell"
+            wx:for="{{item.children}}"
+            wx:key="idx"
+            wx:for-item="child"
+            wx:for-index="idx"
+            is-link
+            bind:tap="onCellClick"
+            data-cell="{{child}}"
+        />
+    </van-cell-group>
 </view>

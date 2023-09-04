@@ -16,26 +16,31 @@
         <view class="content-up">
             <swiper indicatorDots autoplay interval="{{2000}}" duration="{{500}}">
                 <block wx:for="{{swiperList}}" wx:key="*this">
-                <swiper-item>
-                    <view class="swiper-item">{{item}}</view>
-                </swiper-item>
+                    <swiper-item>
+                        <van-image
+                            fit="widthFix"
+                            width="100%"
+                            src="{{item}}"
+                        />
+                    </swiper-item>
                 </block>
             </swiper>
         </view>
         <view class="content-middle">
-            <van-cell title="夜间模式" icon="clock-o" is-link />
-            <van-cell title="更多功能" icon="more-o" is-link />
-            <van-cell title="关于我们" icon="contact" is-link />
-            <van-cell title="海报分享" icon="newspaper-o" is-link />
-            <van-cell title="资源下载" icon="star-o" is-link />
-            <van-cell title="CSDN" icon="label-o" />
-            <van-cell title="Lee前端技术栈" icon="star-o" />
-            <van-cell title="Ibadgers" icon="thumb-circle-o" />
-            <van-cell title="Github" icon="medal-o" />
+            <van-cell title="夜间模式" icon="clock-o" is-link bind:click="onCellClick" data-type="1" />
+            <van-cell title="更多功能" icon="more-o" is-link bind:click="onCellClick" data-type="2" />
+            <van-cell title="关于我们" icon="contact" is-link bind:click="onCellClick" data-type="3" />
+            <van-cell title="海报分享" icon="newspaper-o" is-link bind:click="onCellClick" data-type="4" />
+            <van-cell title="资源下载" icon="star-o" is-link bind:click="onCellClick" data-type="5" />
+            <van-cell title="CSDN" icon="label-o" data-type="6" bind:click="onCellClick" />
+            <van-cell title="Lee前端技术栈" icon="star-o" bind:click="onCellClick" data-type="7" />
+            <van-cell title="Ibadgers" icon="thumb-circle-o" bind:click="onCellClick" data-type="8" />
+            <van-cell title="Github" icon="medal-o" bind:click="onCellClick" data-type="9" />
         </view>
         <view class="content-down">
-            <van-cell title="联系微信" icon="location-o" is-link />
+            <van-cell title="联系微信" icon="location-o" is-link bind:click="onCellClick" data-type="10" />
             <van-cell title="版本信息" icon="description" value="v1.0.0.2" />
         </view>
     </view>
+    <van-dialog id="van-dialog" />
 </view>

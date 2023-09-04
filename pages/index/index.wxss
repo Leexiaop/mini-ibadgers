@@ -1,24 +1,61 @@
 /**index.wxss**/
-.userinfo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #aaa;
+.index {
+    width: 100%;
+    background-color: #e9e9e9;
+    box-sizing: border-box;
+    padding-bottom: 64rpx;
 }
-.userinfo-btn {
-    width: 128rpx;
-    height: 128rpx;
-    border-radius: 50%;
+.index > .nav {
+    position: relative;
+    color: #ffffff;
 }
-.userinfo-avatar {
-    overflow: hidden;
-    width: 128rpx;
-    height: 128rpx;
-    margin: 20rpx;
-    border-radius: 50%;
+.index > .nav > .motto {
+    position: absolute;
+    left: 32rpx;
+    bottom: 84rpx;
+    font-size: 30rpx;
+}
+.index > .content {
+    padding: 32rpx 32rpx 16rpx 32rpx;
+    box-sizing: border-box;
+    column-count: 2;
+    column-gap: 32rpx;
+}
+.index > .content > .item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 24rpx;
+    background-color: #fff;
+    padding: 16rpx;
+    box-sizing: border-box;
+    border-radius: 24rpx;
+    break-inside: avoid;
+}
+.index > .notice {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
 
-.usermotto {
-    margin-top: 200px;
-    text-decoration: underline;
+.index > .content > .item > .title {
+    color: #666;
+    margin-bottom: 8rpx;
 }
+.index > .content > .item > .motto {
+    font-size: 24rpx;
+    color: #999;
+    margin-bottom: 8rpx;
+}
+.index > .content > .item > .img {
+    margin: 0 auto;
+}
+.index > .ad {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: red;
+}
+
