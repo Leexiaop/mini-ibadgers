@@ -1,0 +1,55 @@
+/* pages/center/center.wxss */
+.center {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+.center > .nav {
+    height: 278rpx;
+    background: url('https://leexiaop.github.io/static/mini/img/center_bg.jpg');
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 32rpx;
+}
+.center > .nav > .info {
+    width: 572rpx;
+    color: #fff;
+    margin-left: 32rpx;
+}
+.center > .nav > .info > .name {
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 48rpx;
+}
+.center > .nav > .info > .motto {
+    font-size: 28rpx;
+}
+.center > .content {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 36rpx;
+    border-top-right-radius: 36rpx;
+    margin-top: -24rpx;
+    background-color: #e9e9e9;
+    padding: 32rpx;
+    box-sizing: border-box;
+}
+.center > .content > .content-up {
+    background-color: #fff;
+    border-top-left-radius: 24rpx;
+    border-top-right-radius: 24rpx;
+}
+.center > .content > .content-middle {
+    margin-top: 24rpx;
+}
+.center > .content > .content-down {
+    margin-top: 24rpx;
+    overflow: hidden;
+    border-bottom-left-radius: 24rpx;
+    border-bottom-right-radius: 24rpx;
+}

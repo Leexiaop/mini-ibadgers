@@ -1,0 +1,41 @@
+<!--pages/center/center.wxml-->
+<view class="center">
+    <view class="nav">
+        <van-image
+            round
+            width="114rpx"
+            height="114rpx"
+            src="https://leexiaop.github.io/static/mini/img/avatar.jpeg"
+        />
+        <view class="info">
+            <view class="name">Mr.Lee</view>
+            <view class="motto">拼搏到无能为力 坚持到感动自己</view>
+        </view>
+    </view>
+    <view class="content">
+        <view class="content-up">
+            <swiper indicatorDots autoplay interval="{{2000}}" duration="{{500}}">
+                <block wx:for="{{swiperList}}" wx:key="*this">
+                <swiper-item>
+                    <view class="swiper-item">{{item}}</view>
+                </swiper-item>
+                </block>
+            </swiper>
+        </view>
+        <view class="content-middle">
+            <van-cell title="夜间模式" icon="clock-o" is-link />
+            <van-cell title="更多功能" icon="more-o" is-link />
+            <van-cell title="关于我们" icon="contact" is-link />
+            <van-cell title="海报分享" icon="newspaper-o" is-link />
+            <van-cell title="资源下载" icon="star-o" is-link />
+            <van-cell title="CSDN" icon="label-o" />
+            <van-cell title="Lee前端技术栈" icon="star-o" />
+            <van-cell title="Ibadgers" icon="thumb-circle-o" />
+            <van-cell title="Github" icon="medal-o" />
+        </view>
+        <view class="content-down">
+            <van-cell title="联系微信" icon="location-o" is-link />
+            <van-cell title="版本信息" icon="description" value="v1.0.0.2" />
+        </view>
+    </view>
+</view>

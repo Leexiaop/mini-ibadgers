@@ -1,8 +1,21 @@
 <!--pages/canvas/canvas.wxml-->
-<view wx:if="{{!isEmpty}}" class="case" bindtouchstart="documentTouchStart" bindtouchmove="documentTouchMove" bindtouchend="documentTouchEnd">
-    <canvas type="webgl" id="c" catchtouchstart="touchStart" catchtouchmove="touchMove" catchtouchend="touchEnd" bindtouchcancel="touchCancel" bindlongtap="longTap" bindtap="tap"></canvas>
+<view
+    wx:if="{{!isEmpty}}"
+    class="case"
+    bindtouchstart="documentTouchStart"
+    bindtouchmove="documentTouchMove"
+    bindtouchend="documentTouchEnd"
+>
+    <canvas
+        type="webgl"
+        id="c"
+        catchtouchstart="touchStart"
+        catchtouchmove="touchMove"
+        catchtouchend="touchEnd"
+        bindtouchcancel="touchCancel"
+    ></canvas>
 </view>
 <view class="case" wx:else>
     <!-- <van-empty description="暂无内容" /> -->
-    dsada
+    暂无内容
 </view>

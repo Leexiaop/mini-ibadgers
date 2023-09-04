@@ -2,6 +2,7 @@
 const THREE = require('../../libs/three.weapp')
 const webgl_animation_multiple = require('../../core/webgl_animation_multiple')
 const webgl_animation_skinning_morph = require('../../core/webgl_animation_skinning_morph')
+const webgl_camera = require('../../core/webgl_camera')
 Page({
 
     /**
@@ -27,6 +28,7 @@ Page({
                 })
                 options?.url === 'webgl_animation_multiple' && webgl_animation_multiple(canvas).init()
                 options?.url === 'webgl_animation_skinning_morph' && webgl_animation_skinning_morph(canvas).init()
+                options?.url === 'webgl_camera' && webgl_camera(canvas).init()
             }
         })
     },

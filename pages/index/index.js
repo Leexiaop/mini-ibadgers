@@ -2,7 +2,7 @@
 // 获取应用实例
 Page({
     data: {
-        motto: 'Welcome to the 3D World',
+        motto: 'Welcome to the Ibadgers',
         userInfo: {},
         hasUserInfo: false
     },
@@ -44,7 +44,7 @@ Page({
     },
     onShareAppMessage () {
         return {
-            title: '3d World',
+            title: 'Ibadgers',
             imageUrl: 'https://leexiaop.github.io/static/ibadgers/world.png',
             path: '/page/index/index'
         }

@@ -1,15 +1,39 @@
 {
-  "pages":[
-    "pages/index/index",
-    "pages/list/list",
-    "pages/canvas/canvas"
-  ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "3D Worlds",
-    "navigationBarTextStyle":"black"
-  },
-  "style": "v2",
-  "sitemapLocation": "sitemap.json"
+    "pages": [
+        "pages/index/index",
+        "pages/list/list",
+        "pages/canvas/canvas",
+        "pages/code/code",
+        "pages/center/center"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Ibadgers",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#000000",
+        "selectedColor": "#000000",
+        "backgroundColor": "#000000",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "iconPath": "./assets/h.png",
+                "selectedIconPath": "./assets/h_s.png"
+            },
+            {
+                "pagePath": "pages/code/code",
+                "iconPath": "./assets/c.png",
+                "selectedIconPath": "./assets/c_s.png"
+            },
+            {
+                "pagePath": "pages/center/center",
+                "iconPath": "./assets/p.png",
+                "selectedIconPath": "./assets/p_s.png"
+            }
+        ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
 }

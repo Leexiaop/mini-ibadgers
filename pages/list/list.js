@@ -22,9 +22,14 @@ Page({
             url: `/pages/canvas/canvas?url=${e.currentTarget.dataset.cell}`,
         })
     },
+    onCodeCheck (e) {
+        wx.navigateTo({
+            url: `/pages/code/code?url=${e.currentTarget.dataset.cell}`,
+        })
+    },
     onShareAppMessage () {
         return {
-            title: '3d World',
+            title: 'Ibadgers',
             imageUrl: 'https://leexiaop.github.io/static/ibadgers/world.png',
             path: '/page/list/list'
         }

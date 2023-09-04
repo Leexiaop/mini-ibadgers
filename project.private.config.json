@@ -1,6 +1,6 @@
 {
     "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
-    "projectname": "3DWorlds",
+    "projectname": "Ibadgers",
     "setting": {
         "compileHotReLoad": true
     },
@@ -10,8 +10,22 @@
             "list": [
                 {
                     "name": "",
+                    "pathName": "pages/center/center",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/index/index",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
                     "pathName": "pages/canvas/canvas",
-                    "query": "url=webgl_animation_skinning_morph",
+                    "query": "url=webgl_camera",
                     "launchMode": "default",
                     "scene": null
                 },

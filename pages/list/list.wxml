@@ -1,5 +1,15 @@
 <!--list.wxml-->
 <view class="list" wx:for="{{list}}" wx:key="index" wx:for-item="item" wx:for-index="index">
     <view class="title">{{item.name}}</view>
-    <view class="cell" wx:for="{{item.children}}" wx:key="idx" wx:for-item="child" wx:for-index="idx" bind:tap="onCellClick" data-cell="{{child}}">{{child}}</view>
+    <view class="cell"
+        wx:for="{{item.children}}"
+        wx:key="idx"
+        wx:for-item="child"
+        wx:for-index="idx"
+        bind:tap="onCellClick"
+        data-cell="{{child}}"
+    >
+        <view>{{child}}</view>
+        <button size="mini" plain type="primary" catch:tap="onCodeCheck" data-cell="{{child}}">源码</button>
+    </view>
 </view>
