@@ -6,13 +6,13 @@ module.exports = (url) => {
                 if (res.statusCode === 200) {
                     wx.showToast({
                         icon: 'none',
-                        title: res.errMsg,
+                        title: '请求成功',
                     })
                     resolve(res.data)
                 } else {
                     wx.showToast({
                         icon: 'error',
-                        title: res.errMsg,
+                        title: '请求失败',
                     })
                 }
             },
@@ -20,7 +20,7 @@ module.exports = (url) => {
                 reject(err)
                 wx.showToast({
                     icon: 'error',
-                    title: res.errMsg,
+                    title: '请求失败',
                 })
             }
         })

@@ -18,10 +18,15 @@
             class="item"
             wx:for="{{contentList}}"
             wx:key="index"
+            wx:for-item="item"
             bind:tap="onCellClick"
-            data-index="{{index}}"
+            data-item="{{item}}"
         >
-            <view class="title"><van-icon name="{{item.icon}}" /><text decode="{{true}}">&nbsp;&nbsp;</text>{{item.title}}</view>
+            <view class="title">
+                <van-icon name="{{item.icon}}" />
+                <text decode="{{true}}">&nbsp;&nbsp;</text>
+                {{item.title}}
+            </view>
             <view class="motto">{{item.motto}}</view>
             <van-image
                 class="img"
@@ -37,5 +42,11 @@
         left-icon="volume-o"
         text="在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。"
     />
-    <!-- <view class="ad">dadas</view> -->
+    <van-transition show="{{ timeData.seconds > 0 }}" custom-class="block" name="fade">
+        <view class="ad">
+            <van-count-down use-slot time="{{ time }}" bind:change="onTimeChange">
+                <text class="item">{{ timeData.seconds }}</text>
+            </van-count-down>
+        </view>
+    </van-transition>
 </view>

@@ -5,62 +5,30 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        active: 0
     },
-
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad(options) {
-
+    onChange (e) {
+        this.setData({
+            active: e.detail.name
+        })
+        wx.setNavigationBarTitle({
+          title: e.detail.name ? '进阶图普' : '复习纲要',
+        })
     },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady() {
-
+    onImageClick () {
+        wx.previewImage({
+            content: 'https://leexiaop.github.io/static/mini/img/advanced.png',
+            urls: ['https://leexiaop.github.io/static/mini/img/advanced.png', 'https://leexiaop.github.io/static/mini/img/advanced.png']
+        })
     },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload() {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh() {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom() {
-
-    },
-
     /**
      * 用户点击右上角分享
      */
     onShareAppMessage() {
-
+        return {
+            title: 'Ibadgers',
+            imageUrl: 'https://leexiaop.github.io/static/ibadgers/logo.png',
+            path: '/page/advanced/advanced'
+        }
     }
 })

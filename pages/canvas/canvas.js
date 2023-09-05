@@ -45,7 +45,7 @@ Page({
     onShareAppMessage() {
         return {
             title: this.data.url.split('_').join(' '),
-            imageUrl: 'https://leexiaop.github.io/static/ibadgers/world.png',
+            imageUrl: 'https://leexiaop.github.io/static/ibadgers/logo.png',
             path: `/page/canvas/canvas?url=${this.data.url}`
         }
     },

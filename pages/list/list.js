@@ -30,7 +30,7 @@ Page({
     onShareAppMessage () {
         return {
             title: 'Ibadgers',
-            imageUrl: 'https://leexiaop.github.io/static/ibadgers/world.png',
+            imageUrl: 'https://leexiaop.github.io/static/ibadgers/logo.png',
             path: '/page/list/list'
         }
     }

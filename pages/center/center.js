@@ -8,9 +8,25 @@ Page({
      * 页面的初始数据
      */
     data: {
-        swiperList: []
+        swiperList: [],
+        name: '',
+        gender: 0
     },
     onLoad () {
+        if (wx.getStorageSync('gender') === 0 || wx.getStorageSync('gender') === 1) {
+            this.setData({gender: wx.getStorageSync('gender')})
+        } else {
+            let gender = Math.floor(Math.random() * 2)
+            wx.setStorageSync('gender', gender)
+            this.setData({gender: gender})
+        }
+        if (wx.getStorageSync('name')) {
+            this.setData({name: wx.getStorageSync('name')})
+        } else {
+            let name = `Ibadgers_${Math.ceil(Math.random() * 100000000)}`
+            wx.setStorageSync('name', name)
+            this.setData({name: name})
+        }
         request(url.getSwiperList).then(res => {
             this.setData({swiperList: res})
         })

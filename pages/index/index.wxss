@@ -50,12 +50,24 @@
 .index > .content > .item > .img {
     margin: 0 auto;
 }
-.index > .ad {
+.index .ad {
     width: 100%;
     height: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: red;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+}
+.index .ad .item {
+    display: inline-block;
+    width: 22px;
+    margin-right: 5px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    background-color: #1989fa;
+    border-radius: 2px;
 }
 

@@ -10,6 +10,13 @@
             "list": [
                 {
                     "name": "",
+                    "pathName": "pages/advanced/advanced",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
                     "pathName": "pages/list/list",
                     "query": "",
                     "launchMode": "default",

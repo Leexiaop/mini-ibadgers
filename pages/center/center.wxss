@@ -43,6 +43,7 @@
     background-color: #fff;
     border-top-left-radius: 24rpx;
     border-top-right-radius: 24rpx;
+    overflow: hidden;
 }
 .center > .content > .content-middle {
     margin-top: 24rpx;

@@ -3,6 +3,8 @@
     "usingComponents": {
         "van-image": "@vant/weapp/image/index",
         "van-icon": "@vant/weapp/icon/index",
-        "van-notice-bar": "@vant/weapp/notice-bar/index"
+        "van-notice-bar": "@vant/weapp/notice-bar/index",
+        "van-transition": "@vant/weapp/transition/index",
+        "van-count-down": "@vant/weapp/count-down/index"
     }
 }
