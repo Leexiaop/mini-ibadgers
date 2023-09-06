@@ -30,6 +30,8 @@
     box-sizing: border-box;
     border-radius: 24rpx;
     break-inside: avoid;
+    position: relative;
+    overflow: hidden;
 }
 .index > .notice {
     width: 100%;
@@ -38,6 +40,16 @@
     left: 0;
 }
 
+.index > .content > .item > .tag {
+    position: absolute;
+    background-color: #e4393c;
+    top: 0;
+    right: 0;
+    color: #fff;
+    border-bottom-left-radius: 24rpx;
+    padding: 8rpx;
+    font-size: 14rpx;
+}
 .index > .content > .item > .title {
     color: #666;
     margin-bottom: 8rpx;
@@ -58,16 +70,62 @@
     left: 0;
     background-color: #fff;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
 }
-.index .ad .item {
-    display: inline-block;
-    width: 22px;
-    margin-right: 5px;
+.index .ad > .ad-item {
+    width: 100%;
+    height: calc(100vh - 228rpx);
+    position: relative;
+}
+.index .ad > .ad-item > .left {
+    display: flex;
+    align-items: center;
+    top: 102rpx;
+    left: 20rpx;
+    position: absolute;
+    z-index: 100000000;
+}
+    .index .ad > .ad-item > .left > .left-content {
+    width: 130rpx;
+    height: 36rpx;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 12rpx 20rpx;
+    display: flex;
+    border-radius: 36rpx;
+    background-color: rgb(255, 255, 255, 0.6);
+}
+.index .ad > .ad-item > .left .count {
     color: #fff;
-    font-size: 12px;
+}
+.index .ad > .ad-item > .left > .left-content > view {
+    width: 100%;
+    height: 36rpx;
+    line-height: 36rpx;
     text-align: center;
-    background-color: #1989fa;
-    border-radius: 2px;
+    font-size: 16rpx;
+}
+.index .ad > .ad-item > .left > .left-content > view:first-child {
+    border-right: 1px solid rgba(252, 252, 252, 0.3);
+}
+.index .ad > .ad-item > .ad-content {
+    border-radius: 24rpx;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+.index .ad > .ad-item > .ad-tip {
+    display: flex;
+}
+.index .ad > .ad-logo {
+    width: 100%;
+    height: 228rpx;
+    background-color: rgb(231, 204, 145, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-size: large;
 }
 

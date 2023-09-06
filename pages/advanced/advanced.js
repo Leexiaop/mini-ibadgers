@@ -12,13 +12,15 @@ Page({
             active: e.detail.name
         })
         wx.setNavigationBarTitle({
-          title: e.detail.name ? '进阶图普' : '复习纲要',
+            title: !e.detail.name ? '进阶图普' : '复习纲要',
         })
     },
     onImageClick () {
         wx.previewImage({
-            content: 'https://leexiaop.github.io/static/mini/img/advanced.png',
-            urls: ['https://leexiaop.github.io/static/mini/img/advanced.png', 'https://leexiaop.github.io/static/mini/img/advanced.png']
+            urls: [
+                'https://leexiaop.github.io/static/mini/img/advanced_1.png',
+                'https://leexiaop.github.io/static/mini/img/advanced_2.jpg'
+            ]
         })
     },
     /**

@@ -4,10 +4,6 @@ module.exports = (url) => {
             url,
             success: (res) => {
                 if (res.statusCode === 200) {
-                    wx.showToast({
-                        icon: 'none',
-                        title: '请求成功',
-                    })
                     resolve(res.data)
                 } else {
                     wx.showToast({

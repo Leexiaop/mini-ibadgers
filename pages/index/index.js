@@ -6,8 +6,7 @@ Page({
     data: {
         contentList: [],
         swiperList: [],
-        time: 5000,
-        count: 5,
+        isAdShow: false,
         timeData: {
             seconds: 5
         }
@@ -16,6 +15,7 @@ Page({
 
     onLoad() {
         wx.hideTabBar()
+        this.setData({isAdShow: true})
         request(url.getSwiperList).then(res => {
             this.setData({swiperList: res})
             return request(url.getMainList)
@@ -27,7 +27,12 @@ Page({
         this.setData({timeData: e.detail})
         if (e.detail.seconds <= 0) {
             wx.showTabBar()
+            this.setData({isAdShow: false})
         }
+    },
+    onAdClose () {
+        wx.showTabBar()
+        this.setData({isAdShow: false})
     },
     onCellClick (e) {
         const {item} = e.currentTarget.dataset
@@ -39,7 +44,7 @@ Page({
             return
         }
         wx.navigateTo({
-            url: `/pages/list/list?title=${item.title}`
+            url: `/pages/list/list?url=${item.url}&&title=${item.title}`
         })
     }, 
     onShareAppMessage () {

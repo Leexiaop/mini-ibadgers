@@ -2,8 +2,20 @@
 <view class="advanced">
     <van-tabs active="{{ active }}" animated bind:change="onChange">
         <van-tab title="进阶图谱">
-            <van-image bind:tap="onImageClick" width="100%" src="https://leexiaop.github.io/static/mini/img/advanced.png" fit="widthFix" />
+            <van-image
+                bind:tap="onImageClick"
+                width="100%"
+                src="https://leexiaop.github.io/static/mini/img/advanced_1.png"
+                fit="widthFix"
+            />
         </van-tab>
-        <van-tab title="复习纲要">内容 2</van-tab>
+        <van-tab title="复习纲要">
+            <van-image
+                bind:tap="onImageClick"
+                width="100%"
+                src="https://leexiaop.github.io/static/mini/img/advanced_2.jpg"
+                fit="widthFix"
+            />
+        </van-tab>
     </van-tabs>
 </view>

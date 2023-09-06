@@ -1,23 +1,25 @@
 <!--list.wxml-->
 <view class="list">
-    <van-cell-group
-        wx:for="{{list}}"
-        wx:key="index"
-        wx:for-item="item"
-        border="{{false}}"
-        wx:for-index="index"
-        title="{{item.name}}"
-    >
-        <van-cell
-            title="{{child}}"
-            class="cell"
-            wx:for="{{item.children}}"
-            wx:key="idx"
-            wx:for-item="child"
-            wx:for-index="idx"
-            is-link
-            bind:tap="onCellClick"
-            data-cell="{{child}}"
-        />
-    </van-cell-group>
+    <van-skeleton title row="23" loading="{{ isLoading }}">
+        <van-cell-group
+            wx:for="{{list}}"
+            wx:key="index"
+            wx:for-item="item"
+            border="{{false}}"
+            wx:for-index="index"
+            title="{{item.name || item}}"
+        >
+            <van-cell
+                title="{{child.name || (child === 'index' ? '概要' : child)}}"
+                class="cell"
+                wx:for="{{item.children}}"
+                wx:key="idx"
+                wx:for-item="child"
+                wx:for-index="idx"
+                is-link
+                bind:tap="onCellClick"
+                data-cell="{{child}}"
+            />
+        </van-cell-group>
+    </van-skeleton>
 </view>

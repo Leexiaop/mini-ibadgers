@@ -5,14 +5,14 @@
     box-sizing: border-box;
 }
 .center > .nav {
-    height: 278rpx;
+    height: 348rpx;
     background: url('https://leexiaop.github.io/static/mini/img/center_bg.jpg');
     background-size: 100% 100%;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
     justify-content: flex-start;
-    padding: 0 32rpx;
+    padding: 0 32rpx 64rpx 32rpx;
 }
 .center > .nav > .info {
     width: 572rpx;

@@ -3,9 +3,9 @@
         "pages/index/index",
         "pages/list/list",
         "pages/canvas/canvas",
-        "pages/code/code",
         "pages/center/center",
-        "pages/advanced/advanced"
+        "pages/advanced/advanced",
+        "pages/content/content"
     ],
     "window": {
         "backgroundTextStyle": "light",

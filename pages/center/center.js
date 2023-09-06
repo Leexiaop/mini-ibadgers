@@ -66,6 +66,10 @@ Page({
                 })
                 break
             default:
+                wx.showToast({
+                    icon: 'none',
+                    title: '功能暂未开放，敬请期待...',
+                })
                 console.log('hello ibadgers!')
         }
     }

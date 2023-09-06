@@ -1,23 +1,32 @@
-// pages/code/code.js
+// pages/content/content.js
+import request from '../../utils/request'
+import url from '../../assets/api/url'
+const app = getApp()
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        data: '<div></div>'
+        content: [],
+        isLoading: false
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-        wx.request({
-            url: 'https://leexiaop.github.io/static/cases/threejs/3_webgl_animation_skinning_additive_blending.html',
-            success: res => {
-                console.log(res.data)
-                this.setData({data: res?.data?.replace(/&nbsp;/g,'\xa0')})
-            }
+        wx.setNavigationBarTitle({
+            title: options.url
+        })
+        this.setData({isLoading: true})
+        request(`${url.getIbadgersDoc}${options.path}/${options.url}`).then(res => {
+            if (res) {
+				const content = app.towxml(res,'html', {
+					theme: 'dark'
+				});
+				this.setData({content, isLoading: false});
+			};
         })
     },
 

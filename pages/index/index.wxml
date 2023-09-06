@@ -22,6 +22,7 @@
             bind:tap="onCellClick"
             data-item="{{item}}"
         >
+            <view class="tag" wx:if="{{!item.disabled}}">开放中</view>
             <view class="title">
                 <van-icon name="{{item.icon}}" />
                 <text decode="{{true}}">&nbsp;&nbsp;</text>
@@ -30,9 +31,9 @@
             <view class="motto">{{item.motto}}</view>
             <van-image
                 class="img"
+                fit="widthFix"
                 wx:if="{{item.img}}"
                 width="128rpx"
-                height="128rpx"
                 src="{{item.img}}"
             />
         </view>
@@ -40,13 +41,65 @@
     <van-notice-bar
         class="notice"
         left-icon="volume-o"
-        text="在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。"
+        text="走过多少岁月才发现，敲的每一行代码还不是最优秀，还需要努力加油，拼搏到无能为力，坚持到感动自己。"
     />
-    <van-transition show="{{ timeData.seconds > 0 }}" custom-class="block" name="fade">
+    <van-transition show="{{ timeData.seconds > 0 && isAdShow }}" custom-class="block" name="fade">
         <view class="ad">
-            <van-count-down use-slot time="{{ time }}" bind:change="onTimeChange">
-                <text class="item">{{ timeData.seconds }}</text>
-            </van-count-down>
+            <view class="ad-item">
+                <view class="left">
+                    <view class="left-content">
+                        <view type="default">广告</view>
+                        <view type="default" bind:tap="onAdClose">跳过</view>
+                    </view>
+                    <text decode>&nbsp;&nbsp;&nbsp;</text>
+                    <van-count-down use-slot time="{{ 5000 }}" bind:change="onTimeChange">
+                        <text class="count">{{ timeData.seconds }}s</text>
+                    </van-count-down>
+                </view>
+                <view class="ad-content">
+                    <van-image
+                        class="ad-img"
+                        fit="widthFix"
+                        width="100vw"
+                        src="https://leexiaop.github.io/static/mini/img/ad.png"
+                    />
+                </view>
+                <view class="ad-tip">
+                    <van-image
+                        class="ad-img"
+                        fit="widthFix"
+                        width="25vw"
+                        src="https://leexiaop.github.io/static/mini/img/ad_1.jpg"
+                    />
+                    <van-image
+                        class="ad-img"
+                        fit="widthFix"
+                        width="25vw"
+                        src="https://leexiaop.github.io/static/mini/img/ad_2.jpg"
+                    />
+                    <van-image
+                        class="ad-img"
+                        fit="widthFix"
+                        width="25vw"
+                        src="https://leexiaop.github.io/static/mini/img/ad_3.jpg"
+                    />
+                    <van-image
+                        class="ad-img"
+                        fit="widthFix"
+                        width="25vw"
+                        src="https://leexiaop.github.io/static/mini/img/ad_4.jpg"
+                    />
+                </view>
+            </view>
+            <view class="ad-logo">
+                <van-image
+                    round
+                    width="128rpx"
+                    height="128rpx"
+                    src="https://leexiaop.github.io/static/ibadgers/logo.png"
+                />
+                <text decode="{{true}}">&nbsp;&nbsp;&nbsp;Ibadgers前端练功房</text>
+            </view>
         </view>
     </van-transition>
 </view>

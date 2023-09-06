@@ -1,0 +1,9 @@
+/* pages/content/content.wxss */
+.content {
+    /* background: #000; */
+    box-sizing: border-box;
+    height: 100%;
+}
+.h2w, .van-skeleton__content {
+    height: 100%;
+}

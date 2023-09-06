@@ -1,0 +1,6 @@
+<!--pages/content/content.wxml-->
+<view class="content">
+    <van-skeleton title row="23" loading="{{ isLoading }}">
+        <towxml nodes="{{content}}"/>
+    </van-skeleton>
+</view>
