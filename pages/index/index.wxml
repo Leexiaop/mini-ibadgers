@@ -41,7 +41,7 @@
     <van-notice-bar
         class="notice"
         left-icon="volume-o"
-        text="走过多少岁月才发现，敲的每一行代码还不是最优秀，还需要努力加油，拼搏到无能为力，坚持到感动自己。"
+        text="走过多少岁月才发现，敲的每一行代码还不是最优秀，还需要努力加油，So~~,拼搏到无能为力，坚持到感动自己。"
     />
     <van-transition show="{{ timeData.seconds > 0 && isAdShow }}" custom-class="block" name="fade">
         <view class="ad">

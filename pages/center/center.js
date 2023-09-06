@@ -40,6 +40,11 @@ Page({
                     theme: 'round-button'
                   });
                 break
+            case '5':
+                wx.navigateTo({
+                    url: '/pages/resources/resources',
+                })
+                break
             case '6':
                 wx.setClipboardData({
                     data: 'https://blog.csdn.net/leelxp'

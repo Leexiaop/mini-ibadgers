@@ -1,4 +1,6 @@
 /* pages/content/content.wxss */
+@import'/towxml/style/main.wxss';
+@import'/towxml/style/theme/dark.wxss';
 .content {
     /* background: #000; */
     box-sizing: border-box;

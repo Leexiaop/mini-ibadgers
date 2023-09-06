@@ -5,7 +5,8 @@
         "pages/canvas/canvas",
         "pages/center/center",
         "pages/advanced/advanced",
-        "pages/content/content"
+        "pages/content/content",
+        "pages/resources/resources"
     ],
     "window": {
         "backgroundTextStyle": "light",

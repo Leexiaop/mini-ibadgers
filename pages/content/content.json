@@ -1,4 +1,6 @@
 {
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTextStyle": "white",
     "usingComponents": {
         "towxml":"/towxml/towxml",
         "van-skeleton": "@vant/weapp/skeleton/index"
