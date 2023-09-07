@@ -11,6 +11,7 @@
         >
             <van-cell
                 title="{{child.name || (child === 'index' ? '概要' : child)}}"
+                title-width="484rpx"
                 class="cell"
                 wx:for="{{item.children}}"
                 wx:key="idx"
@@ -19,7 +20,17 @@
                 is-link
                 bind:tap="onCellClick"
                 data-cell="{{child}}"
-            />
+                use-label-slot
+            >
+                <van-button
+                    custom-style="width: 64rpx;"
+                    hairline
+                    round
+                    type="primary"
+                    size="mini"
+                    wx:if="{{options.url === 'threejs_case'}}"
+                >源码</van-button>
+            </van-cell>
         </van-cell-group>
     </van-skeleton>
 </view>
