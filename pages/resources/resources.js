@@ -1,17 +1,21 @@
 // pages/resources/resources.js
+import request from '../../utils/request'
+import url from '../../assets/api/url'
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        resourcesList: [
+        barList: [
+            '全部',
             '简历模板',
             '机构面试题',
             '算法介绍',
             '源码下载',
             '学习资料'
         ],
+        resourcesList: [],
         actice: 0
     },
 
@@ -19,12 +23,18 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-
+        this.init()
+    },
+    init() {
+        request(url.getResourcesList).then(res => {
+            console.log(res)
+        })
     },
     onChange (e) {
         this.setData({
             active: e.detail.name
         })
+        this.init()
     },
 
     /**

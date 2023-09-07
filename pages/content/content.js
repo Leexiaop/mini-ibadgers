@@ -17,7 +17,7 @@ Page({
      */
     onLoad(options) {
         wx.setNavigationBarTitle({
-            title: options.url
+            title: options.url === 'index' ? '概览' : options.url
         })
         this.setData({isLoading: true})
         request(`${url.getIbadgersDoc}${options.path}/${options.url}`).then(res => {

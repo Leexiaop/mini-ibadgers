@@ -35,7 +35,7 @@
                 "selectedIconPath": "./assets/img/p_s.png"
             }
         ]
-    },
+    }, 
     "style": "v2",
     "sitemapLocation": "sitemap.json"
 }

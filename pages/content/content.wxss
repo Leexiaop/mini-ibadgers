@@ -2,7 +2,6 @@
 @import'/towxml/style/main.wxss';
 @import'/towxml/style/theme/dark.wxss';
 .content {
-    /* background: #000; */
     box-sizing: border-box;
     height: 100%;
 }

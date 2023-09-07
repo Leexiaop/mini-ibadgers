@@ -1,17 +1,12 @@
 <!--pages/resources/resources.wxml-->
 <view class="resources">
     <van-tabs active="{{ active }}" animated bind:change="onChange">
-        <van-tab
+        <view
+            class="resources-item"
             wx:for="{{resourcesList}}"
             wx:for-item="resource"
-            title="{{resource}}"
         >
-            <van-image
-                bind:tap="onImageClick"
-                width="100%"
-                src="https://leexiaop.github.io/static/mini/img/advanced_1.png"
-                fit="widthFix"
-            />
-        </van-tab>
+            
+        </view>
     </van-tabs>
 </view>
