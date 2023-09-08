@@ -8,19 +8,6 @@
 .index > .nav {
     position: relative;
     color: #ffffff;
-    height: 480rpx;
-}
-.index > .nav swiper {
-    height: 100%;
-}
-.index > .nav swiper swiper-item {
-    height: 100%;
-}
-.van-image {
-    height: 100%;
-}
-.index > .nav swiper swiper-item image {
-    height: 100%!important;
 }
 .index > .nav > .motto {
     position: absolute;

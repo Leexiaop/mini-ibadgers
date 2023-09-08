@@ -5,6 +5,20 @@ Page({
      * 页面的初始数据
      */
     data: {
+        advanceList: [
+            {
+                title: '进阶图谱',
+                url: 'https://leexiaop.github.io/static/mini/img/advanced_1.png'
+            },
+            {
+                title: '复习纲要',
+                url: 'https://leexiaop.github.io/static/mini/img/advanced_2.png'
+            },
+            {
+                title: '学习进行时',
+                url: 'https://leexiaop.github.io/static/mini/img/advanced_3.png'
+            }
+        ],
         active: 0
     },
     onChange (e) {
@@ -17,10 +31,7 @@ Page({
     },
     onImageClick () {
         wx.previewImage({
-            urls: [
-                'https://leexiaop.github.io/static/mini/img/advanced_1.png',
-                'https://leexiaop.github.io/static/mini/img/advanced_2.jpg'
-            ]
+            urls: this.data.advanceList.map(advance => advance.url)
         })
     },
     /**
@@ -30,7 +41,7 @@ Page({
         return {
             title: 'Ibadgers',
             imageUrl: 'https://leexiaop.github.io/static/ibadgers/logo.png',
-            path: '/page/advanced/advanced'
+            path: '/pages/advanced/advanced'
         }
     }
 })

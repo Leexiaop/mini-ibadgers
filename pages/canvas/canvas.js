@@ -22,6 +22,7 @@ Page({
         .node()
         .exec((res) => {
             const canvas = THREE.global.registerCanvas(res[0].node)
+            console.log(options.url)
             if (options?.url) {
                 wx.setNavigationBarTitle({
                   title: options?.url.split('_').join(' '),
@@ -46,7 +47,7 @@ Page({
         return {
             title: this.data.url.split('_').join(' '),
             imageUrl: 'https://leexiaop.github.io/static/ibadgers/logo.png',
-            path: `/page/canvas/canvas?url=${this.data.url}`
+            path: `/pages/canvas/canvas?url=${this.data.url}`
         }
     },
     touchStart(e) {

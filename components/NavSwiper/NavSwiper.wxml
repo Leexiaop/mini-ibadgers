@@ -1,0 +1,8 @@
+<!--components/navSwiper.wxml-->
+<swiper indicatorDots style="height: {{height}}rpx" autoplay interval="{{2000}}" duration="{{500}}">
+    <block wx:for="{{swiperList}}" wx:key="*this">
+        <swiper-item>
+            <image bind:tap="onImageClick" data-item="{{item}}" style="width: 100%;" src="{{item}}" mode="aspectFill" />
+        </swiper-item>
+    </block>
+</swiper>

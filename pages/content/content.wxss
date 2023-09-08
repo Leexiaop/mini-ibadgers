@@ -3,7 +3,7 @@
 @import'/towxml/style/theme/dark.wxss';
 .content {
     box-sizing: border-box;
-    height: 100%;
+    height: 100vh;
 }
 .h2w, .van-skeleton__content {
     height: 100%;

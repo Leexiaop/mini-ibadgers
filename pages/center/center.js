@@ -1,6 +1,4 @@
 // pages/center/center.js
-import request from '../../utils/request'
-import url from '../../assets/api/url'
 import Dialog from '@vant/weapp/dialog/dialog';
 Page({
 
@@ -8,7 +6,6 @@ Page({
      * 页面的初始数据
      */
     data: {
-        swiperList: [],
         name: '',
         gender: 0
     },
@@ -27,9 +24,6 @@ Page({
             wx.setStorageSync('name', name)
             this.setData({name: name})
         }
-        request(url.getSwiperList).then(res => {
-            this.setData({swiperList: res})
-        })
     },
     onCellClick (e) {
         const {type} = e.currentTarget.dataset

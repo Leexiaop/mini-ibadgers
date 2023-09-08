@@ -20,11 +20,11 @@ Page({
             title: options.url === 'index' ? '概览' : options.url
         })
         this.setData({isLoading: true})
-        request(`${url.getIbadgersDoc}${options.path}/${options.url}`).then(res => {
+        request(`${url.getIbadgersDoc}${options.path}/${options.url}.md.i`).then(res => {
             if (res) {
-				const content = app.towxml(res,'html', {
+				const content = app.towxml(res,'markdown', {
 					theme: 'dark'
-				});
+                });
 				this.setData({content, isLoading: false});
 			};
         })

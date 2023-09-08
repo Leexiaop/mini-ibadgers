@@ -2,6 +2,10 @@
     width: 100%;
     box-sizing: border-box;
 }
+.van-cell {
+    display: flex;
+    justify-content: space-between;
+}
 /* .list > .title {
     height: 64rpx;
     font-size: 36rpx;
