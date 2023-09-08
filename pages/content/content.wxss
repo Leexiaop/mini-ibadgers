@@ -4,7 +4,9 @@
 .content {
     box-sizing: border-box;
     height: 100vh;
+    overflow: auto;
 }
 .h2w, .van-skeleton__content {
     height: 100%;
+    overflow: auto;
 }

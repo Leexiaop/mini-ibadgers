@@ -51,6 +51,7 @@ Page({
         return {
             title: 'Ibadgers',
             imageUrl: 'https://leexiaop.github.io/static/ibadgers/logo.png',
+            desc: 'dadafdafsdada',
             path: '/pages/index/index'
         }
     }
