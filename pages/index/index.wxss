@@ -1,19 +1,9 @@
 /**index.wxss**/
 .index {
     width: 100%;
-    background-color: #e9e9e9;
     box-sizing: border-box;
     padding-bottom: 64rpx;
-}
-.index > .nav {
-    position: relative;
-    color: #ffffff;
-}
-.index > .nav > .motto {
-    position: absolute;
-    left: 32rpx;
-    bottom: 84rpx;
-    font-size: 30rpx;
+    background-color: rgb(206, 235, 231);
 }
 .index > .content {
     padding: 32rpx 32rpx 16rpx 32rpx;

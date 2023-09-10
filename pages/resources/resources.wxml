@@ -1,12 +1,59 @@
 <!--pages/resources/resources.wxml-->
 <view class="resources">
-    <van-tabs active="{{ active }}" animated bind:change="onChange">
+    <van-tabs
+        active="{{ active }}"
+        animated
+        bind:change="onChange"
+    >
+        <van-tab
+            wx:for="{{barList}}"
+            wx:for-item="bar"
+            wx:key="index"
+            title="{{bar}}"
+        />
+    </van-tabs>
+    <van-divider />
+    <block wx:if="{{resourcesList.length}}">  
         <view
             class="resources-item"
             wx:for="{{resourcesList}}"
+            wx:for-index="idx"
+            wx:key="idx"
             wx:for-item="resource"
         >
-            
+            <view class="resources-title">
+                <van-icon name="{{iconList[resource.type]}}" size="72" />
+                <text decode="{{true}}">&nbsp;</text>
+                <view class="titles">
+                    <view class="title">{{resource.name}}</view>
+                    <view class="subtitle">{{resource.subTitle}}</view>
+                    <view class="origin">来源：{{resource.origin}}</view>
+                </view>
+            </view>
+            <view class="resources-desc">{{resource.desc}}</view>
+            <view class="resources-footer">
+                <view class="resources-footer-recommand">
+                    推荐指数：
+                    <van-rate
+                        allow-half
+                        value="{{ resource.recommand }}"
+                        size="{{ 16 }}"
+                        color="#ffd21e"
+                        void-icon="star"
+                        void-color="#eee"
+                    />
+                </view>
+                <view class="resources-footer-btn">
+                    <text decode="{{true}}">&nbsp;</text>
+                    <van-button round type="danger" hairline size="mini" data-item="{{resource}}" wx:if="{{resource.ispassword}}" bind:tap="onPasswordCopy">{{resource.password}}</van-button>
+                    <text decode="{{true}}">&nbsp;</text>
+                    <van-button data-item="{{resource}}" wx:if="{{resource.iscopy}}" round type="info" hairline size="mini" bind:tap="onCopyLink">复制链接</van-button>
+                    <text decode="{{true}}">&nbsp;</text>
+                    <van-button data-item="{{resource}}" wx:if="{{resource.ischeck}}" round type="warning" size="mini" bind:tap="onCheckFile">下载</van-button>
+                </view>
+            </view>
         </view>
-    </van-tabs>
+    </block>
+    <van-empty wx:else description="暂无内容" />
+    <van-dialog id="van-dialog" />
 </view>

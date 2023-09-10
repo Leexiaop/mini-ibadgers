@@ -1,6 +1,7 @@
 // pages/resources/resources.js
 import request from '../../utils/request'
 import url from '../../assets/api/url'
+import Dialog from '@vant/weapp/dialog/dialog'
 Page({
 
     /**
@@ -16,25 +17,61 @@ Page({
             '学习资料'
         ],
         resourcesList: [],
-        actice: 0
+        dataSource: [],
+        actice: 0,
+        iconList: [
+            'video-o',
+            'description',
+            'photo-o'
+        ]
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-        this.init()
-    },
-    init() {
         request(url.getResourcesList).then(res => {
-            console.log(res)
+            this.setData({resourcesList: res, dataSource: res})
         })
     },
     onChange (e) {
         this.setData({
-            active: e.detail.name
+            active: e.detail.name,
+            resourcesList: e.detail.name ? this.data.dataSource.filter(data => data.category === e.detail.name) : this.data.dataSource
         })
-        this.init()
+    },
+    onCopyLink (e) {
+        const {item} = e.currentTarget.dataset
+        wx.setClipboardData({
+            data: item.copyUrl,
+        })
+    },
+    onPasswordCopy (e) {
+        const {item} = e.currentTarget.dataset
+        wx.setClipboardData({
+            data: item.password,
+        })
+    },
+    onCheckFile (e) {
+        const {item} = e.currentTarget.dataset
+        wx.showLoading({
+            title: '加载中...',
+        })
+        wx.downloadFile({
+            url: item.checkUrl,
+            success (res) {
+                if (res.statusCode === 200) {
+                    wx.hideLoading()
+                    Dialog.confirm({
+                        message: '文件下载完成，是否要打开',
+                    }).then(() => {
+                        wx.openDocument({
+                            filePath: res.tempFilePath
+                        })
+                    })
+                }
+            }
+        })
     },
 
     /**
@@ -83,6 +120,11 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage() {
-
+        return {
+            title: 'Ibadgers',
+            imageUrl: 'https://leexiaop.github.io/static/ibadgers/logo.png',
+            desc: 'dadafdafsdada',
+            path: '/pages/resources/resources'
+        }
     }
 })

@@ -1,11 +1,14 @@
-// logs.js
+// list.js
 import request from '../../utils/request'
 import url from '../../assets/api/url'
 Page({
     data: {
         list: [],
         options: null,
-        isLoading: false
+        isLoading: false,
+        show: false,
+        content: null,
+        title: ''
     },
     onLoad(options) {
         this.setData({options, isLoading: true})
@@ -42,6 +45,28 @@ Page({
         }
         wx.navigateTo({
             url: `/pages/canvas/canvas?url=${cell.name}`,
+        })
+    },
+    onCodeCheck (e) {
+        const {cell, index} = e.currentTarget.dataset
+        if (cell.disabled) {
+            wx.showToast({
+                icon: 'none',
+                title: '开发中,敬请期待...'
+            })
+            return
+        }
+        this.setData({isLoading: true})
+        request(`${url.getCode}${index + 1}_${cell.name}.html`).then(res => {
+            this.setData({content: res, show: true, title: cell.name,isLoading: false});
+        })
+    },
+    onClose () {
+        this.setData({show: false, content: null})
+    },
+    onContentClick () {
+        wx.setClipboardData({
+            data: this.data.content
         })
     },
     onShareAppMessage () {

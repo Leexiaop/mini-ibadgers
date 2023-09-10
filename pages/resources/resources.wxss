@@ -1,1 +1,76 @@
 /* pages/resources/resources.wxss */
+.resources {
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 32rpx;
+}
+.resources .resources-item {
+    width: 686rpx;
+    margin: 0 auto;
+    padding: 24rpx;
+    background-color: rgb(206, 235, 231);
+    box-sizing: border-box;
+    margin-bottom: 32rpx;
+    border-radius: 24rpx;
+}
+.resources .resources-item > .resources-title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.resources .resources-item > .resources-title > .titles {
+    width: 100%;
+    height: 128rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.resources .resources-item > .resources-title > .titles > .title {
+    width: 100%;
+    font-size: 28rpx;
+    color: #333;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.resources .resources-item > .resources-title > .titles > .subtitle {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 24rpx;
+    color: #ff976a;
+}
+.resources .resources-item > .resources-title > .titles > .origin {
+    width: 100%;
+    font-size: 22rpx;
+    color: #999;
+    white-space: nowrap;
+}
+.resources .resources-desc {
+    width: 100%;
+    font-size: 24rpx;
+    color: #666;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+.resources .resources-footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.resources .resources-footer > .resources-footer-recommand {
+    margin: 24rpx 0;
+    font-size: 26rpx;
+    color: #999;
+}
+.resources .resources-footer > .resources-footer-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+.resources .resources-footer > .resources-footer-btn .van-button {
+    width: 128rpx;
+}

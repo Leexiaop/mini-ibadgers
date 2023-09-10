@@ -1,19 +1,6 @@
 <!--index.wxml-->
 <view class="index">
-    <view class="nav">
-        <nav-swiper height="480"></nav-swiper>
-        <!-- <swiper indicatorDots autoplay interval="{{2000}}" duration="{{500}}">
-            <block wx:for="{{swiperList}}" wx:key="*this">
-                <swiper-item>
-                    <van-image
-                        fit="widthFix"
-                        width="100%"
-                        src="{{item}}"
-                    />
-                </swiper-item>
-            </block>
-        </swiper> -->
-    </view>
+    <nav-swiper height="480"></nav-swiper>
     <view class="content">
         <view
             class="item"
