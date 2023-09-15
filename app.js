@@ -1,4 +1,4 @@
 // app.js
 App({
-    towxml:require('/towxml/index')
+    // towxml:require('./subpackage/towxml/index')
 })

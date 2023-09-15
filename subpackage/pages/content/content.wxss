@@ -1,6 +1,6 @@
 /* pages/content/content.wxss */
-@import'/towxml/style/main.wxss';
-@import'/towxml/style/theme/dark.wxss';
+@import'../../towxml/style/main.wxss';
+@import'../../towxml/style/theme/dark.wxss';
 .content {
     box-sizing: border-box;
     height: 100vh;

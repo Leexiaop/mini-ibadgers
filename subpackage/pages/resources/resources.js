@@ -1,6 +1,6 @@
 // pages/resources/resources.js
-import request from '../../utils/request'
-import url from '../../assets/api/url'
+import request from '../../../utils/request'
+import url from '../../../assets/api/url'
 import Dialog from '@vant/weapp/dialog/dialog'
 Page({
 

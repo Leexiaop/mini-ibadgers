@@ -40,7 +40,7 @@ Page({
                 break
             case '5':
                 wx.navigateTo({
-                    url: '/pages/resources/resources',
+                    url: '/subpackage/pages/resources/resources',
                 })
                 break
             case '6':

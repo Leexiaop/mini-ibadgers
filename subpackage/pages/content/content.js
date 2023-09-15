@@ -1,13 +1,13 @@
 // pages/content/content.js
-import request from '../../utils/request'
-import url from '../../assets/api/url'
-const app = getApp()
+import request from '../../../utils/request'
+import url from '../../../assets/api/url'
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
+        towxml: require('../../towxml/index'),
         content: [],
         isLoading: false,
         options: null
@@ -23,7 +23,7 @@ Page({
         this.setData({isLoading: true, options})
         request(`${url.getIbadgersDoc}${options.path}/${options.url}.md.i`).then(res => {
             if (res) {
-				const content = app.towxml(res,'markdown', {
+				const content = this.data.towxml(res,'markdown', {
 					theme: 'dark'
                 });
 				this.setData({content, isLoading: false});

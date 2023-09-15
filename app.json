@@ -1,13 +1,27 @@
 {
     "pages": [
         "pages/index/index",
-        "pages/list/list",
-        "pages/canvas/canvas",
         "pages/center/center",
-        "pages/advanced/advanced",
-        "pages/content/content",
-        "pages/resources/resources"
+        "pages/advanced/advanced"
     ],
+    "subpackages": [
+        {
+            "root": "subpackage",
+            "name": "subpackage",
+            "pages": [
+                "pages/list/list",
+                "pages/canvas/canvas",
+                "pages/content/content",
+                "pages/resources/resources"
+            ]
+        }
+    ],
+    "preloadRule": {
+        "pages/index/index": {
+            "network": "all",
+            "packages": ["subpackage"]
+        }
+    },
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",

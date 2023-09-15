@@ -30,7 +30,7 @@ Page({
             return
         }
         wx.navigateTo({
-            url: `/pages/list/list?url=${item.url}&&title=${item.title}`
+            url: `/subpackage/pages/list/list?url=${item.url}&&title=${item.title}`
         })
     }, 
     onShareAppMessage () {

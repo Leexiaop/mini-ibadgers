@@ -1,6 +1,6 @@
 // list.js
-import request from '../../utils/request'
-import url from '../../assets/api/url'
+import request from '../../../utils/request'
+import url from '../../../assets/api/url'
 Page({
     data: {
         list: [],
@@ -43,7 +43,7 @@ Page({
         }
         if (this.data.options.url !== 'threejs_case') {
             wx.navigateTo({
-                url: `/pages/content/content?url=${cell}&&path=${this.options.url}`,
+                url: `/subpackage/pages/content/content?url=${cell}&&path=${this.options.url}`,
             })
             return
         }
@@ -55,7 +55,7 @@ Page({
             return
         }
         wx.navigateTo({
-            url: `/pages/canvas/canvas?url=${cell.name}`,
+            url: `/subpackage/pages/canvas/canvas?url=${cell.name}`,
         })
     },
     onCodeCheck (e) {
