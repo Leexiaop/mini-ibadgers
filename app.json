@@ -35,18 +35,18 @@
         "list": [
             {
                 "pagePath": "pages/index/index",
-                "iconPath": "./assets/img/h.png",
-                "selectedIconPath": "./assets/img/h_s.png"
+                "iconPath": "./assets/img/home.png",
+                "selectedIconPath": "./assets/img/home_s.png"
             },
             {
                 "pagePath": "pages/advanced/advanced",
-                "iconPath": "./assets/img/c.png",
-                "selectedIconPath": "./assets/img/c_s.png"
+                "iconPath": "./assets/img/study.png",
+                "selectedIconPath": "./assets/img/study_s.png"
             },
             {
                 "pagePath": "pages/center/center",
-                "iconPath": "./assets/img/p.png",
-                "selectedIconPath": "./assets/img/p_s.png"
+                "iconPath": "./assets/img/user.png",
+                "selectedIconPath": "./assets/img/user_s.png"
             }
         ]
     }, 
