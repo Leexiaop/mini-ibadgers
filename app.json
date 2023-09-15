@@ -2,7 +2,8 @@
     "pages": [
         "pages/index/index",
         "pages/center/center",
-        "pages/advanced/advanced"
+        "pages/advanced/advanced",
+        "pages/photo/photo"
     ],
     "subpackages": [
         {
@@ -19,7 +20,9 @@
     "preloadRule": {
         "pages/index/index": {
             "network": "all",
-            "packages": ["subpackage"]
+            "packages": [
+                "subpackage"
+            ]
         }
     },
     "window": {
@@ -44,12 +47,17 @@
                 "selectedIconPath": "./assets/img/study_s.png"
             },
             {
+                "pagePath": "pages/photo/photo",
+                "iconPath": "./assets/img/photo.png",
+                "selectedIconPath": "./assets/img/photo_s.png"
+            },
+            {
                 "pagePath": "pages/center/center",
                 "iconPath": "./assets/img/user.png",
                 "selectedIconPath": "./assets/img/user_s.png"
             }
         ]
-    }, 
+    },
     "style": "v2",
     "sitemapLocation": "sitemap.json"
 }

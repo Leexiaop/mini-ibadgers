@@ -1,0 +1,7 @@
+<!--pages/photo/photo.wxml-->
+<view class="photo">
+    
+    <van-button round type="primary" size="small" class="photo-add" bind:tap="onPhotoAdd">
+        <van-icon name="add-o" size="36rpx" />
+    </van-button>
+</view>
