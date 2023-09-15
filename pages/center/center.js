@@ -7,7 +7,8 @@ Page({
      */
     data: {
         name: '',
-        gender: 0
+        gender: 0,
+        show: false
     },
     onLoad () {
         if (wx.getStorageSync('gender') === 0 || wx.getStorageSync('gender') === 1) {
@@ -30,9 +31,12 @@ Page({
         switch (type) {
             case '3':
                 Dialog.alert({
-                    message: '感谢您对Ibadgers一直以来的关注，我们也将继续努力，致力于将不一样的前端知识分享给大家，祝愿每一位前端ibadger一切顺利！',
+                    message: '感谢您对Ibadgers一直以来的关注，同时也感谢尚硅谷，千峰教育等博主，正式因为拔了你们的内容，才使得本小程序如此的有吸引力，我们也将继续努力，致力于将不一样的前端知识分享给大家，祝愿每一位前端ibadger一切顺利！',
                     theme: 'round-button'
                   });
+                break
+            case '4':
+                this.setData({show: true})
                 break
             case '5':
                 wx.navigateTo({

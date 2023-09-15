@@ -17,6 +17,10 @@ Page({
             {
                 title: '学习进行时',
                 url: 'https://leexiaop.github.io/static/mini/img/advanced_3.png'
+            },
+            {
+                title: '面试要点',
+                url: 'https://leexiaop.github.io/static/mini/img/advanced_4.png'
             }
         ],
         active: 0
@@ -42,6 +46,11 @@ Page({
             title: 'Ibadgers',
             imageUrl: 'https://leexiaop.github.io/static/ibadgers/logo.png',
             path: '/pages/advanced/advanced'
+        }
+    },
+    onShareTimeline () {
+        return {
+            title: '代码敲了那么久，总觉得还有一行还不是最优秀...'
         }
     }
 })

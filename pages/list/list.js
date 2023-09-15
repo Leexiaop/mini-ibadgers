@@ -30,6 +30,17 @@ Page({
     },
     onCellClick (e) {
         const {cell} = e.currentTarget.dataset
+        if (this.data.options.url === 'company') {
+            wx.downloadFile({
+                url: `${url.getIbadgersDoc}${this.data.options.url}/${cell}.pdf`,
+                success: res => {
+                    wx.openDocument({
+                        filePath: res.tempFilePath
+                    })
+                }
+            })
+            return
+        }
         if (this.data.options.url !== 'threejs_case') {
             wx.navigateTo({
                 url: `/pages/content/content?url=${cell}&&path=${this.options.url}`,
@@ -74,6 +85,11 @@ Page({
             title: 'Ibadgers',
             imageUrl: 'https://leexiaop.github.io/static/ibadgers/logo.png',
             path: '/pages/list/list'
+        }
+    },
+    onShareTimeline () {
+        return {
+            title: '代码敲了那么久，总觉得还有一行还不是最优秀...'
         }
     }
 })

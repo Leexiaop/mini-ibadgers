@@ -58,7 +58,7 @@ Page({
             title: '加载中...',
         })
         wx.downloadFile({
-            url: item.checkUrl,
+            url: item.downloadUrl,
             success (res) {
                 if (res.statusCode === 200) {
                     wx.hideLoading()

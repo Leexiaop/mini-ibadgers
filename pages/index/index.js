@@ -6,7 +6,6 @@ Page({
     data: {
         contentList: [],
         swiperList: [],
-        isAdShow: false,
         timeData: {
             seconds: 5
         }
@@ -14,25 +13,12 @@ Page({
     // 事件处理函数
 
     onLoad() {
-        wx.hideTabBar()
-        this.setData({isAdShow: true})
         request(url.getSwiperList).then(res => {
             this.setData({swiperList: res})
             return request(url.getMainList)
         }).then(res => {
             this.setData({contentList: res})
         })
-    },
-    onTimeChange (e) {
-        this.setData({timeData: e.detail})
-        if (e.detail.seconds <= 0) {
-            wx.showTabBar()
-            this.setData({isAdShow: false})
-        }
-    },
-    onAdClose () {
-        wx.showTabBar()
-        this.setData({isAdShow: false})
     },
     onCellClick (e) {
         const {item} = e.currentTarget.dataset
@@ -53,6 +39,11 @@ Page({
             imageUrl: 'https://leexiaop.github.io/static/ibadgers/logo.png',
             desc: 'dadafdafsdada',
             path: '/pages/index/index'
+        }
+    },
+    onShareTimeline () {
+        return {
+            title: '代码敲了那么久，总觉得还有一行还不是最优秀...'
         }
     }
 })

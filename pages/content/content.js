@@ -9,7 +9,8 @@ Page({
      */
     data: {
         content: [],
-        isLoading: false
+        isLoading: false,
+        options: null
     },
 
     /**
@@ -19,7 +20,7 @@ Page({
         wx.setNavigationBarTitle({
             title: options.url === 'index' ? '概览' : options.url
         })
-        this.setData({isLoading: true})
+        this.setData({isLoading: true, options})
         request(`${url.getIbadgersDoc}${options.path}/${options.url}.md.i`).then(res => {
             if (res) {
 				const content = app.towxml(res,'markdown', {
@@ -29,53 +30,9 @@ Page({
 			};
         })
     },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload() {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh() {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom() {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage() {
-
+    onShareTimeline () {
+        return {
+            title: '代码敲了那么久，总觉得还有一行还不是最优秀...'
+        }
     }
 })

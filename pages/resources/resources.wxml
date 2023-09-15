@@ -49,7 +49,7 @@
                     <text decode="{{true}}">&nbsp;</text>
                     <van-button data-item="{{resource}}" wx:if="{{resource.iscopy}}" round type="info" hairline size="mini" bind:tap="onCopyLink">复制链接</van-button>
                     <text decode="{{true}}">&nbsp;</text>
-                    <van-button data-item="{{resource}}" wx:if="{{resource.ischeck}}" round type="warning" size="mini" bind:tap="onCheckFile">下载</van-button>
+                    <van-button data-item="{{resource}}" wx:if="{{resource.isdownload}}" round type="warning" size="mini" bind:tap="onCheckFile">下载</van-button>
                 </view>
             </view>
         </view>

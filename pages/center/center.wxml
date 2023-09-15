@@ -33,4 +33,11 @@
         </view>
     </view>
     <van-dialog id="van-dialog" />
+    <van-dialog
+        use-slot
+        show="{{ show }}"
+        theme="round-button"
+    >
+        <image style="margin: 32rpx 0;" src="https://leexiaop.github.io/static/mini/img/poster.jpg" mode="widthFix" show-menu-by-longpress/>
+    </van-dialog>
 </view>

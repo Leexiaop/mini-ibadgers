@@ -58,5 +58,10 @@ Page({
     },
     touchEnd(e) {
         THREE.global.touchEventHandlerFactory('canvas', 'touchend')(e)
+    },
+    onShareTimeline () {
+        return {
+            title: '代码敲了那么久，总觉得还有一行还不是最优秀...'
+        }
     }
 })
