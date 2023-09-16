@@ -50,7 +50,7 @@ Page({
         if (cell.disabled) {
             wx.showToast({
                 icon: 'none',
-                title: '开发中,敬请期待...'
+                title: '建设中,敬请期待...'
             })
             return
         }
@@ -63,7 +63,7 @@ Page({
         if (cell.disabled) {
             wx.showToast({
                 icon: 'none',
-                title: '开发中,敬请期待...'
+                title: '建设中,敬请期待...'
             })
             return
         }

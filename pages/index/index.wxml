@@ -1,29 +1,37 @@
 <!--index.wxml-->
 <view class="index">
-    <nav-swiper height="480"></nav-swiper>
-    <view class="content">
-        <view
-            class="item"
-            wx:for="{{contentList}}"
-            wx:key="index"
-            wx:for-item="item"
-            bind:tap="onCellClick"
-            data-item="{{item}}"
-        >
-            <view class="tag" wx:if="{{!item.disabled}}">开放中</view>
-            <view class="title">
-                <van-icon name="{{item.icon}}" />
-                <text decode="{{true}}">&nbsp;&nbsp;</text>
-                {{item.title}}
+    <view class="nav">
+        <nav-swiper height="360"></nav-swiper>
+    </view>
+    <view class="study">
+        <view class="study-title">
+            <view class="icon"></view>
+            进阶模块
+        </view>
+        <view class="study-content">
+            <view
+                class="item"
+                wx:for="{{contentList}}"
+                wx:key="index"
+                wx:for-item="item"
+                bind:tap="onCellClick"
+                data-item="{{item}}"
+            >
+                <view class="tag" wx:if="{{item.disabled}}">建设中</view>
+                <view class="title">
+                    <van-icon name="{{item.icon}}" />
+                    <text decode="{{true}}">&nbsp;&nbsp;</text>
+                    {{item.title}}
+                </view>
+                <view class="motto">{{item.motto}}</view>
+                <van-image
+                    class="img"
+                    fit="widthFix"
+                    wx:if="{{item.img}}"
+                    width="128rpx"
+                    src="{{item.img}}"
+                />
             </view>
-            <view class="motto">{{item.motto}}</view>
-            <van-image
-                class="img"
-                fit="widthFix"
-                wx:if="{{item.img}}"
-                width="128rpx"
-                src="{{item.img}}"
-            />
         </view>
     </view>
     <van-notice-bar

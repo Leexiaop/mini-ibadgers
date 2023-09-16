@@ -1,54 +1,87 @@
 /**index.wxss**/
 .index {
+    padding-top: 16rpx;
     width: 100%;
     box-sizing: border-box;
     padding-bottom: 64rpx;
     background-color: rgb(206, 235, 231);
 }
-.index > .content {
-    padding: 32rpx 32rpx 16rpx 32rpx;
-    box-sizing: border-box;
-    column-count: 2;
-    column-gap: 32rpx;
+.index > .nav {
+    width: 718rpx;
+    margin: 0 auto;
+    border-radius: 8rpx;
+    overflow: hidden;
 }
-.index > .content > .item {
+.index > .study {
+    width: 100%;
+    padding: 16rpx;
+    box-sizing: border-box;
+}
+.index > .study > .study-title {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 36rpx;
+    padding: 16rpx 0;
+    font-weight: 600;
+    color: #3e4f6d;
+    margin-bottom: 16rpx;
+    display: flex;
+    align-items: center;
+}
+.index > .study > .study-title > .icon {
+    width: 0;
+    border-left: 8rpx solid #0819e4;
+    height: 36rpx;
+    margin-right: 16rpx;
+}
+.index > .study > .study-content {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 32rpx;
+    column-count: 2;
+    column-gap: 16rpx;
+}
+.index > .study > .study-content > .item {
     display: inline-block;
     width: 100%;
     margin-bottom: 24rpx;
     background-color: #fff;
     padding: 16rpx;
     box-sizing: border-box;
-    border-radius: 24rpx;
+    border-radius: 8rpx;
     break-inside: avoid;
-    position: relative;
     overflow: hidden;
+    position: relative;
+    box-shadow: 16rpx 16rpx 16rpx #999;
+}
+
+.index > .study > .study-content > .item > .tag {
+    position: absolute;
+    background-color: #e4393c;
+    top: 0;
+    right: 0;
+    color: #fff;
+    border-bottom-left-radius: 8rpx;
+    padding: 8rpx;
+    font-size: 14rpx;
+}
+.index > .study > .study-content > .item > .title {
+    color: #666;
+    margin-bottom: 8rpx;
+}
+.index > .study > .study-content > .item > .motto {
+    font-size: 24rpx;
+    color: #999;
+    margin-bottom: 8rpx;
+    text-align: justify;
+    text-indent: 2em;
+}
+.index > .study > .study-content > .item > .img {
+    margin: 0 auto;
 }
 .index > .notice {
     width: 100%;
     position: fixed;
     bottom: 0;
     left: 0;
-}
-
-.index > .content > .item > .tag {
-    position: absolute;
-    background-color: #e4393c;
-    top: 0;
-    right: 0;
-    color: #fff;
-    border-bottom-left-radius: 24rpx;
-    padding: 8rpx;
-    font-size: 14rpx;
-}
-.index > .content > .item > .title {
-    color: #666;
-    margin-bottom: 8rpx;
-}
-.index > .content > .item > .motto {
-    font-size: 24rpx;
-    color: #999;
-    margin-bottom: 8rpx;
-}
-.index > .content > .item > .img {
-    margin: 0 auto;
 }
