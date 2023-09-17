@@ -29,7 +29,7 @@
         </view>
         <view class="content-down">
             <van-cell title="联系微信" icon="location-o" is-link bind:click="onCellClick" data-type="10" />
-            <van-cell title="版本信息" icon="description" value="v1.0.1.5" />
+            <van-cell title="版本信息" icon="description" value="v1.0.2.0" />
         </view>
     </view>
     <van-dialog id="van-dialog" />
