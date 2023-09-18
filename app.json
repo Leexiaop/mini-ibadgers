@@ -25,7 +25,7 @@
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "Ibadgers",
+        "navigationBarTitleText": "Ibadgers前端",
         "navigationBarTextStyle": "black"
     },
     "tabBar": {

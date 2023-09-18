@@ -3,12 +3,12 @@
     <view class="nav">
         <nav-swiper height="360"></nav-swiper>
     </view>
-    <view class="study">
-        <view class="study-title">
+    <view class="content">
+        <view class="content-title">
             <view class="icon"></view>
             进阶模块
         </view>
-        <view class="study-content">
+        <view class="content-item">
             <view
                 class="item"
                 wx:for="{{contentList}}"
