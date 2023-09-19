@@ -75,5 +75,17 @@ Page({
                 })
                 console.log('hello ibadgers!')
         }
+	},
+	  onShareAppMessage() {
+        return {
+            title: 'Ibadgers',
+            imageUrl: 'https://leexiaop.github.io/static/ibadgers/logo.png',
+            path: '/pages/center/center'
+        }
+    },
+    onShareTimeline () {
+        return {
+            title: '代码敲了那么久，总觉得还有一行还不是最优秀...'
+        }
     }
 })

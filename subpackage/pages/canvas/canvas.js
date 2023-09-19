@@ -22,11 +22,11 @@ Page({
         .node()
         .exec((res) => {
             const canvas = THREE.global.registerCanvas(res[0].node)
-            console.log(options.url)
             if (options?.url) {
                 wx.setNavigationBarTitle({
                   title: options?.url.split('_').join(' '),
-                })
+				})
+				this.setData({url: options.url})
                 options?.url === 'webgl_animation_multiple' && webgl_animation_multiple(canvas).init()
                 options?.url === 'webgl_animation_skinning_morph' && webgl_animation_skinning_morph(canvas).init()
                 options?.url === 'webgl_camera' && webgl_camera(canvas).init()
@@ -47,7 +47,7 @@ Page({
         return {
             title: this.data.url.split('_').join(' '),
             imageUrl: 'https://leexiaop.github.io/static/ibadgers/logo.png',
-            path: `/pages/canvas/canvas?url=${this.data.url}`
+            path: `/subpackage/pages/canvas/canvas?url=${this.data.url}`
         }
     },
     touchStart(e) {
@@ -61,7 +61,8 @@ Page({
     },
     onShareTimeline () {
         return {
-            title: '代码敲了那么久，总觉得还有一行还不是最优秀...'
-        }
+			title: '代码敲了那么久，总觉得还有一行还不是最优秀...',
+			query: `url=${this.data.url}`
+		}
     }
 })

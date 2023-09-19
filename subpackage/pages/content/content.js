@@ -29,10 +29,18 @@ Page({
 				this.setData({content, isLoading: false});
 			};
         })
-    },
+	},
+	onShareAppMessage () {
+		 return {
+            title: 'Ibadgers',
+            imageUrl: 'https://leexiaop.github.io/static/ibadgers/logo.png',
+            path: `/subpackage/pages/content/content?url=${this.data.options.url}&&path=${this.data.options.path}`
+        }
+	},
     onShareTimeline () {
         return {
-            title: '代码敲了那么久，总觉得还有一行还不是最优秀...'
+			title: '代码敲了那么久，总觉得还有一行还不是最优秀...',
+			path: `url=${this.data.options.url}&&path=${this.data.options.path}`
         }
     }
 })

@@ -43,7 +43,7 @@ Page({
         }
         if (this.data.options.url !== 'threejs_case') {
             wx.navigateTo({
-                url: `/subpackage/pages/content/content?url=${cell}&&path=${this.options.url}`,
+                url: `/subpackage/pages/content/content?url=${cell}&&path=${this.data.options.url}`,
             })
             return
         }
@@ -84,12 +84,13 @@ Page({
         return {
             title: 'Ibadgers',
             imageUrl: 'https://leexiaop.github.io/static/ibadgers/logo.png',
-            path: '/pages/list/list'
+            path: `/subpackage/pages/list/list?url=${this.data.options.url}&&title=${this.data.options.title}`
         }
     },
     onShareTimeline () {
         return {
-            title: '代码敲了那么久，总觉得还有一行还不是最优秀...'
+			title: '代码敲了那么久，总觉得还有一行还不是最优秀...',
+			query: `url=${this.data.options.url}&&title=${this.data.options.title}`
         }
     }
 })

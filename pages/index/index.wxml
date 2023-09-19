@@ -3,7 +3,7 @@
     <view class="nav">
         <nav-swiper height="360"></nav-swiper>
     </view>
-    <view class="content">
+    <view class="content" wx:if="{{contentList.length}}">
         <view class="content-title">
             <view class="icon"></view>
             进阶模块
