@@ -1,8 +1,13 @@
 <!--components/navSwiper.wxml-->
-<swiper wx:if="{{swiperList.length}}" indicatorDots style="height: {{height}}rpx" autoplay interval="{{2000}}" duration="{{500}}">
-    <block wx:for="{{swiperList}}" wx:key="*this">
-        <swiper-item>
-            <image bind:tap="onImageClick" data-item="{{item}}" style="width: 100%;" src="{{item}}" mode="aspectFill" />
-        </swiper-item>
-    </block>
-</swiper>
+<t-swiper
+	wx:if="{{!loading}}"
+	autoplay="{{true}}"
+	duration="{{500}}"
+	interval="{{5000}}"
+	navigation="{{navigation}}"
+	paginationPosition="{{paginationPosition}}"
+	list="{{swiperList}}"
+	bind:click="onImageClick"
+>
+</t-swiper>
+ <t-skeleton theme="image" row-col="{{[{width: '100%', height: height + 'rpx'}]}}" animation="flashed" loading="{{loading}}" wx:else></t-skeleton>

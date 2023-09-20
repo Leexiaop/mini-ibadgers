@@ -6,17 +6,13 @@ Page({
     data: {
         contentList: [],
         swiperList: [],
-        timeData: {
-            seconds: 5
-        }
+		marquee: {speed: 60, loop: -1, delay: 0},
+		rowCol: [{ size: '327rpx', borderRadius: '24rpx' }]
     },
     // 事件处理函数
 
     onLoad() {
-        request(url.getSwiperList).then(res => {
-            this.setData({swiperList: res})
-            return request(url.getMainList)
-        }).then(res => {
+       	request(url.getMainList).then(res => {
             this.setData({contentList: res})
         })
     },
@@ -32,12 +28,11 @@ Page({
         wx.navigateTo({
             url: `/subpackage/pages/list/list?url=${item.url}&&title=${item.title}`
         })
-    }, 
+    },
     onShareAppMessage () {
         return {
             title: 'Ibadgers',
             imageUrl: 'https://leexiaop.github.io/static/ibadgers/logo.png',
-            desc: 'dadafdafsdada',
             path: '/pages/index/index'
         }
     },

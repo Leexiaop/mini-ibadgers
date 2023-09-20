@@ -23,21 +23,29 @@ Page({
                 url: 'https://leexiaop.github.io/static/mini/img/advanced_4.png'
             }
         ],
-        active: 0
-    },
+		active: 1,
+		url: ''
+	},
+	onLoad () {
+		this.setData({url: this.data.advanceList[this.data.active]?.url})
+		wx.setNavigationBarTitle({
+		  	title: this.data.advanceList[this.data.active]?.title,
+		})
+	},
     onChange (e) {
         this.setData({
-            active: e.detail.name
+			active: e.detail.value,
+			url: this.data.advanceList[e.detail.value]?.url
         })
         wx.setNavigationBarTitle({
-            title: !e.detail.name ? '进阶图普' : '复习纲要',
+            title: e.detail.label,
         })
     },
     onImageClick () {
         wx.previewImage({
             urls: this.data.advanceList.map(advance => advance.url)
-        })
-    },
+		})
+	},
     /**
      * 用户点击右上角分享
      */

@@ -1,12 +1,7 @@
 <!--pages/center/center.wxml-->
 <view class="center">
     <view class="nav">
-        <van-image
-            round
-            width="114rpx"
-            height="114rpx"
-            src="{{gender ? 'https://leexiaop.github.io/static/mini/img/avatar.jpeg' : 'https://leexiaop.github.io/static/ibadgers/logo.png'}}"
-        />
+		<t-avatar size="large" image="{{gender ? 'https://leexiaop.github.io/static/mini/img/avatar.jpeg' : 'https://leexiaop.github.io/static/ibadgers/logo.png'}}" />
         <view class="info">
             <view class="name">{{name}}</view>
             <view class="motto">拼搏到无能为力 坚持到感动自己</view>
@@ -17,27 +12,37 @@
             <nav-swiper></nav-swiper>
         </view>
         <view class="content-middle">
-            <van-cell title="夜间模式" icon="clock-o" is-link bind:click="onCellClick" data-type="1" />
-            <van-cell title="更多功能" icon="more-o" is-link bind:click="onCellClick" data-type="2" />
-            <van-cell title="关于我们" icon="contact" is-link bind:click="onCellClick" data-type="3" />
-            <van-cell title="海报分享" icon="newspaper-o" is-link bind:click="onCellClick" data-type="4" />
-            <van-cell title="资源下载" icon="star-o" is-link bind:click="onCellClick" data-type="5" />
-            <van-cell title="CSDN" icon="label-o" data-type="6" bind:click="onCellClick" />
-            <van-cell title="Lee前端技术栈" icon="star-o" bind:click="onCellClick" data-type="7" />
-            <van-cell title="Ibadgers" icon="thumb-circle-o" bind:click="onCellClick" data-type="8" />
-            <van-cell title="Github" icon="medal-o" bind:click="onCellClick" data-type="9" />
+			<t-cell-group theme="card">
+				<t-cell title="关于我们" leftIcon="user-list" hover arrow bind:click="onCellClick" data-type="1"/>
+				<t-cell title="海报分享" leftIcon="book-open" hover arrow bind:click="onCellClick" data-type="2"/>
+				<t-cell title="资源下载" leftIcon="rainbow" hover arrow bind:click="onCellClick" data-type="3"/>
+				<t-cell title="CSDN" leftIcon="letters-c" hover arrow bind:click="onCellClick" data-type="4"/>
+				<t-cell title="Lee前端技术栈" leftIcon="letters-l" hover arrow bind:click="onCellClick" data-type="5"/>
+				<t-cell title="Ibadgers" leftIcon="internet" hover arrow bind:click="onCellClick" data-type="6"/>
+				<t-cell title="Github" leftIcon="logo-github" hover arrow bind:click="onCellClick" data-type="7"/>
+			</t-cell-group>
         </view>
         <view class="content-down">
-            <van-cell title="联系微信" icon="location-o" is-link bind:click="onCellClick" data-type="10" />
-            <van-cell title="版本信息" icon="description" value="v1.0.2.1"/>
+			<t-cell-group theme="card">
+				<t-cell title="联系微信" leftIcon="logo-wechat-stroke" hover arrow bind:click="onCellClick" data-type="8"/>
+				<t-cell title="版本信息" leftIcon="system-sum" note="v1.0.2.1"/>
+			</t-cell-group>
         </view>
     </view>
-    <van-dialog id="van-dialog" />
-    <van-dialog
-        use-slot
-        show="{{ show }}"
-        theme="round-button"
-    >
-        <image style="margin: 32rpx 0;" src="https://leexiaop.github.io/static/mini/img/poster.jpg" mode="widthFix" show-menu-by-longpress/>
-    </van-dialog>
+	<t-dialog id="t-dialog" />
+	<t-dialog
+		visible="{{show}}"
+		confirm-btn="{{ {content: '确定', variant: 'base' } }}"
+		close-btn="{{true}}"
+		bind:confirm="closeDialog"
+		bind:cancel="closeDialog"
+	>
+		<t-image
+			slot="middle"
+			width="228"
+			t-class="image-host dialog-image"
+			show-menu-by-longpress
+			src="https://leexiaop.github.io/static/mini/img/poster.jpg"
+		/>
+	</t-dialog>
 </view>

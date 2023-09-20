@@ -8,7 +8,7 @@ Component({
     properties: {
         height: {
             type: Number,
-            value: 340
+            value: 360
         }
     },
 
@@ -16,12 +16,17 @@ Component({
      * 组件的初始数据
      */
     data: {
-        swiperList: []
+		swiperList: [],
+		autoplay: true,
+		loading: false,
+		paginationPosition: 'bottom-right',
+		navigation: { type: 'fraction' },
     },
     lifetimes: {
         attached () {
+			this.setData({loading: true})
             request(url.getSwiperList).then(res => {
-                this.setData({swiperList: res})
+                this.setData({swiperList: res, loading: false})
             })
         }
     },
@@ -30,12 +35,12 @@ Component({
      */
     methods: {
         onImageClick (e) {
-            const {item} = e.currentTarget.dataset
+            const item = this.data.swiperList[e.detail.index]
             let left = item.lastIndexOf('/') + 1
             let right = item.lastIndexOf('.')
             let str = item.slice(left, right)
             wx.navigateTo({
-                url: `/pages/canvas/canvas?url=${str}`,
+                url: `/subpackage/pages/canvas/canvas?url=${str}`,
             })
         }
     }

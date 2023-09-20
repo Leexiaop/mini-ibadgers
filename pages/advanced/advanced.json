@@ -1,8 +1,10 @@
 {
     "navigationBarTitleText": "进阶图谱",
     "usingComponents": {
-        "van-image": "@vant/weapp/image/index",
-        "van-tab": "@vant/weapp/tab/index",
-        "van-tabs": "@vant/weapp/tabs/index"
+		"t-image": "tdesign-miniprogram/image/image",
+		"t-sticky": "tdesign-miniprogram/sticky/sticky",
+		"t-tabs": "tdesign-miniprogram/tabs/tabs",
+		  "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
+		  "t-loading": "tdesign-miniprogram/loading/loading"
     }
 }

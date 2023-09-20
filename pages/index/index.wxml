@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="index">
     <view class="nav">
-        <nav-swiper height="360"></nav-swiper>
+        <nav-swiper></nav-swiper>
     </view>
     <view class="content" wx:if="{{contentList.length}}">
         <view class="content-title">
@@ -19,24 +19,40 @@
             >
                 <view class="tag" wx:if="{{item.disabled}}">建设中</view>
                 <view class="title">
-                    <van-icon name="{{item.icon}}" />
+					<t-icon name="{{'letters-' + item.icon}}" size="48rpx"/>
                     <text decode="{{true}}">&nbsp;&nbsp;</text>
                     {{item.title}}
                 </view>
                 <view class="motto">{{item.motto}}</view>
-                <van-image
+                <t-image
                     class="img"
-                    fit="widthFix"
+                    shape="round"
+					mode="widthFix"
                     wx:if="{{item.img}}"
-                    width="128rpx"
                     src="{{item.img}}"
                 />
             </view>
         </view>
     </view>
-    <van-notice-bar
-        class="notice"
-        left-icon="volume-o"
-        text="走过多少岁月才发现，敲的每一行代码还不是最优秀，还需要努力加油，So~~,拼搏到无能为力，坚持到感动自己。"
-    />
+	<view class="group" wx:else>
+		<view class="group-title">
+			<t-skeleton animation="flashed" rowCol="{{[{ width: '50%', height: '64rpx' }]}}" loading></t-skeleton>
+		</view>
+		<view class="group-item">
+			<t-skeleton
+				class="group-item-skelton"
+				wx:for="{{11}}"
+				animation="flashed"
+				rowCol="{{rowCol}}"
+				loading
+			></t-skeleton>
+		</view>
+	</view>
+	<t-notice-bar
+		class="notice"
+		visible="{{true}}"
+		marquee="{{marquee}}"
+		prefixIcon="sound"
+		content="走过多少岁月才发现，敲的每一行代码还不是最优秀，还需要努力加油，So~~,拼搏到无能为力，坚持到感动自己。"
+	></t-notice-bar>
 </view>

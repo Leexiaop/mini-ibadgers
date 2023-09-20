@@ -1,10 +1,12 @@
 {
     "navigationStyle": "custom",
     "usingComponents": {
-        "van-image": "@vant/weapp/image/index",
-        "van-cell": "@vant/weapp/cell/index",
-        "van-cell-group": "@vant/weapp/cell-group/index",
-        "van-dialog": "@vant/weapp/dialog/index",
+		"t-avatar": "tdesign-miniprogram/avatar/avatar",
+		"t-cell-group": "tdesign-miniprogram/cell-group/cell-group",
+		"t-cell": "tdesign-miniprogram/cell/cell",
+		"t-icon": "tdesign-miniprogram/icon/icon",
+		"t-image": "tdesign-miniprogram/image/image",
+		"t-dialog": "tdesign-miniprogram/dialog/dialog",
         "nav-swiper": "../../components/NavSwiper/NavSwiper"
     }
 }

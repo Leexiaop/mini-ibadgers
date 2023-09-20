@@ -40,13 +40,14 @@
     box-sizing: border-box;
 }
 .center > .content > .content-up {
-    background-color: #fff;
-    border-top-left-radius: 24rpx;
-    border-top-right-radius: 24rpx;
-    overflow: hidden;
+	background-color: #fff;
+	border-radius: 24rpx;
 }
 .center > .content > .content-middle {
     margin-top: 24rpx;
+}
+.center > .content > .content-middle .t-cell-group--card, .content-down .t-cell-group--card {
+	margin: 0;
 }
 .center > .content > .content-down {
     margin-top: 24rpx;
@@ -57,4 +58,12 @@
 .van-goods-action-button {
     display: flex!important;
     justify-content: center!important;
+}
+.dialog-image {
+	width: 100%;
+	margin: 0 auto;
+}
+.image-host {
+	display: flex;
+	margin-top: 48rpx;
 }

@@ -1,18 +1,20 @@
 <!--pages/advanced/advanced.wxml-->
 <view class="advanced">
-    <van-tabs active="{{ active }}" animated bind:change="onChange">
-        <van-tab
-            wx:for="{{advanceList}}"
-            wx:for-item="advance"
-            wx:key="index"
-            title="{{advance.title}}"
-        >
-            <van-image
-                bind:tap="onImageClick"
-                width="100%"
-                src="{{advance.url}}"
-                fit="widthFix"
-            />
-        </van-tab>
-    </van-tabs>
+	<t-sticky>
+		<t-tabs defaultValue="{{active}}" bind:change="onChange" t-class="custom-tabs">
+			<t-tab-panel wx:for="{{advanceList}}" wx:key="index" wx:for-item="advance" label="{{advance.title}}" value="{{index}}" />
+		</t-tabs>
+	</t-sticky>
+	<t-image
+		lazy
+		show-menu-by-longpress
+		src="{{url}}"
+		class="img"
+		style="width: 100%;min-height: calc(100vh - 48px);"
+		mode="widthFix"
+		aria-label="预览更清晰"
+		bind:tap="onImageClick"
+	>
+	 	<t-loading theme="circular" size="40rpx" text="加载中" layout="vertical" class="wrapper" />
+	</t-image>
 </view>
