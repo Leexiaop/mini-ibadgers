@@ -25,7 +25,7 @@
         <view class="content-down">
 			<t-cell-group theme="card">
 				<t-cell title="联系微信" leftIcon="logo-wechat-stroke" hover arrow bind:click="onCellClick" data-type="8"/>
-				<t-cell title="版本信息" leftIcon="system-sum" note="v1.0.2.1"/>
+				<t-cell title="版本信息" leftIcon="system-sum" note="v2.0.0.0"/>
 			</t-cell-group>
         </view>
     </view>
