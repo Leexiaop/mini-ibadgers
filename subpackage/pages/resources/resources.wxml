@@ -1,18 +1,11 @@
 <!--pages/resources/resources.wxml-->
 <view class="resources">
-    <van-tabs
-        active="{{ active }}"
-        animated
-        bind:change="onChange"
-    >
-        <van-tab
-            wx:for="{{barList}}"
-            wx:for-item="bar"
-            wx:key="index"
-            title="{{bar}}"
-        />
-    </van-tabs>
-    <van-divider />
+	<t-sticky>
+		<t-tabs defaultValue="{{active}}" bind:change="onChange" t-class="custom-tabs">
+			<t-tab-panel wx:for="{{barList}}" wx:key="index" wx:for-item="bar" label="{{bar}}" value="{{index}}" />
+		</t-tabs>
+	</t-sticky>
+	<text decode="{{true}}">&nbsp;</text>
     <block wx:if="{{resourcesList.length}}">  
         <view
             class="resources-item"
@@ -22,7 +15,7 @@
             wx:for-item="resource"
         >
             <view class="resources-title">
-                <van-icon name="{{iconList[resource.type]}}" size="72" />
+				<t-icon name="{{iconList[resource.type]}}" size="72" />
                 <text decode="{{true}}">&nbsp;</text>
                 <view class="titles">
                     <view class="title">{{resource.name}}</view>
@@ -34,26 +27,19 @@
             <view class="resources-footer">
                 <view class="resources-footer-recommand">
                     推荐指数：
-                    <van-rate
-                        allow-half
-                        value="{{ resource.recommand }}"
-                        size="{{ 16 }}"
-                        color="#ffd21e"
-                        void-icon="star"
-                        void-color="#eee"
-                    />
+					<t-rate value="{{resource.recommand}}" icon="thumb-up"size="{{ 16 }}" />
                 </view>
                 <view class="resources-footer-btn">
                     <text decode="{{true}}">&nbsp;</text>
-                    <van-button round type="danger" hairline size="mini" data-item="{{resource}}" wx:if="{{resource.ispassword}}" bind:tap="onPasswordCopy">{{resource.password}}</van-button>
+                    <t-button theme="primary" variant="outline" shape="round" size="extra-small" data-item="{{resource}}" wx:if="{{resource.ispassword}}" bind:tap="onPasswordCopy">{{resource.password}}</t-button>
                     <text decode="{{true}}">&nbsp;</text>
-                    <van-button data-item="{{resource}}" wx:if="{{resource.iscopy}}" round type="info" hairline size="mini" bind:tap="onCopyLink">复制链接</van-button>
+                    <t-button data-item="{{resource}}" wx:if="{{resource.iscopy}}" theme="danger" shape="round"  size="extra-small" bind:tap="onCopyLink">复制链接</t-button>
                     <text decode="{{true}}">&nbsp;</text>
-                    <van-button data-item="{{resource}}" wx:if="{{resource.isdownload}}" round type="warning" size="mini" bind:tap="onCheckFile">下载</van-button>
+                    <t-button data-item="{{resource}}" wx:if="{{resource.isdownload}}" theme="primary" shape="round" size="extra-small" bind:tap="onCheckFile">下载</t-button>
                 </view>
             </view>
         </view>
     </block>
-    <van-empty wx:else description="暂无内容" />
-    <van-dialog id="van-dialog" />
+	<t-empty wx:else icon="book-open" description="暂无内容" />
+    <t-dialog id="t-dialog" />
 </view>

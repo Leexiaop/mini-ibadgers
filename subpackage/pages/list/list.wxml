@@ -1,54 +1,52 @@
 <!--list.wxml-->
 <view class="list">
-    <van-skeleton row="23" loading="{{ isLoading }}">
-        <van-cell-group
-            wx:for="{{list}}"
-            wx:key="index"
-            wx:for-item="item"
-            border="{{false}}"
-            wx:for-index="index"
-            title="{{item.name || item}}"
-        >
-            <van-cell
-                title="{{child.name || (child === 'index' ? '概要' : child)}}"
-                title-width="484rpx"
-                class="cell"
-                wx:for="{{item.children}}"
-                wx:key="idx"
-                wx:for-item="child"
-                wx:for-index="idx"
-                is-link
-                bind:tap="onCellClick"
-                data-cell="{{child}}"
-                use-label-slot
-            >
-                <van-button
-                    custom-style="width: 64rpx;"
-                    hairline
-                    catch:tap="onCodeCheck"
-                    data-cell="{{child}}"
-                    data-index="{{idx}}"
-                    round
-                    type="primary"
-                    size="mini"
-                    wx:if="{{options.url === 'threejs_case'}}"
-                >源码</van-button>
-            </van-cell>
-        </van-cell-group>
-    </van-skeleton>
-    <van-popup
-        show="{{ show }}"
-        closeable
-        round
-        close-icon="close"
-        position="bottom"
-        custom-style="height: 70%"
-        bind:close="onClose"
-    >
-        <view class="pop-title">{{title}}</view>
-        <van-divider />
-        <view class="pop-tip">* 可点击代码区域复制粘贴到html文档中查看案例</view>
-        <view class="pop-content" bind:tap="onContentClick">{{content}}</view>
-    </van-popup>
-    <van-loading custom-class="loading" wx:if="{{isLoading}}" type="spinner" color="#1989fa" />
+    <t-cell-group
+		wx:if="{{list.length && !isLoading}}"
+		wx:for="{{list}}"
+		wx:key="index"
+		wx:for-item="item"
+		wx:for-index="index"
+		title="{{item.name || item}}"
+	>
+		<t-cell
+			hover
+			arrow
+			wx:for="{{item.children}}"
+			wx:key="idx"
+			wx:for-item="child"
+			wx:for-index="idx"
+			title="{{child.name || (child === 'index' ? '概要' : child)}}"
+			bind:tap="onCellClick"
+			data-cell="{{child}}"
+		>
+			<t-button
+				theme="primary"
+				size="small"
+				slot="note"
+				shape="round"
+				catch:tap="onCodeCheck"
+				data-cell="{{child}}"
+				data-index="{{idx}}"
+				wx:if="{{options.url === 'threejs_case'}}"
+			>源码</t-button>
+		</t-cell>
+	</t-cell-group>
+	<view class="group" wx:if="{{!list.length || isLoading}}">
+		<t-skeleton wx:for="{{30}}" animation="flashed" class="group-content" rowCol="{{[1]}}" loading></t-skeleton>
+		<t-loading theme="circular" size="40rpx" class="wrapper" />
+	</view>
+	<t-popup visible="{{show}}" prevent-scroll-through="{{true}}" placement="bottom">
+		<view class="block">
+			<view class="header">
+				<view class="btn btn--cancel" aria-role="button" bind:tap="onClose">取消</view>
+				<view class="title">{{title}}</view>
+				<view class="btn btn--confirm" aria-role="button" bind:tap="onClose">确定</view>
+			</view>
+		</view>
+		<t-divider />
+		<view class="pop-tip">* 可点击代码区域复制粘贴到html文档中查看案例</view>
+        <view class="pop-content" bind:tap="onContentClick">
+			<towxml nodes="{{content}}"/>
+		</view>
+	</t-popup>
 </view>

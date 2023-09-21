@@ -1,11 +1,10 @@
 {
     "usingComponents": {
-        "van-cell": "@vant/weapp/cell/index",
-        "van-cell-group": "@vant/weapp/cell-group/index",
-        "van-skeleton": "@vant/weapp/skeleton/index",
-        "van-button": "@vant/weapp/button/index",
-        "van-popup": "@vant/weapp/popup/index",
-        "van-divider": "@vant/weapp/divider/index",
-        "van-loading": "@vant/weapp/loading/index"
+		"t-cell-group": "tdesign-miniprogram/cell-group/cell-group",
+		"t-cell": "tdesign-miniprogram/cell/cell",
+		"t-button": "tdesign-miniprogram/button/button",
+		"t-popup": "tdesign-miniprogram/popup/popup",
+		"t-divider": "tdesign-miniprogram/divider/divider",
+		"towxml":"../../towxml/towxml"
     }
 }

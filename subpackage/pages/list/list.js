@@ -8,7 +8,8 @@ Page({
         isLoading: false,
         show: false,
         content: null,
-        title: ''
+		title: '',
+		towxml: require('../../towxml/index')
     },
     onLoad(options) {
         this.setData({options, isLoading: true})
@@ -69,7 +70,8 @@ Page({
         }
         this.setData({isLoading: true})
         request(`${url.getCode}${index + 1}_${cell.name}.html`).then(res => {
-            this.setData({content: res, show: true, title: cell.name,isLoading: false});
+			const content = this.data.towxml(res,'html');
+            this.setData({content, show: true, title: cell.name,isLoading: false});
         })
     },
     onClose () {

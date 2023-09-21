@@ -36,6 +36,7 @@
 		close-btn="{{true}}"
 		bind:confirm="closeDialog"
 		bind:cancel="closeDialog"
+		close-on-overlay-click="{{true}}"
 	>
 		<t-image
 			slot="middle"

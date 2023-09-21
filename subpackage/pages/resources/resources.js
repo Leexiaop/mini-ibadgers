@@ -1,7 +1,7 @@
 // pages/resources/resources.js
 import request from '../../../utils/request'
 import url from '../../../assets/api/url'
-import Dialog from '@vant/weapp/dialog/dialog'
+import Dialog from 'tdesign-miniprogram/dialog/index'
 Page({
 
     /**
@@ -20,9 +20,9 @@ Page({
         dataSource: [],
         actice: 0,
         iconList: [
-            'video-o',
-            'description',
-            'photo-o'
+            'video',
+            'folder-locked',
+            'image'
         ]
     },
 
@@ -36,8 +36,8 @@ Page({
     },
     onChange (e) {
         this.setData({
-            active: e.detail.name,
-            resourcesList: e.detail.name ? this.data.dataSource.filter(data => data.category === e.detail.name) : this.data.dataSource
+            active: e.detail.value,
+            resourcesList: e.detail.value ? this.data.dataSource.filter(data => data.category === e.detail.value) : this.data.dataSource
         })
     },
     onCopyLink (e) {
@@ -63,7 +63,7 @@ Page({
                 if (res.statusCode === 200) {
                     wx.hideLoading()
                     Dialog.confirm({
-                        message: '文件下载完成，是否要打开',
+                        content: '文件下载完成，是否要打开',
                     }).then(() => {
                         wx.openDocument({
                             filePath: res.tempFilePath

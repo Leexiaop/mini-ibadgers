@@ -65,12 +65,14 @@
 .resources .resources-footer > .resources-footer-recommand {
     margin: 24rpx 0;
     font-size: 26rpx;
-    color: #999;
+	color: #999;
+	display: flex;
 }
 .resources .resources-footer > .resources-footer-btn {
     display: flex;
     justify-content: flex-end;
 }
-.resources .resources-footer > .resources-footer-btn .van-button {
-    width: 128rpx;
+.resources .resources-footer > .resources-footer-btn .t-button {
+	margin: 0;
+	padding: 8rpx 24rpx;
 }

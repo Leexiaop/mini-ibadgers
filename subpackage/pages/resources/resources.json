@@ -1,13 +1,13 @@
 {
     "navigationBarTitleText": "资源下载",
     "usingComponents": {
-        "van-tab": "@vant/weapp/tab/index",
-        "van-tabs": "@vant/weapp/tabs/index",
-        "van-button": "@vant/weapp/button/index",
-        "van-icon": "@vant/weapp/icon/index",
-        "van-rate": "@vant/weapp/rate/index",
-        "van-divider": "@vant/weapp/divider/index",
-        "van-dialog": "@vant/weapp/dialog/index",
-        "van-empty": "@vant/weapp/empty/index"
+		"t-sticky": "tdesign-miniprogram/sticky/sticky",
+		"t-tabs": "tdesign-miniprogram/tabs/tabs",
+		"t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
+		"t-rate": "tdesign-miniprogram/rate/rate",
+		"t-button": "tdesign-miniprogram/button/button",
+		"t-dialog": "tdesign-miniprogram/dialog/dialog",
+		"t-icon": "tdesign-miniprogram/icon/icon",
+        "t-empty": "tdesign-miniprogram/empty/empty"
     }
 }

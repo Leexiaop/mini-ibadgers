@@ -1,6 +1,8 @@
 <!--pages/content/content.wxml-->
 <view class="content">
-    <van-skeleton animate row="23" loading="{{ isLoading }}">
-        <towxml nodes="{{content}}"/>
-    </van-skeleton>
+	<towxml nodes="{{content}}" wx:if="{{!isLoading}}"/>
+	<view class="group" wx:else>
+		<t-skeleton wx:for="{{10}}" animation="flashed" class="group-content" rowCol="{{[1, {width: '50%'}]}}" loading></t-skeleton>
+		<t-loading theme="circular" size="40rpx" class="wrapper" />
+	</view>
 </view>

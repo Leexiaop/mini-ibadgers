@@ -1,4 +1,6 @@
 {
-    "usingComponents": {},
+    "usingComponents": {
+		"t-empty": "tdesign-miniprogram/empty/empty"
+	},
     "pageOrientation": "auto"
 }
