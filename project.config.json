@@ -31,7 +31,14 @@
             "outputPath": ""
         },
         "ignoreUploadUnusedFiles": false,
-        "ignoreDevUnusedFiles": false
+        "ignoreDevUnusedFiles": false,
+        "packNpmManually": true,
+        "packNpmRelationList": [
+            {
+                "packageJsonPath": "./package.json",
+                "miniprogramNpmDistDir": "./"
+            }
+        ]
     },
     "compileType": "miniprogram",
     "condition": {},

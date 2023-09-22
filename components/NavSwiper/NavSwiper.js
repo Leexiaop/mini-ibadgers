@@ -1,6 +1,7 @@
 // components/navSwiper.js
 import request from '../../utils/request'
 import url from '../../assets/api/url'
+
 Component({
     /**
      * 组件的属性列表
@@ -9,10 +10,6 @@ Component({
         height: {
             type: Number,
             value: 360
-		},
-		list: {
-			type: Array,
-			value: []
 		}
     },
 
@@ -21,18 +18,13 @@ Component({
      */
     data: {
 		swiperList: [],
-		autoplay: true,
 		loading: false,
 		paginationPosition: 'bottom-right',
-		navigation: { type: 'fraction' },
-    },
+		navigation: { type: 'fraction' }
+	},
     lifetimes: {
-        attached () {
+        ready () {
 			this.setData({loading: true})
-			if (this.properties.list.length) {
-				this.setData({swiperList: this.data.properties.list})
-				return
-			}
             request(url.getSwiperList).then(res => {
                 this.setData({swiperList: res, loading: false})
             })

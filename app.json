@@ -12,14 +12,17 @@
                 "pages/list/list",
                 "pages/canvas/canvas",
                 "pages/content/content",
-                "pages/resources/resources"
+                "pages/resources/resources",
+                "pages/ad/ad"
             ]
-        }
+		}
     ],
     "preloadRule": {
         "pages/index/index": {
             "network": "all",
-            "packages": ["subpackage"]
+            "packages": [
+                "subpackage"
+            ]
         }
     },
     "window": {
@@ -49,9 +52,9 @@
                 "selectedIconPath": "./assets/img/user_s.png"
             }
         ]
-	},
-	"usingComponents": {
-		"t-skeleton": "tdesign-miniprogram/skeleton/skeleton"
-	},
+    },
+    "usingComponents": {
+        "t-skeleton": "tdesign-miniprogram/skeleton/skeleton"
+    },
     "sitemapLocation": "sitemap.json"
 }

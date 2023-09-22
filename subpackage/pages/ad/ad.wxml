@@ -1,0 +1,34 @@
+<!--indeppackage/ad/ad.wxml-->
+<view class="ad">
+	<t-swiper
+		wx:if="{{swiperList.length}}"
+		autoplay="{{true}}"
+		duration="{{500}}"
+		interval="{{5000}}"
+		navigation="{{navigation}}"
+		paginationPosition="{{paginationPosition}}"
+		list="{{swiperList}}"
+	/>
+	<view class="content">
+		<view class="content-item" wx:for="{{contentList}}" wx:for-item="content" wx:key="index">
+			<view class="title">{{content.name}}</view>
+			<block wx:if="{{index % 5 === 1}}">
+				<view class="content-squre">dsasdd</view>
+			</block>
+			<block wx:if="{{index % 3 === 1}}">
+				<view class="content-small">
+					<block wx:for="{{swiperList}}">
+						<t-image class="img" src="{{item}}" mode="aspectFill" width="142" height="62" aria-label="图" />
+					</block>
+				</view>
+			</block>
+			<block wx:else>
+				<view class="content-list">
+					<block wx:for="{{swiperList}}">
+						<t-image class="img" src="{{item}}" mode="aspectFill" width="72" height="162" aria-label="图" />
+					</block>
+				</view>
+			</block>
+		</view>
+	</view>
+</view>

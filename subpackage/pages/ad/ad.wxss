@@ -1,0 +1,38 @@
+/* deppackage/ad/ad.wxss */
+.ad {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 16rpx;
+}
+.content {
+	width: 100%;
+}
+.content > .content-item {
+	width: 100%;
+}
+.content > .content-item > .title {
+	font-size: 32rpx;
+	font-weight: 600;
+	color: #666;
+	margin: 24rpx 0;
+}
+.content > .content-item > .content-small {
+	display: flex;
+	flex-wrap: nowrap;
+	overflow-x: scroll;
+	margin-right: -16rpx;
+}
+.content > .content-item > .content-small > .img {
+	border-radius: 8rpx;
+	margin-right: 16rpx;
+}
+.content > .content-item > .content-list {
+	display: flex;
+	flex-wrap: nowrap;
+	overflow-x: scroll;
+	margin-right: -16rpx;
+}
+.content > .content-item > .content-list > .img {
+	border-radius: 16rpx;
+	margin-right: 16rpx;
+}

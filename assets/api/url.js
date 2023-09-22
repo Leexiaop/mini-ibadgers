@@ -6,5 +6,7 @@ export default {
     getResourcesList: url + 'mini/table/resources.json',
     getIbadgersList: url + 'mini/table/',
     getIbadgersDoc: url + 'mini/docs/',
-    getCode: url + 'cases/threejs/'
+	getCode: url + 'cases/threejs/',
+	getAdSwiperList: url + 'mini/table/adSwiper.json',
+	getProvinceList: url + 'mini/table/province.json'
 }
