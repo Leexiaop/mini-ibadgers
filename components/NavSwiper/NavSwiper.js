@@ -9,7 +9,11 @@ Component({
         height: {
             type: Number,
             value: 360
-        }
+		},
+		list: {
+			type: Array,
+			value: []
+		}
     },
 
     /**
@@ -25,6 +29,10 @@ Component({
     lifetimes: {
         attached () {
 			this.setData({loading: true})
+			if (this.properties.list.length) {
+				this.setData({swiperList: this.data.properties.list})
+				return
+			}
             request(url.getSwiperList).then(res => {
                 this.setData({swiperList: res, loading: false})
             })
