@@ -14,7 +14,12 @@
 	font-size: 32rpx;
 	font-weight: 600;
 	color: #666;
-	margin: 24rpx 0;
+	margin: 64rpx 0 24rpx 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-bottom: 16rpx;
+	border-bottom: 1rpx solid #d8d8d8;
 }
 .content > .content-item > .content-small {
 	display: flex;
