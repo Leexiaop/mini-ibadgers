@@ -11,7 +11,14 @@
             "list": [
                 {
                     "name": "",
-                    "pathName": "subpackage/pages/ad/ad",
+                    "pathName": "molarpackage/pages/details/details",
+                    "query": "id=3&name=%E7%83%A4%E9%B8%AD",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "molarpackage/pages/index/index",
                     "query": "",
                     "launchMode": "default",
                     "scene": null

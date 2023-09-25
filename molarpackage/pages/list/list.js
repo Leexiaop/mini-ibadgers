@@ -1,28 +1,18 @@
-// indeppackage/ad/ad.js
-import request from '../../../utils/request'
-import url from '../../../assets/api/url'
+// molarpackage/pages/list/list.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-		swiperList: [],
-		paginationPosition: 'bottom-right',
-		navigation: { type: 'fraction' },
-		contentList: []
+
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad() {
-		request(url.getAdSwiperList).then(res => {
-			this.setData({swiperList: res})
-			return request(url.getProvinceList)
-		}).then(res => {
-			this.setData({contentList: res})
-		})
+    onLoad(options) {
+
     },
 
     /**

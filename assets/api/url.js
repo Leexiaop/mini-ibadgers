@@ -7,6 +7,7 @@ export default {
     getIbadgersList: url + 'mini/table/',
     getIbadgersDoc: url + 'mini/docs/',
 	getCode: url + 'cases/threejs/',
-	getAdSwiperList: url + 'mini/table/adSwiper.json',
-	getProvinceList: url + 'mini/table/province.json'
+	getMolarSwiperList: url + 'mini/molar/swiper.json',
+	getMolarList: url + 'mini/molar/molar.json',
+	getProvinceList: url + 'mini/molar/province.json'
 }

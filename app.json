@@ -12,10 +12,18 @@
                 "pages/list/list",
                 "pages/canvas/canvas",
                 "pages/content/content",
-                "pages/resources/resources",
-                "pages/ad/ad"
+                "pages/resources/resources"
             ]
-		}
+        },
+        {
+            "root": "molarpackage",
+            "name": "molarpackage",
+            "pages": [
+                "pages/index/index",
+                "pages/list/list",
+                "pages/details/details"
+            ]
+        }
     ],
     "preloadRule": {
         "pages/index/index": {
