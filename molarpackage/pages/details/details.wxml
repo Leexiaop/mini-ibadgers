@@ -13,8 +13,8 @@
 			width="228"
 			t-class="image-host dialog-image"
 			show-menu-by-longpress
-			src="https://leexiaop.github.io/static/mini/img/poster.jpg"
+			src="https://leexiaop.github.io/static/mini/img/molars/anda.jpg"
 		/>
 	</t-dialog>
-	<t-button theme="primary" size="large" shape="round" block bind:tap="onBuyClick">eee</t-button>
+	<t-button theme="primary" size="large" shape="round" block bind:tap="onBuyClick">立即购买</t-button>
 </view>

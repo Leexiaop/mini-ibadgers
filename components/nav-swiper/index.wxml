@@ -1,4 +1,4 @@
-<!--components/navSwiper.wxml-->
+<!--components/nav-swiper.wxml-->
 <t-swiper
 	wx:if="{{!loading}}"
 	autoplay="{{true}}"

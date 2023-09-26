@@ -1,4 +1,4 @@
-// components/navSwiper.js
+// components/nav-swiper.js
 import request from '../../utils/request'
 import url from '../../assets/api/url'
 

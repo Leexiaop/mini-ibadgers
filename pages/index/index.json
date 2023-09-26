@@ -3,6 +3,8 @@
 		"t-image": "tdesign-miniprogram/image/image",
 		"t-icon": "tdesign-miniprogram/icon/icon",
 		"t-notice-bar": "tdesign-miniprogram/notice-bar/notice-bar",
-        "nav-swiper": "../../components/NavSwiper/NavSwiper"
+		"nav-swiper": "../../components/nav-swiper/index",
+		"mp-waterfall": "../../components/mp-waterfall",
+		"waterfall-item": "../../components/waterfall-item"
     }
 }

@@ -71,7 +71,12 @@ Page({
                 wx.previewImage({
                     urls: ['https://leexiaop.github.io/static/ibadgers/wechat.jpeg'],
                 })
-                break
+				break
+			case '9':
+				wx.navigateTo({
+				  url: '/molarpackage/pages/index/index',
+				})
+				break
             default:
                 wx.showToast({
                     icon: 'none',

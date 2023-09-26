@@ -9,5 +9,6 @@ export default {
 	getCode: url + 'cases/threejs/',
 	getMolarSwiperList: url + 'mini/molar/swiper.json',
 	getMolarList: url + 'mini/molar/molar.json',
-	getProvinceList: url + 'mini/molar/province.json'
+	getProvinceList: url + 'mini/molar/province.json',
+	getProvinceMolarList: url + 'mini/molar/list.json'
 }

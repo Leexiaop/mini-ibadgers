@@ -61,6 +61,16 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage() {
-
+		return {
+            title: '安达小铺',
+            imageUrl: 'https://leexiaop.github.io/static/mini/img/molars/anda.jpg',
+            path: '/molarpackage/pages/index/index'
+        }
+	},
+	onShareTimeline () {
+        return {
+			title: '安达小铺，休闲时的好陪伴！',
+			imageUrl: 'https://leexiaop.github.io/static/mini/img/molars/anda.jpg'
+        }
     }
 })

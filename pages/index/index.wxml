@@ -8,6 +8,7 @@
             <view class="icon"></view>
             进阶模块
         </view>
+		<!-- <mp-waterfall id="waterfall" generic:item="waterfall-item" list="{{contentList || []}}" idKey="id" imageKey="imgUrl" colNum="3" gutter="8rpx" bind:onItemClick="onItemClick" order="{{false}}"></mp-waterfall> -->
         <view class="content-item">
             <view
                 class="item"

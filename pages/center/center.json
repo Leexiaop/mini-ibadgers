@@ -7,6 +7,6 @@
 		"t-icon": "tdesign-miniprogram/icon/icon",
 		"t-image": "tdesign-miniprogram/image/image",
 		"t-dialog": "tdesign-miniprogram/dialog/dialog",
-        "nav-swiper": "../../components/NavSwiper/NavSwiper"
+        "nav-swiper": "../../components/nav-swiper/index"
     }
 }
