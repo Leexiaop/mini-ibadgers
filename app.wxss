@@ -1,1 +1,4 @@
 /**app.wxss**/
+.h2w {
+	overflow: auto;
+}
