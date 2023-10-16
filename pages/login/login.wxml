@@ -1,0 +1,9 @@
+<!--pages/login/login.wxml-->
+<view class="login">
+	<t-image src="https://leexiaop.github.io/static/ibadgers/logo.png" width="168rpx" height="168rpx" shape="circle" aria-label="logo" />
+	<t-divider style="margin: 48rpx 0;" />
+	<view class="title">申请获取以下权限</view>
+	<view class="info">获取您的公开信息（微信昵称、头像、性别等）</view>
+	<t-button theme="primary" block size="large"  hover-class="none" wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile">授权</t-button>
+	<t-button theme="primary" block size="large" hover-class="none" wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权</t-button>
+</view>

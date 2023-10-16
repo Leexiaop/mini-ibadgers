@@ -1,31 +1,15 @@
 // pages/center/center.js
 import Dialog from 'tdesign-miniprogram/dialog/index';
+const app = getApp()
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        name: '',
-        gender: 0,
+		userInfo: app.globalData.userInfo,
         show: false
     },
-    onLoad () {
-        if (wx.getStorageSync('gender') === 0 || wx.getStorageSync('gender') === 1) {
-            this.setData({gender: wx.getStorageSync('gender')})
-        } else {
-            let gender = Math.floor(Math.random() * 2)
-            wx.setStorageSync('gender', gender)
-            this.setData({gender: gender})
-        }
-        if (wx.getStorageSync('name')) {
-            this.setData({name: wx.getStorageSync('name')})
-        } else {
-            let name = `Ibadgers_${Math.ceil(Math.random() * 100000000)}`
-            wx.setStorageSync('name', name)
-            this.setData({name: name})
-        }
-	},
 	closeDialog () {
 		this.setData({show: false})
 	},

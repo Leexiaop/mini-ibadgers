@@ -2,6 +2,7 @@
 // 获取应用实例
 import request from '../../utils/request'
 import url from '../../assets/api/url'
+const app = getApp()
 Page({
     data: {
         contentList: [],
@@ -15,7 +16,7 @@ Page({
        	request(url.getMainList).then(res => {
             this.setData({contentList: res})
         })
-    },
+	},
     onCellClick (e) {
         const {item} = e.currentTarget.dataset
         if (item.disabled) {

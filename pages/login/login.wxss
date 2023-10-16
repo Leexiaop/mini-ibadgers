@@ -1,0 +1,17 @@
+/* pages/login/login.wxss */
+.login {
+	height: 100vh;
+	padding: 240rpx 32rpx 0 32rpx;
+	box-sizing: border-box;
+	/* background-color: red; */
+	text-align: left;
+}
+.login > .title {
+	font-size: 36rpx;
+	margin-bottom: 24rpx;
+}
+.login > .info {
+	font-size: 32rpx;
+	color: #ddd;
+	margin-bottom: 120rpx;
+}

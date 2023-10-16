@@ -2,7 +2,9 @@
     "pages": [
         "pages/index/index",
         "pages/center/center",
-        "pages/advanced/advanced"
+        "pages/advanced/advanced",
+        "pages/xrframe/xrframe",
+        "pages/login/login"
     ],
     "subpackages": [
         {
@@ -36,7 +38,7 @@
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#000",
-        "navigationBarTitleText": "Ibadgers前端",
+        "navigationBarTitleText": "Ibadgers前端练功房",
         "navigationBarTextStyle": "white"
     },
     "tabBar": {
@@ -55,6 +57,11 @@
                 "selectedIconPath": "./assets/img/study_s.png"
             },
             {
+                "pagePath": "pages/xrframe/xrframe",
+                "iconPath": "./assets/img/photo.png",
+                "selectedIconPath": "./assets/img/photo_s.png"
+            },
+            {
                 "pagePath": "pages/center/center",
                 "iconPath": "./assets/img/user.png",
                 "selectedIconPath": "./assets/img/user_s.png"
@@ -64,5 +71,6 @@
     "usingComponents": {
         "t-skeleton": "tdesign-miniprogram/skeleton/skeleton"
     },
+    "lazyCodeLoading": "requiredComponents",
     "sitemapLocation": "sitemap.json"
 }

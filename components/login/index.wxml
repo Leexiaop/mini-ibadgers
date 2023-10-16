@@ -1,0 +1,30 @@
+<!--components/login/login.wxml-->
+<t-popup visible="{{show}}" bind:visible-change="onRufuse" placement="center">
+	<view class="login">
+		<view class="header">
+			<view>微信授权</view>
+		</view>
+		<t-divider />
+		<view class="content">
+			<view class="item">
+				<t-avatar size="small" image="https://leexiaop.github.io/static/ibadgers/logo.png" />
+				<text decode="{{true}}">&nbsp;&nbsp;&nbsp;</text>
+				<view>申请获取以下权限</view>
+			</view>
+			<view class="item info">
+				<text>·</text>
+				获取您的公开信息（头像、微信昵称、性别等）
+			</view>
+		</view>
+		<t-divider />
+		<view class="foot">
+			<view class="foot-left">
+				<t-button size="large" bind:tap="onRufuse" class="btn" hover-class="none" variant="text">拒绝</t-button>
+			</view>
+			<view class="foot-right">
+				<t-button size="large" class="btn"  hover-class="none" variant="text" wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile">授权</t-button>
+				<t-button size="large" class="btn" hover-class="none" variant="text" wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权</t-button>
+			</view>
+		</view>
+	</view>
+</t-popup>

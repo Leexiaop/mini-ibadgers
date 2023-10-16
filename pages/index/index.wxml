@@ -26,7 +26,8 @@
                 </view>
                 <view class="motto">{{item.motto}}</view>
                 <t-image
-                    class="img"
+					class="img"
+					width="128rpx"
                     shape="round"
 					mode="widthFix"
                     wx:if="{{item.img}}"
