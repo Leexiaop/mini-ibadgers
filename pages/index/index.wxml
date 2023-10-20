@@ -52,9 +52,9 @@
 	</view>
 	<t-notice-bar
 		class="notice"
-		visible="{{true}}"
+		visible="{{noticeContent}}"
 		marquee="{{marquee}}"
 		prefixIcon="sound"
-		content="走过多少岁月才发现，敲的每一行代码还不是最优秀，还需要努力加油，So~~,拼搏到无能为力，坚持到感动自己。"
+		content="{{noticeContent}}"
 	></t-notice-bar>
 </view>

@@ -5,6 +5,7 @@
 		"t-button": "tdesign-miniprogram/button/button",
 		"t-popup": "tdesign-miniprogram/popup/popup",
 		"t-divider": "tdesign-miniprogram/divider/divider",
+		"t-search": "tdesign-miniprogram/search/search",
 		"towxml":"../../towxml/towxml"
     }
 }

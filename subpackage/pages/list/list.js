@@ -9,7 +9,8 @@ Page({
         show: false,
         content: null,
 		title: '',
-		towxml: require('../../towxml/index')
+		towxml: require('../../towxml/index'),
+		copyList: []
     },
     onLoad(options) {
         this.setData({options, isLoading: true})
@@ -18,17 +19,39 @@ Page({
         })
         request(`${url.getIbadgersList}${options.url}.json`).then(res => {
             let data = res
-            if (options.url !== 'threejs_case') {
+            // if (options.url !== 'threejs_case') {
                 data = [
                     {
                         name: options.url,
                         children: res
                     }
                 ]
-            }
-            this.setData({list: data, isLoading: false})
+			// }
+			console.log(data, 444)
+            this.setData({list: data, copyList: data, isLoading: false})
         })
-    },
+	},
+	onInputChange (e) {
+		const {value} = e.detail
+		console.log(this.data.copyList)
+		this.setData({list: value ? this.searchData(this.data.list, value) : this.data.copyList})
+	},
+	searchData (data, value) {
+		let arr = [];
+		for (let i = 0; i < data.length; i++) {
+			let item = data[i]
+			if (item?.name?.indexOf(value) > -1) {
+				arr.push(item)
+			}
+			if (item.children && item.children.length) {
+				item.children = item.children.filter(child => {
+					return child?.indexOf(value) > -1
+				})
+				arr.push(item)
+			}
+		}
+		return arr
+	},
     onCellClick (e) {
         const {cell} = e.currentTarget.dataset
         if (this.data.options.url === 'company') {
@@ -48,15 +71,8 @@ Page({
             })
             return
         }
-        if (cell.disabled) {
-            wx.showToast({
-                icon: 'none',
-                title: '建设中,敬请期待...'
-            })
-            return
-        }
         wx.navigateTo({
-            url: `/subpackage/pages/canvas/canvas?url=${cell.name}`,
+            url: `/subpackage/pages/canvas/canvas?url=${cell}`,
         })
     },
     onCodeCheck (e) {

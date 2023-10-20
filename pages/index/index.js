@@ -5,6 +5,7 @@ import url from '../../assets/api/url'
 const app = getApp()
 Page({
     data: {
+		noticeContent: '',
         contentList: [],
         swiperList: [],
 		marquee: {speed: 60, loop: -1, delay: 0},
@@ -14,8 +15,11 @@ Page({
 
     onLoad() {
        	request(url.getMainList).then(res => {
-            this.setData({contentList: res})
-        })
+			this.setData({contentList: res})
+			return request(url.getNoticeContent)
+        }).then(res => {
+			this.setData({noticeContent: res.content})
+		})
 	},
     onCellClick (e) {
         const {item} = e.currentTarget.dataset

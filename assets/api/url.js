@@ -1,6 +1,7 @@
-// const url = __wxConfig.envVersion === 'develop' ? 'http://127.0.0.1:5500/' : 'https://leexiaop.github.io/static/'
-const url = 'https://leexiaop.github.io/static/'
+const url = __wxConfig.envVersion === 'develop' ? 'http://127.0.0.1:5500/' : 'https://leexiaop.github.io/static/'
+// const url = 'https://leexiaop.github.io/static/'
 export default {
+	getNoticeContent: url + 'mini/table/notice.json',
     getMainList: url + 'mini/table/main.json',
     getSwiperList: url + 'mini/table/swiper.json',
     getResourcesList: url + 'mini/table/resources.json',
