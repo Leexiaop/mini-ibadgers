@@ -57,11 +57,6 @@
                 "selectedIconPath": "./assets/img/study_s.png"
             },
             {
-                "pagePath": "pages/xrframe/xrframe",
-                "iconPath": "./assets/img/photo.png",
-                "selectedIconPath": "./assets/img/photo_s.png"
-            },
-            {
                 "pagePath": "pages/center/center",
                 "iconPath": "./assets/img/user.png",
                 "selectedIconPath": "./assets/img/user_s.png"

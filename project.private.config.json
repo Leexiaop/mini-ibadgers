@@ -11,6 +11,13 @@
             "list": [
                 {
                     "name": "",
+                    "pathName": "pages/xrframe/xrframe",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
                     "pathName": "pages/index/index",
                     "query": "",
                     "launchMode": "default",

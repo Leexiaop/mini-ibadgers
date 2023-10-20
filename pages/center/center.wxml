@@ -1,7 +1,12 @@
 <!--pages/center/center.wxml-->
 <view class="center">
     <view class="nav">
-		<t-avatar size="large" image="{{userInfo.avatarUrl}}" />
+		<t-image
+			width="72"
+			height="72"
+			shape="circle"
+			src="{{userInfo.avatarUrl}}"
+		/>
         <view class="info">
             <view class="name">{{userInfo.nickName}}</view>
             <view class="motto">拼搏到无能为力 坚持到感动自己</view>

@@ -1,1 +1,56 @@
 /* pages/xrframe/xrframe.wxss */
+.xrframe {
+	width: 100%;
+	height: 100vh;
+	box-sizing: border-box;
+}
+.xrframe-content {
+	width: 100%;
+	box-sizing: border-box;
+	min-height: 520rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.t-grid-item {
+	width: 100%!important;
+}
+.xrframe-operate {
+	width: 686rpx;
+	height: 50vh;
+	box-sizing: border-box;
+	margin: 0 auto;
+	padding: 24rpx;
+	display: flex;
+	flex-wrap: wrap;
+	overflow: auto;
+}
+::-webkit-scrollbar {
+	display: none;
+	width: 0;
+	height: 0;
+	color:transparent;
+}
+.xrframe-operate-item {
+	width: 25%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #cfe5e8;
+	margin-bottom: 24rpx;
+	font-size: 24rpx;
+	padding: 24rpx 0;
+}
+.xrframe-footer {
+	width: 100%;
+	height: 88rpx;
+	box-sizing: border-box;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background-color: #fff;
+}

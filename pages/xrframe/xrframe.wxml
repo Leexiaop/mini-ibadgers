@@ -1,23 +1,38 @@
 <!--pages/xrframe/xrframe.wxml-->
-<!-- <view>
+<view class="xrframe">
+	<view class="xrframe-content">
+		<block wx:if="{{!file}}">
+			<t-upload
+				mediaType="{{['video','image']}}"
+				files="{{fileList}}"
+				bind:add="handleAdd"
+			>
+			</t-upload>
+		</block>
+		<block wx:else>
+			<video src="{{file.url}}" wx:if="{{file.type === 'video'}}"/>
+			<image src="{{file.url}}" wx:if="{{file.type === 'image'}}" mode="aspectFill"/>
+		</block>
+	</view>
+	<t-divider />
+	<view class="xrframe-operate">
+		<view class="xrframe-operate-item" wx:for="{{operateList}}" wx:for-item="operate" wx:key="index">
+			<t-icon name="{{operate.icon}}" data-name="{{operate.icon}}" />
+			<text decode="{{true}}">&nbsp;</text>
+			<view>{{operate.name}}</view>
+			<t-divider layout="vertical"/>
+		</view>
+	</view>
+	<view class="xrframe-footer">
+		<t-button theme="danger" size="small" variant="outline">重新上传</t-button>
+		<t-divider layout="vertical"/>
+		<t-button theme="primary" size="small">保存到相册</t-button>
+	</view>
   	<xr-start
-    disable-scroll
-    id="main-frame"
-    width="{{renderWidth}}"
-    height="{{renderHeight}}"
-    style="width:{{width}}px;height:{{height}}px;"
-  />
-  <button></button>
-</view> -->
-<view class="container">
-  <view class="userinfo">
-    <block wx:if="{{!hasUserInfo}}">
-      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
-      <button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    </block>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
+		disable-scroll
+		id="main-frame"
+		width="{{renderWidth}}"
+		height="{{renderHeight}}"
+		style="width:{{width}}px;height:{{height}}px;"
+	/>
 </view>
