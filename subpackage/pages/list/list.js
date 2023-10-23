@@ -18,39 +18,16 @@ Page({
             title: options.title,
         })
         request(`${url.getIbadgersList}${options.url}.json`).then(res => {
-            let data = res
-            // if (options.url !== 'threejs_case') {
-                data = [
-                    {
-                        name: options.url,
-                        children: res
-                    }
-                ]
-			// }
-			console.log(data, 444)
-            this.setData({list: data, copyList: data, isLoading: false})
+            this.setData({list: res, copyList: wx._.cloneDeep(res), isLoading: false})
         })
 	},
 	onInputChange (e) {
 		const {value} = e.detail
-		console.log(this.data.copyList)
-		this.setData({list: value ? this.searchData(this.data.list, value) : this.data.copyList})
-	},
-	searchData (data, value) {
-		let arr = [];
-		for (let i = 0; i < data.length; i++) {
-			let item = data[i]
-			if (item?.name?.indexOf(value) > -1) {
-				arr.push(item)
-			}
-			if (item.children && item.children.length) {
-				item.children = item.children.filter(child => {
-					return child?.indexOf(value) > -1
-				})
-				arr.push(item)
-			}
+		if (value) {
+			this.setData({list: this.data.copyList.filter(item => item.indexOf(value) >= 0)})
+			return
 		}
-		return arr
+		this.setData({list: this.data.copyList})
 	},
     onCellClick (e) {
         const {cell} = e.currentTarget.dataset
