@@ -4,6 +4,7 @@
 	autoplay="{{true}}"
 	duration="{{500}}"
 	interval="{{5000}}"
+	height="{{height + 'rpx'}}"
 	navigation="{{navigation}}"
 	paginationPosition="{{paginationPosition}}"
 	list="{{swiperList}}"

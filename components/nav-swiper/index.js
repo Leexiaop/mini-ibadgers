@@ -10,6 +10,18 @@ Component({
         height: {
             type: Number,
             value: 360
+		},
+		paginationPosition: {
+			type: String,
+			value: 'bottom-right'
+		},
+		navigation: {
+			type: Object,
+			value: { type: 'fraction' }
+		},
+		list: {
+			type: Array,
+			value: []
 		}
     },
 
@@ -18,12 +30,14 @@ Component({
      */
     data: {
 		swiperList: [],
-		loading: false,
-		paginationPosition: 'bottom-right',
-		navigation: { type: 'fraction' }
+		loading: false
 	},
     lifetimes: {
         ready () {
+			if (this.data.list.length) {
+				this.setData({swiperList: this.data.list})
+				return
+			}
 			this.setData({loading: true})
             request(url.getSwiperList).then(res => {
                 this.setData({swiperList: res, loading: false})

@@ -1,104 +1,118 @@
-/**index.wxss**/
+/* pages/index/index.wxss */
 .index {
-    padding-top: 16rpx;
-    width: 100%;
-    box-sizing: border-box;
-    padding-bottom: 64rpx;
-	background-color: rgb(206, 235, 231);
-	min-height: 100vh;
-}
-.index > .nav {
-    width: 718rpx;
-    margin: 0 auto;
-    border-radius: 8rpx;
-    overflow: hidden;
-}
-.index > .content {
-    width: 100%;
-    padding: 16rpx;
-    box-sizing: border-box;
-}
-.index > .content > .content-title {
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 36rpx;
-    padding: 16rpx 0;
-    font-weight: 600;
-    color: #3e4f6d;
-    margin-bottom: 16rpx;
-    display: flex;
-    align-items: center;
-}
-.index > .content > .content-title > .icon {
-    width: 0;
-    border-left: 8rpx solid #0819e4;
-    height: 36rpx;
-    margin-right: 16rpx;
-}
-.index > .content > .content-item {
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 32rpx;
-    column-count: 2;
-    column-gap: 16rpx;
-}
-.index > .content > .content-item > .item {
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 24rpx;
-    background-color: #fff;
-    padding: 16rpx;
-    box-sizing: border-box;
-    border-radius: 8rpx;
-    break-inside: avoid;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 16rpx 16rpx 16rpx #999;
-}
-
-.index > .content > .content-item > .item > .tag {
-    position: absolute;
-    background-color: #e4393c;
-    top: 0;
-    right: 0;
-    color: #fff;
-    border-bottom-left-radius: 8rpx;
-    padding: 8rpx;
-    font-size: 14rpx;
-}
-.index > .content > .content-item > .item > .title {
-    color: #666;
-	margin-bottom: 8rpx;
-	display: flex;
-}
-.index > .content > .content-item > .item > .motto {
-    font-size: 24rpx;
-    color: #999;
-    margin-bottom: 8rpx;
-    text-align: justify;
-}
-.index > .content > .content-item > .item > .img {
-	margin: 0 auto;
-	width: 128rpx;
-}
-.index > .group {
 	width: 100%;
-    padding: 16rpx;
 	box-sizing: border-box;
 }
-.index > .group > .group-title {
-	margin-bottom: 24rpx;
+.index > .container {
+	width: 686rpx;
+	box-sizing: border-box;
+	margin: 32rpx;
+	padding: 24rpx;
+	border-radius: 24rpx;
+	border: 1rpx solid #eee;
+	overflow: hidden;
 }
-.index > .group > .group-item {
+.index > .container > .title {
+	width: 100%;
+	height: 72rpx;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.index > .container > .title > .name {
+	width: 100%;
+	color: #444444;
+	font-size: 34rpx;
+	font-weight: 600;
+}
+.index > .container > .title > .more {
+	color: #999;
+	font-size: 28rpx;
+}
+.index > .javascript {
+	box-sizing: border-box;
+}
+.index > .javascript > .content {
+	width: 100%;
+	box-sizing: border-box;
+	column-count: 2;
+    column-gap: 1rpx;
+}
+.index > .javascript > .content > .item {
+	width: 100%;
+	border: 4rpx solid #fff;
+	border-top: none;
+}
+.index > .shop > .content {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
 }
-.index > .group > .group-item > .group-item-skelton {
+.index > .shop > .content > .item {
+	width: 100%;
+	height: 360rpx;
+}
+.index > .shop > .content > .item > image {
+	width: 100%;
+	height: 100%;
+	border: 2rpx solid #fff;
+}
+.index > .guitar {
+	padding: 0 24rpx 24rpx 0;
+}
+.index > .guitar > .title {
+	border-bottom: 1rpx solid rgb(228, 214, 228);
+}
+.index > .guitar > .title > .name {
+	display: flex;
+	height: 100%;
+	font-size: 32rpx;
+	font-weight: normal;
+}
+.index > .guitar > .title > .name > .tab {
+    width: 128rpx;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.index > .guitar > .title > .name > .active {
+	background: #fff;
+    color: #333;
+    background: rgb(228, 214, 228);
+	border-radius: 24rpx 24rpx 0 0;
+}
+
+.index > .guitar > .content {
+	width: 100%;
+	padding: 24rpx;
+	white-space: nowrap;
+	overflow: hidden;
+	overflow-x: auto;
+}
+
+.index > .guitar > .content > .item {
+	width: 622rpx;
+	height: 360rpx;
+	display: inline-grid;
+}
+.index > .guitar > .content > .item > .list {
+	width: 100%;
+}
+.index > .guitar > .content > .item > .list > .list-item {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	font-size: 28rpx;
+	color: #666;
 	margin-bottom: 24rpx;
 }
-.index > .notice {
-    width: 100%;
-    position: fixed;
-    bottom: 0;
+.index > .guitar > .content > .item > .list > .list-item > .author {
+	font-size: 22rpx;
+}
+.index > .foot {
+	padding: 48rpx;
+	text-align: center;
+	font-size: 24rpx;
+	color: #999;
 }

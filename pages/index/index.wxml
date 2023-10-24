@@ -1,60 +1,57 @@
-<!--index.wxml-->
+<!--pages/index/index.wxml-->
 <view class="index">
-    <view class="nav">
-        <nav-swiper></nav-swiper>
-    </view>
-    <view class="content" wx:if="{{contentList.length}}">
-        <view class="content-title">
-            <view class="icon"></view>
-            进阶模块
-        </view>
-		<!-- <mp-waterfall id="waterfall" generic:item="waterfall-item" list="{{contentList || []}}" idKey="id" imageKey="imgUrl" colNum="3" gutter="8rpx" bind:onItemClick="onItemClick" order="{{false}}"></mp-waterfall> -->
-        <view class="content-item">
-            <view
-                class="item"
-                wx:for="{{contentList}}"
-                wx:key="index"
-                wx:for-item="item"
-                bind:tap="onCellClick"
-                data-item="{{item}}"
-            >
-                <view class="tag" wx:if="{{item.disabled}}">建设中</view>
-                <view class="title">
-					<t-icon name="{{'letters-' + item.icon}}" size="48rpx"/>
-                    <text decode="{{true}}">&nbsp;&nbsp;</text>
-                    {{item.title}}
-                </view>
-                <view class="motto">{{item.motto}}</view>
-                <t-image
-					class="img"
-					width="128rpx"
-                    shape="round"
-					mode="widthFix"
-                    wx:if="{{item.img}}"
-                    src="{{item.img}}"
-                />
-            </view>
-        </view>
-    </view>
-	<view class="group" wx:else>
-		<view class="group-title">
-			<t-skeleton animation="flashed" rowCol="{{[{ width: '50%', height: '64rpx' }]}}" loading></t-skeleton>
+	<nav-swiper navigation="{{navigation}}"></nav-swiper>
+	<view class="javascript container">
+		<view class="title">
+			<view class="name">Javascript</view>
+			<view class="more">more...</view>
 		</view>
-		<view class="group-item">
-			<t-skeleton
-				class="group-item-skelton"
-				wx:for="{{11}}"
-				animation="flashed"
-				rowCol="{{rowCol}}"
-				loading
-			></t-skeleton>
+		<view class="content">
+			<view wx:for="{{javascriptList}}" wx:for-item="javascript" wx:key="index" class="item">
+				<t-image src="{{javascript.url}}" mode="aspectFill" width="100%" height="{{(index + 1) % 3 === 1 ? '480rpx' : '420rpx'}}" aria-label="{{javascript.name}}" />
+			</view>
 		</view>
 	</view>
-	<t-notice-bar
-		class="notice"
-		visible="{{noticeContent}}"
-		marquee="{{marquee}}"
-		prefixIcon="sound"
-		content="{{noticeContent}}"
-	></t-notice-bar>
+	<view class="shop container">
+		<view class="title">
+			<view class="name">Shop</view>
+			<view class="more">more...</view>
+		</view>
+		<view class="content">
+			<view wx:for="{{shopList}}" wx:for-item="shop" wx:key="index" class="item" style="width: {{index === 0 ? '70%' : (index >= 1 && index < 2 ? '30%' : '25%')}};height: {{index > 1 ? '180rpx' : '360rpx'}}">
+				<image src="{{shop.url}}" mode="aspectFill" />
+			</view>
+		</view>
+	</view>
+	<view class="guitar container">
+		<view class="title">
+			<view class="name">
+				<view class="{{active === 1 ? 'active' : ''}} tab" bind:tap="onGuitarTabChange" data-active="{{1}}">Guitar</view>
+				<view class="{{active === 2 ? 'active' : ''}} tab" bind:tap="onGuitarTabChange" data-active="{{2}}">Ukulele</view>
+			</view>
+			<view class="more">more...</view>
+		</view>
+		<view class="content">
+			<view class="item" wx:for="{{guitarList}}" wx:for-item="guitar" wx:key="index" style="padding-left: {{index > 0 ? '24rpx' : 0}};border-left: {{index > 0 ? '1rpx solid #eee' : 'none'}}">
+				<view class="list">
+					<view class="list-item" wx:for="{{guitar}}" wx:for-item="obj" wx:for-index="idx" wx:key="idx">
+						<t-image src="https://tdesign.gtimg.com/miniprogram/images/image1.jpeg" width="24" height="24" shape="circle" aria-label="{{obj.name}}" />
+						<text decode="{{true}}">&nbsp;&nbsp;</text>
+						<view>{{obj.name}}</view>
+						<view class="author">{{'---' + obj.author}}</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="foot">
+		<t-notice-bar
+			visible="{{true}}"
+			direction="vertical"
+			interval="{{3000}}"
+			content="{{noticeList}}"
+			prefixIcon="''"
+			bind:click="click"
+		></t-notice-bar>
+	</view>
 </view>

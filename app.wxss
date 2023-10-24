@@ -2,3 +2,6 @@
 .h2w {
 	overflow: auto;
 }
+::-webkit-scrollbar { 
+    display: none;
+}

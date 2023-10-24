@@ -1,10 +1,11 @@
 {
     "pages": [
         "pages/index/index",
+        "pages/javascript/javascript",
         "pages/center/center",
-        "pages/advanced/advanced",
-        "pages/xrframe/xrframe",
-        "pages/login/login"
+        "pages/login/login",
+        "pages/guitar/guitar",
+        "pages/shop/shop"
     ],
     "subpackages": [
         {
@@ -42,24 +43,39 @@
         "navigationBarTextStyle": "white"
     },
     "tabBar": {
-        "color": "#000000",
-        "selectedColor": "#000000",
+        "color": "#fff",
+        "selectedColor": "#0061b2",
         "backgroundColor": "#000000",
         "list": [
             {
                 "pagePath": "pages/index/index",
+                "text": "Home",
                 "iconPath": "./assets/img/home.png",
                 "selectedIconPath": "./assets/img/home_s.png"
             },
             {
-                "pagePath": "pages/advanced/advanced",
-                "iconPath": "./assets/img/study.png",
-                "selectedIconPath": "./assets/img/study_s.png"
+                "pagePath": "pages/javascript/javascript",
+                "text": "Javascript",
+                "iconPath": "./assets/img/javascript.png",
+                "selectedIconPath": "./assets/img/javascript_s.png"
+            },
+            {
+                "pagePath": "pages/guitar/guitar",
+                "text": "Guitar",
+                "iconPath": "./assets/img/guitar.png",
+                "selectedIconPath": "./assets/img/guitar_s.png"
+            },
+            {
+                "pagePath": "pages/shop/shop",
+                "text": "Shop",
+                "iconPath": "./assets/img/shop.png",
+                "selectedIconPath": "./assets/img/shop_s.png"
             },
             {
                 "pagePath": "pages/center/center",
-                "iconPath": "./assets/img/user.png",
-                "selectedIconPath": "./assets/img/user_s.png"
+                "text": "Center",
+                "iconPath": "./assets/img/center.png",
+                "selectedIconPath": "./assets/img/center_s.png"
             }
         ]
     },

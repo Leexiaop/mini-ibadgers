@@ -1,49 +1,97 @@
-// index.js
-// 获取应用实例
+// pages/index/index.js
 import request from '../../utils/request'
 import url from '../../assets/api/url'
-const app = getApp()
-Page({
-    data: {
-		noticeContent: '',
-        contentList: [],
-        swiperList: [],
-		marquee: {speed: 60, loop: -1, delay: 0},
-		rowCol: [{ size: '327rpx', borderRadius: '24rpx' }]
-    },
-    // 事件处理函数
 
+
+const imageCdn = 'https://tdesign.gtimg.com/miniprogram/images';
+const swiperList = [
+  `${imageCdn}/swiper1.png`,
+  `${imageCdn}/swiper2.png`,
+  `${imageCdn}/swiper1.png`,
+  `${imageCdn}/swiper2.png`,
+  `${imageCdn}/swiper1.png`,
+];
+Page({
+
+    /**
+     * 页面的初始数据
+     */
+    data: {
+		swiperList,
+		navigation: {type: 'dots-bar'},
+		javascriptList: [],
+		shopList: [],
+		guitarList: [],
+		noticeList: [],
+		active: 1
+    },
+
+    /**
+     * 生命周期函数--监听页面加载
+     */
     onLoad() {
-       	request(url.getMainList).then(res => {
-			this.setData({contentList: res})
-			return request(url.getNoticeContent)
-        }).then(res => {
-			this.setData({noticeContent: res.content})
+		request(url.getIndexList).then(res => {
+			let guitarData = res.guitarList.filter(guitar => guitar.type === 1)
+			this.setData({
+				javascriptList: res.javascriptList,
+				shopList: res.shopList,
+				guitarList: wx._.chunk(guitarData, 5),
+				noticeList: res.noticeList,
+				copyGuitarList: res.guitarList
+			})
 		})
 	},
-    onCellClick (e) {
-        const {item} = e.currentTarget.dataset
-        if (item.disabled) {
-            wx.showToast({
-                icon: 'none',
-                title: '正在建设中，敬请期待...'
-            })
-            return
-        }
-        wx.navigateTo({
-            url: `/subpackage/pages/list/list?url=${item.url}&&title=${item.title}`
-        })
+	onGuitarTabChange(e) {
+		const data = this.data.copyGuitarList.filter(guitar => guitar.type === e.currentTarget.dataset.active)
+		this.setData({active: e.currentTarget.dataset.active, guitarList: wx._.chunk(data, 5)})
+	},
+
+    /**
+     * 生命周期函数--监听页面初次渲染完成
+     */
+    onReady() {
+
     },
-    onShareAppMessage () {
-        return {
-            title: 'Ibadgers',
-            imageUrl: 'https://leexiaop.github.io/static/ibadgers/logo.png',
-            path: '/pages/index/index'
-        }
+
+    /**
+     * 生命周期函数--监听页面显示
+     */
+    onShow() {
+
     },
-    onShareTimeline () {
-        return {
-            title: '代码敲了那么久，总觉得还有一行还不是最优秀...'
-        }
+
+    /**
+     * 生命周期函数--监听页面隐藏
+     */
+    onHide() {
+
+    },
+
+    /**
+     * 生命周期函数--监听页面卸载
+     */
+    onUnload() {
+
+    },
+
+    /**
+     * 页面相关事件处理函数--监听用户下拉动作
+     */
+    onPullDownRefresh() {
+
+    },
+
+    /**
+     * 页面上拉触底事件的处理函数
+     */
+    onReachBottom() {
+
+    },
+
+    /**
+     * 用户点击右上角分享
+     */
+    onShareAppMessage() {
+
     }
 })
