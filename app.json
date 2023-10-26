@@ -9,22 +9,31 @@
     ],
     "subpackages": [
         {
-            "root": "subpackage",
-            "name": "subpackage",
+            "root": "javascriptpackage",
+            "name": "javascriptpackage",
             "pages": [
                 "pages/list/list",
                 "pages/canvas/canvas",
                 "pages/content/content",
-                "pages/resources/resources"
+                "pages/resources/resources",
+                "pages/advanced/advanced"
             ]
         },
         {
-            "root": "molarpackage",
-            "name": "molarpackage",
+            "root": "shoppackage",
+            "name": "shoppackage",
             "pages": [
-                "pages/index/index",
                 "pages/list/list",
                 "pages/details/details"
+            ]
+        },
+        {
+            "root": "guitarpackage",
+            "name": "guitarpackage",
+            "pages": [
+                "pages/songs/songs",
+                "pages/singers/singers",
+                "pages/list/list"
             ]
         }
     ],
@@ -32,7 +41,7 @@
         "pages/index/index": {
             "network": "all",
             "packages": [
-                "subpackage"
+                "javascriptpackage"
             ]
         }
     },

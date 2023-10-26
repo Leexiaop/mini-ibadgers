@@ -1,0 +1,29 @@
+<!--list.wxml-->
+<view class="list">
+	<t-search class="list-input" shape="round" placeholder="请输入搜索的内容" bind:change="onInputChange" />
+    <!-- <t-cell-group
+		wx:if="{{list.length && !isLoading}}"
+		wx:for="{{list}}"
+		wx:key="index"
+		wx:for-item="item"
+		wx:for-index="index"
+		title="{{undefined}}"
+	> -->
+		<t-cell
+			hover
+			arrow
+			wx:for="{{list}}"
+			wx:key="idx"
+			wx:for-item="child"
+			wx:for-index="idx"
+			title="{{child.name || (child === 'index' ? '概要' : child)}}"
+			bind:tap="onCellClick"
+			data-cell="{{child}}"
+		>
+		</t-cell>
+	<!-- </t-cell-group> -->
+	<view class="group" wx:if="{{!list.length || isLoading}}">
+		<t-skeleton wx:for="{{30}}" animation="flashed" class="group-content" rowCol="{{[1]}}" loading></t-skeleton>
+		<t-loading theme="circular" size="40rpx" class="wrapper" />
+	</view>
+</view>

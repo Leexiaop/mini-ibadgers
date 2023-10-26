@@ -3,7 +3,8 @@
     "projectname": "Ibadgers",
     "setting": {
         "compileHotReLoad": true,
-        "urlCheck": false
+        "urlCheck": false,
+        "bigPackageSizeSupport": true
     },
     "libVersion": "2.16.0",
     "condition": {
@@ -11,14 +12,21 @@
             "list": [
                 {
                     "name": "",
-                    "pathName": "pages/xrframe/xrframe",
+                    "pathName": "guitarpackage/pages/list/list",
                     "query": "",
                     "launchMode": "default",
                     "scene": null
                 },
                 {
                     "name": "",
-                    "pathName": "pages/index/index",
+                    "pathName": "javascriptpackage/pages/advanced/advanced",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/xrframe/xrframe",
                     "query": "",
                     "launchMode": "default",
                     "scene": null
@@ -32,14 +40,14 @@
                 },
                 {
                     "name": "",
-                    "pathName": "molarpackage/pages/details/details",
+                    "pathName": "shoppackage/pages/details/details",
                     "query": "id=3&name=%E7%83%A4%E9%B8%AD",
                     "launchMode": "default",
                     "scene": null
                 },
                 {
                     "name": "",
-                    "pathName": "molarpackage/pages/index/index",
+                    "pathName": "shoppackage/pages/index/index",
                     "query": "",
                     "launchMode": "default",
                     "scene": null
@@ -47,13 +55,6 @@
                 {
                     "name": "",
                     "pathName": "pages/resources/resources",
-                    "query": "",
-                    "launchMode": "default",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/advanced/advanced",
                     "query": "",
                     "launchMode": "default",
                     "scene": null

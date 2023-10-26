@@ -1,2 +1,49 @@
-<!--pages/shop/shop.wxml-->
-<text>pages/shop/shop.wxml</text>
+<!--indeppackage/ad/ad.wxml-->
+<view class="molar">
+	<t-swiper
+		wx:if="{{swiperList.length}}"
+		autoplay="{{true}}"
+		duration="{{500}}"
+		interval="{{5000}}"
+		navigation="{{navigation}}"
+		paginationPosition="{{paginationPosition}}"
+		list="{{swiperList}}"
+	/>
+	<view class="content">
+		<view class="content-item" wx:for="{{contentList}}" wx:for-item="content" wx:key="index">
+			<view class="title" wx:if="{{content.children.length}}">
+				<view>{{content.code === 100000 ? '强烈推荐' : content.name}}</view>
+				<t-icon name="chevron-right" wx:if="{{index}}" size="48rpx" data-content="{{content}}" bind:click="onIconTap" />
+			</view>
+			<block wx:if="{{content.type === 1 && content.children.length}}">
+				<view class="content-squre">
+					<block wx:for="{{content.children}}" wx:for-item="child" wx:for-index="idx" wx:key="idx">
+						<t-image bind:tap="onDetailClick" data-molar="{{child}}" class="img" src="{{child.url}}" mode="aspectFill" width="142" height="62" aria-label="图" />
+					</block>
+				</view>
+			</block>
+			<block wx:if="{{content.type === 2 && content.children.length}}">
+				<view class="content-small">
+					<view class="content-small-left">
+						<block wx:for="{{content.children}}" wx:for-item="child" wx:for-index="idx" wx:key="idx">
+							<t-image bind:tap="onDetailClick" data-molar="{{child}}" class="img" wx:if="{{!idx}}" src="{{child.url}}" width="100%" mode="widthFix" aria-label="图" />
+						</block>
+					</view>
+					<view class="content-small-right">
+						<block wx:for="{{content.children}}" wx:for-item="child" wx:for-index="idx" wx:key="idx">
+							<t-image bind:tap="onDetailClick" data-molar="{{child}}" class="img" src="{{child.url}}" mode="widthFix" width="50%" wx:if="{{idx}}" aria-label="图" />
+						</block>
+					</view>
+				</view>
+			</block>
+			<block wx:if="{{content.type === 3 && content.children.length}}">
+				<view class="content-list">
+					<block wx:for="{{content.children}}" wx:for-item="{{child}}" wx:for-index="idx" wx:key="idx">
+						<t-image bind:tap="onDetailClick" data-molar="{{child}}" class="img" src="{{child.url}}" mode="aspectFill" width="72" height="162" aria-label="图" />
+					</block>
+				</view>
+			</block>
+		</view>
+	</view>
+	<t-divider content="我也是有底线的" />
+</view>

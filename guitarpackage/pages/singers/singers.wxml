@@ -1,0 +1,10 @@
+<!--guitarpackage/pages/singers/singers.wxml-->
+<view class="singers">
+	<t-grid class="block" column="{{4}}">
+		<t-grid-item wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="index" bind:tap="onSingerClick" data-item="{{item}}">
+			<t-image src="{{item.avatar}}" width="72" mode="aspectFill" height="72" shape="round" aria-label="{{item.author}}" />
+			<view slot="text">{{item.author}}</view>
+		</t-grid-item>
+	</t-grid>
+	<t-divider style="width: 686rpx;margin: 0 auto;" content="我也是有底线的" />
+</view>

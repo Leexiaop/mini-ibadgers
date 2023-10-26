@@ -2,7 +2,7 @@
 	"navigationStyle": "custom",
     "usingComponents": {
 		"nav-swiper": "../../components/nav-swiper/index",
-		"t-image": "tdesign-miniprogram/image/image",
-		"t-notice-bar": "tdesign-miniprogram/notice-bar/notice-bar"
+		"t-icon": "tdesign-miniprogram/icon/icon",
+		"t-image": "tdesign-miniprogram/image/image"
 	}
 }

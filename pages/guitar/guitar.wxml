@@ -1,2 +1,50 @@
 <!--pages/guitar/guitar.wxml-->
-<text>pages/guitar/guitar.wxml</text>
+<view class="guitar">
+	<nav-swiper list="{{navList}}"></nav-swiper>
+	<view class="main">
+		<view class="title">
+			<view class="left">
+				<view bind:tap="onTabClick" data-tab="{{1}}" style="color: {{active === 1 ? '#666' : '#999'}};">
+					Guitar
+					<view class="line" style="border-color: {{active === 1 ? 'blue' : 'transpent'}};"></view>
+				</view>
+				<view bind:tap="onTabClick" data-tab="{{2}}" style="color: {{active === 2 ? '#666' : '#999'}};">
+					Ukulele
+					<view class="line" style="border-color: {{active === 2 ? 'pink' : 'transpent'}};"></view>
+				</view>
+			</view>
+			<view class="right" bind:tap="onVocalClick">
+				<t-icon name="more" size="20" data-name="more" color="#999" />
+			</view>
+		</view>
+		<swiper indicator-dots="{{false}}" style="background: {{active === 1 ? '#e6e6f3' : '#f1e7e9'}};" class="swiper" autoplay="{{false}}" interval="{{2000}}" duration="{{500}}">
+			<block wx:for="{{list}}" wx:for-index="index" wx:key="index" wx:for-item="item">
+				<swiper-item class="swiper-item">
+					<view class="left">
+						<view wx:for="{{item}}" class="swiper-item-guitar" wx:for-item="obj" wx:for-index="idx" wx:key="idx">
+							<t-image src="{{obj.avatar}}" mode="aspectFill" width="24" height="24" shape="circle" aria-label="{{obj.name}}" />
+							<text decode="{{true}}">&nbsp;&nbsp;</text>
+							<view>{{obj.name}}</view>
+							<view class="author">{{'---' + obj.author}}</view>
+						</view>
+					</view>
+					<view class="right" wx:if="{{index < list.length - 1}}">
+						<t-icon name="chevron-right-double" size="24"/>
+					</view>
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+	<view class="singer">
+		<view class="title">
+			Vocalists
+			<t-icon name="more" size="20" data-name="more" color="#999" bind:tap="onVocalistsClick" />
+		</view>
+		<view class="content">
+			<view class="item" wx:for="{{singerList}}" wx:for-item="singer" wx:for-index="index" wx:key="index" bind:tap="onVocalClick" data-vocal="{{singer}}">
+				<t-image src="{{singer.avatar}}" mode="aspectFill" width="220rpx" height="220rpx" shape="round" aria-label="{{singer.author}}" />
+				<view>{{singer.author}}</view>
+			</view>
+		</view>
+	</view>
+</view>

@@ -28,7 +28,7 @@ Page({
                 break
             case '3':
                 wx.navigateTo({
-                    url: '/subpackage/pages/resources/resources',
+                    url: '/javascriptpackage/pages/resources/resources',
                 })
                 break
             case '4':
@@ -58,7 +58,7 @@ Page({
 				break
 			case '9':
 				wx.navigateTo({
-				  url: '/molarpackage/pages/index/index',
+				  url: '/shoppackage/pages/index/index',
 				})
 				break
             default:
@@ -69,16 +69,16 @@ Page({
                 console.log('hello ibadgers!')
         }
 	},
-	  onShareAppMessage() {
+	onShareAppMessage() {
         return {
-            title: 'Ibadgers',
+            title: 'Ibadgers前端练功房',
             imageUrl: 'https://leexiaop.github.io/static/ibadgers/logo.png',
             path: '/pages/center/center'
         }
     },
     onShareTimeline () {
         return {
-            title: '代码敲了那么久，总觉得还有一行还不是最优秀...'
+            title: '代码改变世界，我删库跑路！'
         }
     }
 })

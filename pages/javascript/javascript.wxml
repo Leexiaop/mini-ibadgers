@@ -35,6 +35,16 @@
                 />
             </view>
         </view>
+		<view class="content-title">
+            <view class="icon"></view>
+            复习纲要
+        </view>
+		<view class="">
+			<t-cell title="进阶图谱" hover arrow bind:tap="onTipClick"/>
+			<t-cell title="复习纲要" hover arrow bind:tap="onTipClick"/>
+			<t-cell title="学习进行时" hover arrow bind:tap="onTipClick"/>
+			<t-cell title="面试要点" hover arrow bind:tap="onTipClick"/>
+		</view>
     </view>
 	<view class="group" wx:else>
 		<view class="group-title">

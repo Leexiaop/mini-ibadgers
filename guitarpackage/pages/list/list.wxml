@@ -1,0 +1,52 @@
+<!--guitarpackage/pages/list/list.wxml-->
+<view class="list">
+	<block wx:if="{{isAuthor}}">
+		<view class="nav" style="background: url({{authorInfo.avatar}}) no-repeat; background-size: 100%;">
+			<view class="singer">
+				<t-image src="{{authorInfo.avatar}}" width="98" height="98" mode="aspectFill" shape="round" aria-label="{{authorInfo.author}}" />
+				<text decode="{{true}}">&nbsp;</text>
+				<text decode="{{true}}">&nbsp;</text>
+				<text decode="{{true}}">&nbsp;</text>
+				<text decode="{{true}}">&nbsp;</text>
+				<view class="authorInfo">
+					<view>{{authorInfo.author}}</view>
+					<t-icon name="share" size="24" data-name="share" />
+				</view>
+			</view>
+		</view>
+	</block>
+	<block wx:else>
+		<view class="nav">
+			<t-search class="list-input" shape="round" placeholder="请输入搜索的歌名/歌手名称" bind:change="onInputChange" />
+			<view class="tab">
+				<view class="left" bind:tap="onTabClick" data-tab="{{1}}" style="color: {{active === 1 ? 'pink' : '#999'}};">
+					<t-icon name="microphone" size="24" data-name="microphone" />
+					<text decode="{{true}}">&nbsp;</text>
+					<view>
+						<view>Guitar</view>
+						<view>吉他</view>
+					</view>
+				</view>
+				<t-divider layout="vertical"/>
+				<view class="right" bind:tap="onTabClick" data-tab="{{2}}" style="color: {{active === 2 ? 'pink' : '#999'}};">
+					<t-icon name="microphone-1" size="24" data-name="microphone-1" />
+					<text decode="{{true}}">&nbsp;</text>
+					<view>
+						<view>Ukulele</view>
+						<view>尤克里里</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</block>
+	<view class="content">
+		<t-cell wx:for="{{list}}" title="{{item.name}}" bordered="{{index < list.length - 1}}" description="{{item.author}}" hover arrow>
+			<view class="avatar" slot="left-icon" wx:if="{{!isAuthor}}">
+				<t-image src="{{item.avatar}}" width="36" height="36" mode="aspectFill" shape="round" aria-label="{{item.author}}" />
+			</view>
+			<view wx:else slot="left-icon">{{index + 1}}.</view>
+			<t-tag slot="note" variant="outline" size="small" theme="{{item.classify === 1 ? 'primary' : 'warning'}}">{{item.classify === 1 ? '弹唱' : '指弹'}}</t-tag>
+		</t-cell>
+	</view>
+	<t-divider style="width: 686rpx;margin: 0 auto;" content="我也是有底线的" />
+</view>

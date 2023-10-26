@@ -1,0 +1,16 @@
+/* shoppackage/pages/details/details.wxss */
+.t-button {
+	width: 80%!important;
+	position: fixed!important;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.dialog-image {
+	width: 100%;
+	margin: 0 auto;
+}
+.image-host {
+	display: flex;
+	margin-top: 48rpx;
+}

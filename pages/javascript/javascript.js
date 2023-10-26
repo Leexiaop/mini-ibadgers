@@ -14,9 +14,9 @@ Page({
     // 事件处理函数
 
     onLoad() {
-       	request(url.getMainList).then(res => {
+       	request(url.getJavascriptList).then(res => {
 			this.setData({contentList: res})
-			return request(url.getNoticeContent)
+			return request(url.getJavascriptNoticeList)
         }).then(res => {
 			this.setData({noticeContent: res.content})
 		})
@@ -31,19 +31,24 @@ Page({
             return
         }
         wx.navigateTo({
-            url: `/subpackage/pages/list/list?url=${item.url}&&title=${item.title}`
+            url: `/javascriptpackage/pages/list/list?url=${item.url}&&title=${item.title}`
         })
-    },
+	},
+	onTipClick () {
+		wx.navigateTo({
+		  	url: '/javascriptpackage/pages/advanced/advanced'
+		})
+	},
     onShareAppMessage () {
         return {
-            title: 'Ibadgers',
+            title: 'Ibadgers前端练功房',
             imageUrl: 'https://leexiaop.github.io/static/ibadgers/logo.png',
-            path: '/pages/index/index'
+            path: '/pages/javascript/javascript'
         }
     },
     onShareTimeline () {
         return {
-            title: '代码敲了那么久，总觉得还有一行还不是最优秀...'
+            title: '代码改变世界，我删库跑路！'
         }
     }
 })

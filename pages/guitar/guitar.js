@@ -1,66 +1,61 @@
 // pages/guitar/guitar.js
+import request from '../../utils/request'
+import url from '../../assets/api/url'
+
+const count = 4
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+		active: 1,
+		list: [],
+		navList: [],
+		singerList: []
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-
+		request(url.getGuitarList).then(res => {
+			const data = res.list.filter(item => item.type === this.data.active)
+			this.setData({navaList: res.list, copyList: res.list, list: wx._.chunk(data, count), singerList: wx._.uniqBy(res.list, 'author')})
+		})
     },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload() {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh() {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom() {
-
-    },
-
+	onTabClick (e) {
+		const data = this.data.copyList.filter(item => item.type === e.currentTarget.dataset.tab)
+		this.setData({active: e.currentTarget.dataset.tab, list: wx._.chunk(data, count)})
+	},
+	onVocalistsClick () {
+		wx.navigateTo({
+		  	url: '/guitarpackage/pages/singers/singers',
+		})
+	},
+	onVocalClick (e) {
+		const author = e.currentTarget.dataset.vocal?.author
+		let url = '/guitarpackage/pages/list/list'
+		if (author) {
+			url = `${url}?author=${author}`
+		}
+		wx.navigateTo({
+		  	url
+		})
+	},
     /**
      * 用户点击右上角分享
      */
-    onShareAppMessage() {
-
+	onShareAppMessage() {
+        return {
+            title: '民谣小馆',
+            imageUrl: 'https://leexiaop.github.io/static/ibadgers/logo.png',
+            path: '/pages/guitar/guitar'
+        }
+    },
+    onShareTimeline () {
+        return {
+            title: '民谣有三，爱情、理想、远方，听者有三，孤独、平庸、落魄，听后有三，费烟、废酒、废心！'
+        }
     }
 })

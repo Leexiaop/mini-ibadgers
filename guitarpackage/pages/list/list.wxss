@@ -1,0 +1,54 @@
+/* guitarpackage/pages/list/list.wxss */
+.list {
+	min-height: 100vh;
+	padding-bottom: 32rpx;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+}
+.list > .nav {
+	margin-bottom: 32rpx;
+	box-sizing: border-box;
+}
+.list > .nav > .singer {
+	width: 100%;
+	height: 220rpx;
+	backdrop-filter: blur(16rpx);
+	padding: 64rpx;
+	display: flex;
+	color: #fff;
+	box-sizing: border-box;
+}
+.list > .nav > .singer > .authorInfo {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.list > .nav > .tab {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 32rpx 0;
+}
+.list > .nav > .tab view {
+	width: 100%;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.list > .nav > .tab view view {
+	width: fit-content;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 28rpx;
+}
+.list > .nav > .tab view view view:last-child{
+	font-size: 22rpx;
+}
+.list > .content {
+	flex: 1;
+}

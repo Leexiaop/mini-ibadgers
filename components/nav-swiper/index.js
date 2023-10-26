@@ -39,7 +39,7 @@ Component({
 				return
 			}
 			this.setData({loading: true})
-            request(url.getSwiperList).then(res => {
+            request(url.getJavascriptSwiperList).then(res => {
                 this.setData({swiperList: res, loading: false})
             })
         }
@@ -54,7 +54,7 @@ Component({
             let right = item.lastIndexOf('.')
             let str = item.slice(left, right)
             wx.navigateTo({
-                url: `/subpackage/pages/canvas/canvas?url=${str}`,
+                url: `/javascriptpackage/pages/canvas/canvas?url=${str}`,
             })
         }
     }

@@ -1,25 +1,29 @@
 <!--pages/index/index.wxml-->
 <view class="index">
-	<nav-swiper navigation="{{navigation}}"></nav-swiper>
+	<nav-swiper navigation="{{navigation}}" height="480" list="{{navList}}"></nav-swiper>
 	<view class="javascript container">
 		<view class="title">
 			<view class="name">Javascript</view>
-			<view class="more">more...</view>
+			<view class="more" bind:tap="onPageSwitch" data-page="javascript">
+				<t-icon name="more" size="20" data-name="more" color="#999" />
+			</view>
 		</view>
 		<view class="content">
 			<view wx:for="{{javascriptList}}" wx:for-item="javascript" wx:key="index" class="item">
-				<t-image src="{{javascript.url}}" mode="aspectFill" width="100%" height="{{(index + 1) % 3 === 1 ? '480rpx' : '420rpx'}}" aria-label="{{javascript.name}}" />
+				<t-image src="{{javascript}}" mode="widthFix" width="100%" height="{{(index + 1) % 3 === 1 ? '480rpx' : '420rpx'}}" aria-label="{{javascript}}" />
 			</view>
 		</view>
 	</view>
 	<view class="shop container">
 		<view class="title">
 			<view class="name">Shop</view>
-			<view class="more">more...</view>
+			<view class="more" bind:tap="onPageSwitch" data-page="shop">
+				<t-icon name="more" size="20" data-name="more" color="#999" />
+			</view>
 		</view>
 		<view class="content">
 			<view wx:for="{{shopList}}" wx:for-item="shop" wx:key="index" class="item" style="width: {{index === 0 ? '70%' : (index >= 1 && index < 2 ? '30%' : '25%')}};height: {{index > 1 ? '180rpx' : '360rpx'}}">
-				<image src="{{shop.url}}" mode="aspectFill" />
+				<image src="{{shop}}" mode="widthFix" />
 			</view>
 		</view>
 	</view>
@@ -29,29 +33,17 @@
 				<view class="{{active === 1 ? 'active' : ''}} tab" bind:tap="onGuitarTabChange" data-active="{{1}}">Guitar</view>
 				<view class="{{active === 2 ? 'active' : ''}} tab" bind:tap="onGuitarTabChange" data-active="{{2}}">Ukulele</view>
 			</view>
-			<view class="more">more...</view>
-		</view>
-		<view class="content">
-			<view class="item" wx:for="{{guitarList}}" wx:for-item="guitar" wx:key="index" style="padding-left: {{index > 0 ? '24rpx' : 0}};border-left: {{index > 0 ? '1rpx solid #eee' : 'none'}}">
-				<view class="list">
-					<view class="list-item" wx:for="{{guitar}}" wx:for-item="obj" wx:for-index="idx" wx:key="idx">
-						<t-image src="https://tdesign.gtimg.com/miniprogram/images/image1.jpeg" width="24" height="24" shape="circle" aria-label="{{obj.name}}" />
-						<text decode="{{true}}">&nbsp;&nbsp;</text>
-						<view>{{obj.name}}</view>
-						<view class="author">{{'---' + obj.author}}</view>
-					</view>
-				</view>
+			<view class="more" bind:tap="onPageSwitch" data-page="guitar">
+				<t-icon name="more" size="20" data-name="more" color="#999" />
 			</view>
 		</view>
-	</view>
-	<view class="foot">
-		<t-notice-bar
-			visible="{{true}}"
-			direction="vertical"
-			interval="{{3000}}"
-			content="{{noticeList}}"
-			prefixIcon="''"
-			bind:click="click"
-		></t-notice-bar>
+		<view class="content">
+			<view class="item" wx:for="{{guitarList}}" wx:for-item="guitar" wx:key="index">
+				<t-image src="{{guitar.avatar}}" mode="aspectFill" width="24" height="24" shape="circle" aria-label="{{guitar.name}}" />
+				<text decode="{{true}}">&nbsp;&nbsp;</text>
+				<view>{{guitar.name}}</view>
+				<view class="author">{{'---' + guitar.author}}</view>
+			</view>
+		</view>
 	</view>
 </view>

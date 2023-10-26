@@ -30,7 +30,7 @@
             "disablePlugins": [],
             "outputPath": ""
         },
-        "ignoreUploadUnusedFiles": false,
+        "ignoreUploadUnusedFiles": true,
         "ignoreDevUnusedFiles": false,
         "packNpmManually": true,
         "packNpmRelationList": [
@@ -38,7 +38,8 @@
                 "packageJsonPath": "./package.json",
                 "miniprogramNpmDistDir": "./"
             }
-        ]
+        ],
+        "condition": true
     },
     "compileType": "miniprogram",
     "condition": {},

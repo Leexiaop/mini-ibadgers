@@ -1,4 +1,0 @@
-<!--molarpackage/pages/list/list.wxml-->
-<view class="list">
-	<mp-waterfall id="waterfall" generic:item="waterfall-item" list="{{list || []}}" idKey="id" imageKey="imgUrl" colNum="3" gutter="8rpx" bind:onItemClick="onItemClick" order="{{false}}"></mp-waterfall>
-</view>
