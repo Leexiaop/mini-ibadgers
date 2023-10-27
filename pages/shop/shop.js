@@ -6,9 +6,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-		swiperList: [],
-		paginationPosition: 'bottom-right',
-		navigation: { type: 'fraction' },
+		navList: [],
 		contentList: []
     },
 
@@ -16,32 +14,21 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad() {
-		request(url.getShopSwiperList).then(res => {
-			this.setData({swiperList: res})
-		})
 		this.initList()
 	},
 	async initList () {
 		const provinceList = await request(url.getProvinceList)
-		const molarList = await request(url.getShopList)
-		provinceList.forEach((province, index) => {
+		const {navList, list} = await request(url.getShopList)
+		provinceList.forEach((province) => {
 			province.children = []
-			province.type = (index + 1) < 2 ? 1 : (this.isPrime(index + 1) ? 2 : 3)
-			molarList.forEach(molar => {
-				if (province.code === molar.code) {
-					province.children.push(molar)
+			list.forEach(item => {
+				if (province.code === item.code) {
+					province.children.push(item)
 				}
 			})
 		})
-		this.setData({contentList: provinceList})
-	},
-	isPrime (num) {
-		for (var i = 2; i < num; i++) {
-			if (num % i==0){
-				return false;
-			}
-		};
-		return true;
+		console.log(provinceList)
+		this.setData({contentList: provinceList, navList})
 	},
 	onIconTap (e) {
 		const {code, name} = e.currentTarget.dataset.content
@@ -50,7 +37,7 @@ Page({
 		})
 	},
 	onDetailClick (e) {
-		const {id, name} = e.currentTarget.dataset.molar
+		const {id, name} = e.currentTarget.dataset.item
 		wx.navigateTo({
 			url: `/shoppackage/pages/details/details?id=${id}&&name=${name}`,
 	  })

@@ -12,7 +12,7 @@
             "list": [
                 {
                     "name": "",
-                    "pathName": "pages/index/index",
+                    "pathName": "pages/shop/shop",
                     "query": "",
                     "launchMode": "default",
                     "scene": null

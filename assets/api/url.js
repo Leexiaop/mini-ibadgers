@@ -10,8 +10,7 @@ export default {
 	getJavascriptDocList: url + 'mini/docs/',
 	getGuitarList: url + 'mini/db/guitar/index.json',
 	getGuitarSongCellList: url + 'mini/db/guitar/list.json',
-	getGuitarSongList: url + 'mini/db/guitar/songs.json', 
-	getShopSwiperList: url + 'mini/db/shop/swiper.json',
+	getGuitarSongList: url + 'mini/db/guitar/songs.json',
 	getShopList: url + 'mini/db/shop/index.json',
 	getProvinceList: url + 'mini/db/shop/province.json',
 	getProvinceShopList: url + 'mini/db/shop/list.json'

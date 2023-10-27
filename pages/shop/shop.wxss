@@ -1,5 +1,5 @@
 /* deppackage/ad/ad.wxss */
-.molar {
+.shop {
 	width: 100%;
 	min-height: 100vh;
 	box-sizing: border-box;
@@ -10,7 +10,8 @@
 }
 .content {
 	width: 100%;
-	min-height: calc(100vh - 500rpx);
+	height: 100%;
+	flex: 1;
 }
 .content > .content-item {
 	width: 100%;
@@ -36,29 +37,10 @@
 	border-radius: 8rpx;
 	margin-right: 16rpx;
 }
-.content > .content-item > .content-small {
-	display: flex;
-	border-radius: 8rpx;
+.content > .content-item > .content-card {
+	width: 100%;
+	border-radius: 24rpx;
 	overflow: hidden;
-}
-.content > .content-item > .content-small > .content-small-left {
-	width: 50%;
-}
-.content > .content-item > .content-small > .content-small-right {
-	width: 50%;
-	display: flex;
-	flex-wrap: wrap;
-}
-/* .content > .content-item > .content-small > .content-small-right > .img {
-	border: 1rpx solid #ffffff;
-} */
-.content > .content-item > .content-list {
-	display: flex;
-	flex-wrap: nowrap;
-	overflow-x: scroll;
-	margin-right: -16rpx;
-}
-.content > .content-item > .content-list > .img {
-	border-radius: 16rpx;
-	margin-right: 16rpx;
+	column-count: 3;
+    column-gap: 4rpx;
 }
