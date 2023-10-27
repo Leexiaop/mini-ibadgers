@@ -47,6 +47,12 @@ Page({
 		  url: `/javascriptpackage/pages/list/list?url=${origin}&title=${title}`,
 		})
 	},
+	onShopClick (e) {
+		console.log(e)
+		wx.navigateTo({
+		  	url: '/shoppackage/pages/details/details',
+		})
+	},
 	onGuitarClick (e) {
 	const {name, type, classify} = e.currentTarget.dataset.item
 		wx.navigateTo({

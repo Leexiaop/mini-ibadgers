@@ -22,7 +22,7 @@
 			</view>
 		</view>
 		<view class="content">
-			<view wx:for="{{shopList}}" wx:for-item="shop" wx:key="index" class="item" style="width: {{index === 0 ? '70%' : (index >= 1 && index < 2 ? '30%' : '25%')}};height: {{index > 1 ? '180rpx' : '360rpx'}}">
+			<view wx:for="{{shopList}}" bind:tap="onShopClick" data-item="{{shop}}" wx:for-item="shop" wx:key="index" class="item" style="width: {{index === 0 ? '70%' : (index >= 1 && index < 2 ? '30%' : '25%')}};height: {{index > 1 ? '180rpx' : '360rpx'}}">
 				<image src="{{shop}}" mode="widthFix" />
 			</view>
 		</view>
