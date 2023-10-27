@@ -20,7 +20,6 @@
 			<t-cell-group theme="card">
 				<t-cell title="关于我们" leftIcon="user-list" hover arrow bind:click="onCellClick" data-type="1"/>
 				<t-cell title="海报分享" leftIcon="book-open" hover arrow bind:click="onCellClick" data-type="2"/>
-				<t-cell title="资源下载" leftIcon="rainbow" hover arrow bind:click="onCellClick" data-type="3"/>
 				<t-cell title="CSDN" leftIcon="letters-c" hover arrow bind:click="onCellClick" data-type="4"/>
 				<t-cell title="Lee前端技术栈" leftIcon="letters-l" hover arrow bind:click="onCellClick" data-type="5"/>
 				<t-cell title="Ibadgers" leftIcon="internet" hover arrow bind:click="onCellClick" data-type="6"/>
@@ -31,7 +30,6 @@
 			<t-cell-group theme="card">
 				<t-cell title="联系微信" leftIcon="logo-wechat-stroke" hover arrow bind:click="onCellClick" data-type="8"/>
 				<t-cell title="版本信息" leftIcon="system-sum" note="v2.2.2.3"/>
-				<t-cell title="安达小铺" leftIcon="saving-pot" hover arrow bind:click="onCellClick" data-type="9"/>
 			</t-cell-group>
         </view>
     </view>

@@ -3,6 +3,7 @@
     "usingComponents": {
 		"nav-swiper": "../../components/nav-swiper/index",
 		"t-icon": "tdesign-miniprogram/icon/icon",
-		"t-image": "tdesign-miniprogram/image/image"
+		"t-image": "tdesign-miniprogram/image/image",
+		"t-tag": "tdesign-miniprogram/tag/tag"
 	}
 }

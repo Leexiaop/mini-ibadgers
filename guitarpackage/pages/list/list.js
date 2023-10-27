@@ -18,9 +18,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-		// console.log(!!options.author)
-		// this.setData({isAuthor: !!options.author})
-		request(url.getGuitarSongList).then(res => {
+		request(url.getGuitarSongCellList).then(res => {
 			if (!options.author) {
 				const data = wx._.cloneDeep(res)
 				this.setData({isAuthor: false, list: res.filter(item => item.type === this.data.active), copyList: data})
@@ -34,47 +32,21 @@ Page({
 		this.setData({active: e.currentTarget.dataset.tab, list: this.data.copyList.filter(item => item.type === e.currentTarget.dataset.tab)})
 	},
 
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload() {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh() {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom() {
-
-    },
+	onCellClick (e) {
+		const {name, type, classify} = e.currentTarget.dataset.item
+		wx.navigateTo({
+		  	url: `/guitarpackage/pages/songs/songs?name=${name}&&type=${type}&&classify=${classify}`
+		})
+	},
+	onInputChange (e) {
+		const {value} = e.detail
+		if (value) {
+			const list = this.data.copyList.filter(item => item.type === this.data.active && (item.name.indexOf(value) > -1 || item.author.indexOf(value) > -1))
+			this.setData({list})
+		} else {
+			this.setData({list: this.data.copyList.filter(item => item.type === this.data.active)})
+		}
+	},
 
     /**
      * 用户点击右上角分享

@@ -43,6 +43,18 @@
             "packages": [
                 "javascriptpackage"
             ]
+		},
+		"pages/guitar/guitar": {
+            "network": "all",
+            "packages": [
+                "guitarpackage"
+            ]
+		},
+		"pages/shop/shop": {
+            "network": "all",
+            "packages": [
+                "shoppackage"
+            ]
         }
     },
     "window": {

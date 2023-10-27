@@ -28,6 +28,12 @@ Page({
 		const data = this.data.copyList.filter(item => item.type === e.currentTarget.dataset.tab)
 		this.setData({active: e.currentTarget.dataset.tab, list: wx._.chunk(data, count)})
 	},
+	onCellClick (e) {
+		const {name, type, classify} = e.currentTarget.dataset.item
+		wx.navigateTo({
+		  	url: `/guitarpackage/pages/songs/songs?name=${name}&&type=${type}&&classify=${classify}`
+		})
+	},
 	onVocalistsClick () {
 		wx.navigateTo({
 		  	url: '/guitarpackage/pages/singers/singers',

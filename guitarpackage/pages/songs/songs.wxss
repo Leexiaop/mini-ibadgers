@@ -1,1 +1,11 @@
 /* guitarpackage/pages/songs/songs.wxss */
+swiper {
+	height: 100vh;
+}
+.empty {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

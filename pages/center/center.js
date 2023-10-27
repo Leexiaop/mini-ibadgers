@@ -26,11 +26,6 @@ Page({
             case '2':
                 this.setData({show: true})
                 break
-            case '3':
-                wx.navigateTo({
-                    url: '/javascriptpackage/pages/resources/resources',
-                })
-                break
             case '4':
                 wx.setClipboardData({
                     data: 'https://blog.csdn.net/leelxp'
@@ -55,11 +50,6 @@ Page({
                 wx.previewImage({
                     urls: ['https://leexiaop.github.io/static/ibadgers/wechat.jpeg'],
                 })
-				break
-			case '9':
-				wx.navigateTo({
-				  url: '/shoppackage/pages/index/index',
-				})
 				break
             default:
                 wx.showToast({

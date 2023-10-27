@@ -16,7 +16,7 @@
 		</view>
 	</block>
 	<block wx:else>
-		<view class="nav">
+		<view class="song">
 			<t-search class="list-input" shape="round" placeholder="请输入搜索的歌名/歌手名称" bind:change="onInputChange" />
 			<view class="tab">
 				<view class="left" bind:tap="onTabClick" data-tab="{{1}}" style="color: {{active === 1 ? 'pink' : '#999'}};">
@@ -40,7 +40,12 @@
 		</view>
 	</block>
 	<view class="content">
-		<t-cell wx:for="{{list}}" title="{{item.name}}" bordered="{{index < list.length - 1}}" description="{{item.author}}" hover arrow>
+		<t-cell wx:for="{{list}}" bind:tap="onCellClick" data-item="{{item}}" bordered="{{index < list.length - 1}}" description="{{item.author}}" hover arrow>
+			<view slot="title">
+				{{item.name}}
+				<text decode="{{true}}">&nbsp;</text>
+				<t-tag variant="outline" wx:if="{{isAuthor}}" size="small" theme="{{item.type === 1 ? 'danger' : 'success'}}">{{item.type === 1 ? 'guitar' : 'ukulele'}}</t-tag>
+			</view>
 			<view class="avatar" slot="left-icon" wx:if="{{!isAuthor}}">
 				<t-image src="{{item.avatar}}" width="36" height="36" mode="aspectFill" shape="round" aria-label="{{item.author}}" />
 			</view>

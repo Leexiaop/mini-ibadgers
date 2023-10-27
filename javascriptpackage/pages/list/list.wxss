@@ -1,13 +1,6 @@
 .list {
     width: 100%;
 	box-sizing: border-box;
-	padding-top: 80rpx;
-}
-.list-input {
-	width: 100%;
-	position: fixed;
-	top: 0;
-	left: 0;
 }
 .t-cell__title {
 	width: 70%;

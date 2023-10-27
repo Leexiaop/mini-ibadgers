@@ -23,13 +23,13 @@ Page({
                 url: 'https://leexiaop.github.io/static/mini/img/advanced_4.png'
             }
         ],
-		active: 1,
+		active: 0,
 		url: ''
 	},
-	onLoad () {
-		this.setData({url: this.data.advanceList[this.data.active]?.url})
+	onLoad (options) {
+		this.setData({url: this.data.advanceList[options.idx - 0]?.url, active: options.idx - 0})
 		wx.setNavigationBarTitle({
-		  	title: this.data.advanceList[this.data.active]?.title,
+		  	title: this.data.advanceList[options.idx - 0]?.title,
 		})
 	},
     onChange (e) {

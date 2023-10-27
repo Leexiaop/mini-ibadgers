@@ -38,7 +38,19 @@ Page({
 	onPageSwitch (e) {
 		const {page} = e.currentTarget.dataset
 		wx.switchTab({
-		  url: `/pages/${page}/${page}`
+		  	url: `/pages/${page}/${page}`
+		})
+	},
+	onJavascriptClick (e) {
+		const {origin, title} = e.currentTarget.dataset.item
+		wx.navigateTo({
+		  url: `/javascriptpackage/pages/list/list?url=${origin}&title=${title}`,
+		})
+	},
+	onGuitarClick (e) {
+	const {name, type, classify} = e.currentTarget.dataset.item
+		wx.navigateTo({
+		  	url: `/guitarpackage/pages/songs/songs?name=${name}&&type=${type}&&classify=${classify}`
 		})
 	},
 	onShareAppMessage () {

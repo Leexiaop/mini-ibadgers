@@ -1,7 +1,7 @@
 <!--pages/advanced/advanced.wxml-->
 <view class="advanced">
 	<t-sticky>
-		<t-tabs defaultValue="{{active}}" bind:change="onChange" t-class="custom-tabs">
+		<t-tabs defaultValue="{{0}}" value="{{active}}" bind:change="onChange" t-class="custom-tabs">
 			<t-tab-panel wx:for="{{advanceList}}" wx:key="index" wx:for-item="advance" label="{{advance.title}}" value="{{index}}" />
 		</t-tabs>
 	</t-sticky>

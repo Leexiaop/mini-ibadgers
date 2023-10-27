@@ -21,7 +21,7 @@
 			<block wx:for="{{list}}" wx:for-index="index" wx:key="index" wx:for-item="item">
 				<swiper-item class="swiper-item">
 					<view class="left">
-						<view wx:for="{{item}}" class="swiper-item-guitar" wx:for-item="obj" wx:for-index="idx" wx:key="idx">
+						<view wx:for="{{item}}" bind:tap="onCellClick" data-item="{{obj}}" class="swiper-item-guitar" wx:for-item="obj" wx:for-index="idx" wx:key="idx">
 							<t-image src="{{obj.avatar}}" mode="aspectFill" width="24" height="24" shape="circle" aria-label="{{obj.name}}" />
 							<text decode="{{true}}">&nbsp;&nbsp;</text>
 							<view>{{obj.name}}</view>

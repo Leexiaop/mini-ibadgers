@@ -39,12 +39,13 @@
             <view class="icon"></view>
             复习纲要
         </view>
-		<view class="">
-			<t-cell title="进阶图谱" hover arrow bind:tap="onTipClick"/>
-			<t-cell title="复习纲要" hover arrow bind:tap="onTipClick"/>
-			<t-cell title="学习进行时" hover arrow bind:tap="onTipClick"/>
-			<t-cell title="面试要点" hover arrow bind:tap="onTipClick"/>
-		</view>
+		<t-cell-group theme="card">
+			<t-cell title="进阶图谱" hover arrow bind:tap="onTipClick" data-idx="{{0}}"/>
+			<t-cell title="复习纲要" hover arrow bind:tap="onTipClick" data-idx="{{1}}"/>
+			<t-cell title="学习进行时" hover arrow bind:tap="onTipClick" data-idx="{{2}}"/>
+			<t-cell title="面试要点" hover arrow bind:tap="onTipClick" data-idx="{{3}}"/>
+			<t-cell title="资源下载" hover arrow bind:tap="onTipClick" data-idx="{{4}}"/>
+		</t-cell-group>
     </view>
 	<view class="group" wx:else>
 		<view class="group-title">

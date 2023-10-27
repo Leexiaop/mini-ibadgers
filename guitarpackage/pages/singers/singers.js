@@ -14,7 +14,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad() {
-		request(url.getGuitarSongList).then(res => {
+		request(url.getGuitarSongCellList).then(res => {
 			this.setData({list: wx._.uniqBy(res, 'author')})
 		})
 	},

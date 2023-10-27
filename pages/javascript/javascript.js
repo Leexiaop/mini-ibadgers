@@ -34,9 +34,16 @@ Page({
             url: `/javascriptpackage/pages/list/list?url=${item.url}&&title=${item.title}`
         })
 	},
-	onTipClick () {
+	onTipClick (e) {
+		const {idx} = e.currentTarget.dataset
+		if (idx === 4) {
+			wx.navigateTo({
+				url: `/javascriptpackage/pages/resources/resources`
+		  	})
+			return
+		}
 		wx.navigateTo({
-		  	url: '/javascriptpackage/pages/advanced/advanced'
+		  	url: `/javascriptpackage/pages/advanced/advanced?idx=${idx}`
 		})
 	},
     onShareAppMessage () {

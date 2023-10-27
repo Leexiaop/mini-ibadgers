@@ -101,16 +101,21 @@
 .index > .guitar > .content > .item {
 	width: 622rpx;
 	height: auto;
-	display: flex;
-	align-items: center;
 	font-size: 28rpx;
 	color: #666;
 	margin-bottom: 24rpx;
+	display: flex;
+	align-items: center;
+}
+.index > .guitar .content > .item > .song {
+	width: 100%;
+	display: flex;
+	align-items: center;
 }
 .index > .guitar > .content > .item:last-child {
 	margin-bottom: 0;
 }
-.index > .guitar > .content > .item > .author {
+.index > .guitar > .content > .item > .song > .author {
 	font-size: 22rpx;
 }
 .index > .foot {

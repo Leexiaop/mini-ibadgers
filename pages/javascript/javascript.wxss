@@ -3,7 +3,7 @@
     padding-top: 16rpx;
     width: 100%;
     box-sizing: border-box;
-    padding-bottom: 64rpx;
+    padding-bottom: 84rpx;
 	background-color: rgb(206, 235, 231);
 	min-height: 100vh;
 }
