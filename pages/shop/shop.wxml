@@ -10,7 +10,7 @@
 				</view>
 				<view class="content-squre" wx:if="{{!index && content.children.length}}">
 					<block wx:for="{{content.children}}" wx:for-item="child" wx:for-index="idx" wx:key="idx">
-						<t-image bind:tap="onDetailClick" data-item="{{child}}" class="img" src="{{child.url}}" mode="aspectFill" width="142" height="62" aria-label="图" />
+						<t-image bind:tap="onDetailClick" data-item="{{child}}" class="img" src="{{child.url}}" mode="widthFix" width="142" height="62" aria-label="图" />
 					</block>
 				</view>
 				<view class="content-card" wx:if="{{index && content.children.length}}">
