@@ -21,7 +21,7 @@ Page({
     onLoad(options) {
 		request(url.getGuitarList).then(res => {
 			const data = res.list.filter(item => item.type === this.data.active)
-			this.setData({navaList: res.list, copyList: res.list, list: wx._.chunk(data, count), singerList: wx._.uniqBy(res.list, 'author')})
+			this.setData({navList: res.navList, copyList: res.list, list: wx._.chunk(data, count), singerList: wx._.uniqBy(res.list, 'author')})
 		})
     },
 	onTabClick (e) {

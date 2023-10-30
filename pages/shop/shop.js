@@ -7,7 +7,8 @@ Page({
      */
     data: {
 		navList: [],
-		contentList: []
+		contentList: [],
+		loading: false
     },
 
     /**
@@ -17,8 +18,9 @@ Page({
 		this.initList()
 	},
 	async initList () {
+		this.setData({loading: true})
 		const provinceList = await request(url.getProvinceList)
-		const {navList, recommandList, list} = await request(url.getShopList)
+		const {navList, list} = await request(url.getShopList)
 		provinceList.forEach((province) => {
 			province.children = []
 			list.forEach(item => {
@@ -27,7 +29,7 @@ Page({
 				}
 			})
 		})
-		this.setData({contentList: provinceList, navList})
+		this.setData({contentList: provinceList, navList, loading: false})
 	},
 	onIconTap (e) {
 		const {code, name} = e.currentTarget.dataset.content
@@ -36,7 +38,7 @@ Page({
 		})
 	},
 	onDetailClick (e) {
-		const {id, name} = e.currentTarget.dataset.item
+		const {id} = e.currentTarget.dataset.item
 		wx.navigateTo({
 			url: `/shoppackage/pages/details/details?id=${id}`,
 	  })

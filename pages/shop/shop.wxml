@@ -1,6 +1,6 @@
 <!--indeppackage/ad/ad.wxml-->
 <view class="shop">
-	<nav-swiper list="{{navList}}"></nav-swiper>
+	<nav-swiper wx:if="{{!loading}}" height="480" list="{{navList}}"></nav-swiper>
 	<view class="content">
 		<block wx:for="{{contentList}}" wx:for-item="content" wx:key="index">
 			<view class="content-item" wx:if="{{content.children.length}}">
