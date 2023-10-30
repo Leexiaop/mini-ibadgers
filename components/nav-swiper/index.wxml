@@ -8,7 +8,6 @@
 	navigation="{{navigation}}"
 	paginationPosition="{{paginationPosition}}"
 	list="{{swiperList}}"
-	bind:click="onImageClick"
 >
 </t-swiper>
  <t-skeleton theme="image" row-col="{{[{width: '100%', height: height + 'rpx'}]}}" animation="flashed" loading="{{loading}}" wx:else></t-skeleton>

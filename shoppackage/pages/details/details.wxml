@@ -1,5 +1,11 @@
 <!--shoppackage/pages/details/details.wxml-->
 <view class="details">
+	<t-image
+		style="width: 100%;"
+		mode="aspectFill"
+		src="{{item.url}}"
+	/>
+	<text decord="{{true}}" class="desc">{{item.desc}}</text>
 	<t-dialog
 		visible="{{show}}"
 		confirm-btn="{{ null }}"

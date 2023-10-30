@@ -36,7 +36,7 @@ Page({
 	},
 	onVocalistsClick () {
 		wx.navigateTo({
-		  	url: '/guitarpackage/pages/singers/singers',
+		  	url: '/guitarpackage/pages/singers/singers'
 		})
 	},
 	onVocalClick (e) {

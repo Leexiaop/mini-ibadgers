@@ -49,8 +49,9 @@ Page({
 	},
 	onShopClick (e) {
 		console.log(e)
+		const {id} = e.currentTarget.dataset.item
 		wx.navigateTo({
-		  	url: '/shoppackage/pages/details/details',
+		  	url: `/shoppackage/pages/details/details?id=${id}`,
 		})
 	},
 	onGuitarClick (e) {

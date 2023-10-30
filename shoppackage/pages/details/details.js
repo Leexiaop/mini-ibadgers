@@ -1,4 +1,6 @@
 // shoppackage/pages/details/details.js
+import url from '../../../assets/api/url'
+import request from '../../../utils/request'
 Page({
 
     /**
@@ -6,16 +8,19 @@ Page({
      */
     data: {
 		show: false,
-		options: null
+		item: null
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-		this.setData({options})
-		wx.setNavigationBarTitle({
-		  	title: options.name
+		request(url.getProvinceShopList).then(res => {
+			const item = res.find(obj => obj.id === options.id - 0)
+			wx.setNavigationBarTitle({
+				title: item.name
+			})
+			this.setData({item})
 		})
     },
 	onBuyClick () {
@@ -32,7 +37,7 @@ Page({
 		return {
             title: '安达小铺',
             imageUrl: 'https://leexiaop.github.io/static/mini/img/shop/anda.jpg',
-            path: `/shoppackage/pages/details/details?id=${this.data.options.id}&&name=${this.data.options.name}`
+            path: `/shoppackage/pages/details/details?id=${this.data.item.id}`
         }
 	},
 	onShareTimeline () {

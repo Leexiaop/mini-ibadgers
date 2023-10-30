@@ -1,4 +1,20 @@
 /* shoppackage/pages/details/details.wxss */
+.details {
+	width: 100%;
+	box-sizing: border-box;
+	padding-bottom: 160rpx;
+}
+.details > .desc {
+	display: block;
+	width: 686rpx;
+	margin: 32rpx auto;
+	text-indent: 2em;
+	white-space: pre-wrap;
+	text-align: justify;
+	word-wrap: break-word;
+	font-size: 28rpx;
+	line-height: 48rpx;
+}
 .t-button {
 	width: 80%!important;
 	position: fixed!important;
