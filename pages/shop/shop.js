@@ -15,12 +15,16 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad() {
+		wx.showLoading({
+		  	title: '加载中...',
+		})
 		this.initList()
 	},
 	async initList () {
 		this.setData({loading: true})
 		const provinceList = await request(url.getProvinceList)
 		const {navList, list} = await request(url.getShopList)
+		wx.hideLoading()
 		provinceList.forEach((province) => {
 			province.children = []
 			list.forEach(item => {

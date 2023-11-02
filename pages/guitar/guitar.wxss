@@ -93,5 +93,4 @@
 	height: 220rpx;
 	margin-right: 24rpx;
 	border-radius: 16rpx;
-	background-color: red;
 }

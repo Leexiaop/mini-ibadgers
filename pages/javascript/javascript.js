@@ -14,11 +14,15 @@ Page({
     // 事件处理函数
 
     onLoad() {
+		wx.showLoading({
+		  	title: '加载中...'
+		})
        	request(url.getJavascriptList).then(res => {
 			this.setData({contentList: res})
 			return request(url.getJavascriptNoticeList)
         }).then(res => {
 			this.setData({noticeContent: res.content})
+			wx.hideLoading()
 		})
 	},
     onCellClick (e) {
