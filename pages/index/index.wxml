@@ -49,4 +49,10 @@
 			</view>
 		</view>
 	</view>
+	<view class="overlay" wx:if="{{visible}}">
+		<t-image show-menu-by-longpress src="http://127.0.0.1:5500/mini/img/shop/lucky.jpg" mode="widthFix" shape="round" aria-label="安达小铺" />
+		<text decode="{{true}}">&nbsp;</text>
+		<text decode="{{true}}">&nbsp;</text>
+		<t-icon name="close-circle" class="close" size="48" data-name="more" color="#999" bind:tap="onAdClick" />
+	</view>
 </view>

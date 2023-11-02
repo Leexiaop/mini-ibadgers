@@ -13,7 +13,8 @@ Page({
 		javascriptList: [],
 		shopList: [],
 		guitarList: [],
-		active: 1
+		active: 1,
+		visible: false
     },
 
     /**
@@ -26,7 +27,8 @@ Page({
 				javascriptList: res.javascriptList,
 				shopList: res.shopList,
 				guitarList: res.guitarList.filter(guitar => guitar.type === 1),
-				copyGuitarList: res.guitarList
+				copyGuitarList: res.guitarList,
+				visible: true
 			})
 		})
 	},
@@ -59,6 +61,9 @@ Page({
 		wx.navigateTo({
 		  	url: `/guitarpackage/pages/songs/songs?name=${name}&&type=${type}&&classify=${classify}`
 		})
+	},
+	onAdClick () {
+		this.setData({visible: false})
 	},
 	onShareAppMessage () {
         return {
