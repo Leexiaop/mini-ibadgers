@@ -22,11 +22,11 @@
 			</view>
 		</view>
 		<view class="content">
-			<!-- <view wx:for="{{shopList}}" bind:tap="onShopClick" data-item="{{shop}}" wx:for-item="shop" wx:key="index" class="item" style="width: {{index === 0 ? '70%' : (index >= 1 && index < 2 ? '30%' : '25%')}};height: {{index > 1 ? '180rpx' : '360rpx'}}">
+			<view wx:for="{{shopList}}" bind:tap="onShopClick" data-item="{{shop}}" wx:for-item="shop" wx:key="index" class="item" style="width: {{index === 0 ? '70%' : (index >= 1 && index < 2 ? '30%' : '25%')}};height: {{index > 1 ? '180rpx' : '360rpx'}}">
 				<image src="{{shop.url}}" mode="widthFix" />
-			</view> -->
-			<mp-waterfall id="waterfall" generic:item="waterfall-item" list="{{shopList || []}}" idKey="id" imageKey="imgUrl" colNum="3" style="width: 100%;" gutter="8rpx" bind:onItemClick="onShopClick" order="{{false}}">
-			</mp-waterfall>
+			</view>
+			<!-- <mp-waterfall id="waterfall" generic:item="waterfall-item" list="{{shopList || []}}" idKey="id" imageKey="imgUrl" colNum="3" style="width: 100%;" gutter="8rpx" bind:onItemClick="onShopClick" order="{{false}}">
+			</mp-waterfall> -->
 		</view>
 	</view>
 	<view class="guitar container">
