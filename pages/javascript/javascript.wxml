@@ -1,8 +1,23 @@
 <!--javascript.wxml-->
-<view class="index">
-    <view class="nav">
-        <nav-swiper></nav-swiper>
-    </view>
+<view class="index" wx:if="{{!loading}}">
+	<t-sticky>
+		<t-notice-bar
+			visible="{{noticeContent}}"
+			marquee="{{marquee}}"
+			prefixIcon="sound"
+			content="{{noticeContent}}"
+		></t-notice-bar>
+	</t-sticky>
+	<view class="nav" wx:if="{{navList.length}}">
+		<nav-swiper list="{{navList}}"></nav-swiper>
+	</view>
+	<t-grid column="{{5}}">
+		<t-grid-item text="进阶图谱" icon="education" bindclick="onTipClick" data-index="{{0}}"/>
+		<t-grid-item text="复习纲要" icon="git-repository-commits" bindclick="onTipClick" data-index="{{1}}" />
+		<t-grid-item text="学习进行时" icon="system-regulation" bindclick="onTipClick" data-index="{{2}}" />
+		<t-grid-item text="面试要点" icon="list" bindclick="onTipClick" data-index="{{3}}" />
+		<t-grid-item text="资源下载" icon="castle" bindclick="onTipClick" data-index="{{4}}" />
+	</t-grid>
     <view class="content" wx:if="{{contentList.length}}">
         <view class="content-title">
             <view class="icon"></view>
@@ -34,37 +49,27 @@
                 />
             </view>
         </view>
-		<view class="content-title">
-            <view class="icon"></view>
-            复习纲要
-        </view>
-		<t-cell-group theme="card">
-			<t-cell title="进阶图谱" hover arrow bind:tap="onTipClick" data-idx="{{0}}"/>
-			<t-cell title="复习纲要" hover arrow bind:tap="onTipClick" data-idx="{{1}}"/>
-			<t-cell title="学习进行时" hover arrow bind:tap="onTipClick" data-idx="{{2}}"/>
-			<t-cell title="面试要点" hover arrow bind:tap="onTipClick" data-idx="{{3}}"/>
-			<t-cell title="资源下载" hover arrow bind:tap="onTipClick" data-idx="{{4}}"/>
-		</t-cell-group>
     </view>
+</view>
 	<view class="group" wx:else>
-		<view class="group-title">
-			<t-skeleton animation="flashed" rowCol="{{[{ width: '50%', height: '64rpx' }]}}" loading></t-skeleton>
+		<t-skeleton animation="flashed" rowCol="{{[{height: '84rpx'}]}}" loading></t-skeleton>
+		<text decode="{{true}}">&nbsp;</text>
+		<t-skeleton animation="flashed" rowCol="{{[{width: '686rpx', height: '360rpx', margin: '0 auto'}]}}" loading></t-skeleton>
+		<view class="grid">
+			<t-skeleton rowCol="{{grid}}" loading></t-skeleton>
 		</view>
 		<view class="group-item">
-			<t-skeleton
-				class="group-item-skelton"
-				wx:for="{{11}}"
-				animation="flashed"
-				rowCol="{{rowCol}}"
-				loading
-			></t-skeleton>
+			<t-skeleton rowCol="{{[{width: '50%', height: '48rpx'}]}}" loading></t-skeleton>
+			<text decode="{{true}}">&nbsp;</text>
+			<view class="tip">
+				<t-skeleton
+					wx:for="{{6}}"
+					style="margin-bottom: 24rpx;"
+					animation="flashed"
+					rowCol="{{[{width: '320rpx', height: '343rpx'}]}}"
+					loading
+				></t-skeleton>
+			</view>
 		</view>
 	</view>
-	<t-notice-bar
-		class="notice"
-		visible="{{noticeContent}}"
-		marquee="{{marquee}}"
-		prefixIcon="sound"
-		content="{{noticeContent}}"
-	></t-notice-bar>
-</view>
+<copy-right></copy-right>

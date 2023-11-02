@@ -1,35 +1,22 @@
 // pages/advanced/advanced.js
+import request from '../../../utils/request'
+import url from '../../../assets/api/url'
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        advanceList: [
-            {
-                title: '进阶图谱',
-                url: 'https://leexiaop.github.io/static/mini/img/advanced_1.png'
-            },
-            {
-                title: '复习纲要',
-                url: 'https://leexiaop.github.io/static/mini/img/advanced_2.png'
-            },
-            {
-                title: '学习进行时',
-                url: 'https://leexiaop.github.io/static/mini/img/advanced_3.png'
-            },
-            {
-                title: '面试要点',
-                url: 'https://leexiaop.github.io/static/mini/img/advanced_4.png'
-            }
-        ],
+        advanceList: [],
 		active: 0,
 		url: ''
 	},
 	onLoad (options) {
-		this.setData({url: this.data.advanceList[options.idx - 0]?.url, active: options.idx - 0})
-		wx.setNavigationBarTitle({
-		  	title: this.data.advanceList[options.idx - 0]?.title,
+		request(url.getJavascriptAdvanceList).then(res => {
+			this.setData({advanceList: res, url: res[options.idx - 0]?.url, active: options.idx - 0})
+			wx.setNavigationBarTitle({
+				title: res[options.idx - 0]?.title,
+			})
 		})
 	},
     onChange (e) {

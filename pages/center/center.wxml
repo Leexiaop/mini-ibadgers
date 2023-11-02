@@ -13,10 +13,11 @@
         </view>
     </view>
     <view class="content">
-        <view class="content-up">
+		<view class="content"></view>
+        <!-- <view class="content-up">
             <nav-swiper></nav-swiper>
-        </view>
-        <view class="content-middle">
+        </view> -->
+        <!-- <view class="content-middle">
 			<t-cell-group theme="card">
 				<t-cell title="关于我们" leftIcon="user-list" hover arrow bind:click="onCellClick" data-type="1"/>
 				<t-cell title="海报分享" leftIcon="book-open" hover arrow bind:click="onCellClick" data-type="2"/>
@@ -31,7 +32,7 @@
 				<t-cell title="联系微信" leftIcon="logo-wechat-stroke" hover arrow bind:click="onCellClick" data-type="8"/>
 				<t-cell title="版本信息" leftIcon="system-sum" note="v3.0.0.0"/>
 			</t-cell-group>
-        </view>
+        </view> -->
     </view>
 	<t-dialog id="t-dialog" />
 	<t-dialog
@@ -50,4 +51,5 @@
 			src="https://leexiaop.github.io/static/mini/img/poster.jpg"
 		/>
 	</t-dialog>
+	<copy-right></copy-right>
 </view>

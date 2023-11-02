@@ -1,0 +1,5 @@
+<!--components/copy-right/index.wxml-->
+<view class="copy">
+	<view>Github提供云服务</view>
+	<view>Copyright @ 2023 09 Lee 盗版必究</view>
+</view>

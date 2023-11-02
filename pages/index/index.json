@@ -4,8 +4,6 @@
 		"nav-swiper": "../../components/nav-swiper/index",
 		"t-icon": "tdesign-miniprogram/icon/icon",
 		"t-image": "tdesign-miniprogram/image/image",
-		"t-tag": "tdesign-miniprogram/tag/tag",
-		"mp-waterfall": "../../../components/mp-waterfall",
-		"waterfall-item": "../../../components/waterfall-item"
+		"t-tag": "tdesign-miniprogram/tag/tag"
 	}
 }

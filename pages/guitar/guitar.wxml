@@ -1,7 +1,7 @@
 <!--pages/guitar/guitar.wxml-->
-<view class="guitar">
-	<nav-swiper list="{{navList}}"></nav-swiper>
-	<view class="main">
+<view class="guitar" wx:if="{{!loading}}">
+	<nav-swiper list="{{navList}}" wx:if="{{navList.length}}"></nav-swiper>
+	<view class="main" wx:if="{{list.length}}">
 		<view class="title">
 			<view class="left">
 				<view bind:tap="onTabClick" data-tab="{{1}}" style="color: {{active === 1 ? '#666' : '#999'}};">
@@ -35,7 +35,7 @@
 			</block>
 		</swiper>
 	</view>
-	<view class="singer">
+	<view class="singer" wx:if="{{singerList.length}}">
 		<view class="title">
 			Vocalists
 			<t-icon name="more" size="20" data-name="more" color="#999" bind:tap="onVocalistsClick" />
@@ -48,3 +48,12 @@
 		</view>
 	</view>
 </view>
+<view wx:else class="group">
+	<t-skeleton rowCol="{{rowCol}}" animation="gradient" loading></t-skeleton>
+	<text decode="{{true}}">&nbsp;</text>
+	<t-skeleton animation="flashed" rowCol="{{rowCol}}" loading></t-skeleton>
+	<view class="content">
+		<t-skeleton  wx:for="{{3}}" animation="flashed" rowCol="{{rowCol1}}" loading></t-skeleton>
+	</view>
+</view>
+<copy-right></copy-right>

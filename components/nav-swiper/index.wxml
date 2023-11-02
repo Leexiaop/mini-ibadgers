@@ -1,13 +1,11 @@
 <!--components/nav-swiper.wxml-->
 <t-swiper
-	wx:if="{{!loading}}"
 	autoplay="{{true}}"
 	duration="{{500}}"
 	interval="{{5000}}"
 	height="{{height + 'rpx'}}"
 	navigation="{{navigation}}"
 	paginationPosition="{{paginationPosition}}"
-	list="{{swiperList}}"
+	list="{{list}}"
 >
 </t-swiper>
- <t-skeleton theme="image" row-col="{{[{width: '100%', height: height + 'rpx'}]}}" animation="flashed" loading="{{loading}}" wx:else></t-skeleton>

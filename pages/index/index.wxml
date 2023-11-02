@@ -1,7 +1,7 @@
 <!--pages/index/index.wxml-->
-<view class="index">
-	<nav-swiper navigation="{{navigation}}" height="480" list="{{navList}}"></nav-swiper>
-	<view class="javascript container">
+<view wx:if="{{!loading}}" class="index">
+	<nav-swiper navigation="{{navigation}}" height="480" wx:if="{{navList.length}}" list="{{navList}}"></nav-swiper>
+	<view class="javascript container" wx:if="{{javascriptList.length}}">
 		<view class="title">
 			<view class="name">Javascript</view>
 			<view class="more" bind:tap="onPageSwitch" data-page="javascript">
@@ -14,7 +14,7 @@
 			</view>
 		</view>
 	</view>
-	<view class="shop container">
+	<view class="shop container" wx:if="{{shopList.length}}">
 		<view class="title">
 			<view class="name">Shop</view>
 			<view class="more" bind:tap="onPageSwitch" data-page="shop">
@@ -22,14 +22,12 @@
 			</view>
 		</view>
 		<view class="content">
-			<view wx:for="{{shopList}}" bind:tap="onShopClick" data-item="{{shop}}" wx:for-item="shop" wx:key="index" class="item" style="width: {{index === 0 ? '70%' : (index >= 1 && index < 2 ? '30%' : '25%')}};height: {{index > 1 ? '180rpx' : '360rpx'}}">
-				<image src="{{shop.url}}" mode="widthFix" />
+			<view wx:for="{{shopList}}" bind:tap="onShopClick" data-item="{{shop}}" wx:for-item="shop" wx:key="index" class="item" style="width: {{index === 0 ? '420rpx' : (index === 1 || index === 2 ? '214rpx' : '25%')}};height: {{index === 0 ? '360rpx' : '180rpx'}}">
+				<image src="{{shop.url}}" mode="aspectFill"/>
 			</view>
-			<!-- <mp-waterfall id="waterfall" generic:item="waterfall-item" list="{{shopList || []}}" idKey="id" imageKey="imgUrl" colNum="3" style="width: 100%;" gutter="8rpx" bind:onItemClick="onShopClick" order="{{false}}">
-			</mp-waterfall> -->
 		</view>
 	</view>
-	<view class="guitar container">
+	<view class="guitar container" wx:if="{{guitarList.length}}">
 		<view class="title">
 			<view class="name">
 				<view class="{{active === 1 ? 'active' : ''}} tab" bind:tap="onGuitarTabChange" data-active="{{1}}">Guitar</view>
@@ -51,4 +49,17 @@
 			</view>
 		</view>
 	</view>
+	<view class="overlay" style="display: {{!visible?'none':'flex'}};">
+		<t-image show-menu-by-longpress lazy src="https://leexiaop.github.io/static/mini/img/shop/lucky.jpg" mode="widthFix" shape="round" aria-label="安达小铺" bind:load="onLuckyLoad"></t-image>
+		<text decode="{{true}}">&nbsp;</text>
+		<text decode="{{true}}">&nbsp;</text>
+		<t-icon name="close-circle" class="close" size="48" data-name="more" color="#999" bind:tap="onAdClick" />
+	</view>
 </view>
+<view wx:else class="group">
+	<t-skeleton rowCol="{{rowCol1}}" animation="gradient" loading></t-skeleton>
+	<view class="content" wx:for="{{2}}">
+		<t-skeleton animation="flashed" rowCol="{{rowCol2}}" loading></t-skeleton>
+	</view>
+</view>
+<copy-right></copy-right>

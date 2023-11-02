@@ -5,20 +5,46 @@ import url from '../../assets/api/url'
 
 Page({
     data: {
+		navList: [],
 		noticeContent: '',
         contentList: [],
-        swiperList: [],
+		swiperList: [],
+		loading: false,
 		marquee: {speed: 60, loop: -1, delay: 0},
-		rowCol: [{ size: '327rpx', borderRadius: '24rpx' }]
+		rowCol: [{ size: '327rpx', borderRadius: '24rpx' }],
+		grid: [
+			[
+			  { width: '96rpx', height: '96rpx', borderRadius: '12rpx' },
+			  { width: '96rpx', height: '96rpx', borderRadius: '12rpx' },
+			  { width: '96rpx', height: '96rpx', borderRadius: '12rpx' },
+			  { width: '96rpx', height: '96rpx', borderRadius: '12rpx' },
+			  { width: '96rpx', height: '96rpx', borderRadius: '12rpx' },
+			],
+			[
+			  { width: '96rpx', height: '32rpx', borderRadius: '6rpx' },
+			  { width: '96rpx', height: '32rpx', borderRadius: '6rpx' },
+			  { width: '96rpx', height: '32rpx', borderRadius: '6rpx' },
+			  { width: '96rpx', height: '32rpx', borderRadius: '6rpx' },
+			  { width: '96rpx', height: '32rpx', borderRadius: '6rpx' },
+			]
+		]
     },
     // 事件处理函数
 
     onLoad() {
-       	request(url.getJavascriptList).then(res => {
+		wx.showLoading({
+		  	title: '加载中...'
+		})
+		this.setData({loading: true})
+		request(url.getJavascriptSwiperList).then(res => {
+			this.setData({navList: res})
+		   return request(url.getJavascriptList) 
+		}).then(res => {
 			this.setData({contentList: res})
 			return request(url.getJavascriptNoticeList)
         }).then(res => {
-			this.setData({noticeContent: res.content})
+			this.setData({noticeContent: res.content, loading: false})
+			wx.hideLoading()
 		})
 	},
     onCellClick (e) {
@@ -35,15 +61,15 @@ Page({
         })
 	},
 	onTipClick (e) {
-		const {idx} = e.currentTarget.dataset
-		if (idx === 4) {
+		const {index} = e.currentTarget.dataset
+		if (index === 4) {
 			wx.navigateTo({
 				url: `/javascriptpackage/pages/resources/resources`
 		  	})
 			return
 		}
 		wx.navigateTo({
-		  	url: `/javascriptpackage/pages/advanced/advanced?idx=${idx}`
+		  	url: `/javascriptpackage/pages/advanced/advanced?idx=${index}`
 		})
 	},
     onShareAppMessage () {

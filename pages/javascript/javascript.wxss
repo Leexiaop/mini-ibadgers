@@ -1,16 +1,14 @@
 /**javascript.wxss**/
 .index {
-    padding-top: 16rpx;
     width: 100%;
     box-sizing: border-box;
-    padding-bottom: 84rpx;
-	background-color: rgb(206, 235, 231);
 	min-height: 100vh;
 }
 .index > .nav {
-    width: 718rpx;
+    width: 686rpx;
     margin: 0 auto;
-    border-radius: 8rpx;
+	border-radius: 8rpx;
+	margin-top: 24rpx;
     overflow: hidden;
 }
 .index > .content {
@@ -81,24 +79,20 @@
 	margin: 0 auto;
 	width: 128rpx;
 }
-.index > .group {
+.group {
 	width: 100%;
-    padding: 16rpx;
 	box-sizing: border-box;
 }
-.index > .group > .group-title {
-	margin-bottom: 24rpx;
+.group > .grid {
+	width: 686rpx;
+	margin: 24rpx auto;
 }
-.index > .group > .group-item {
+.group > .group-item {
+	width: 686rpx;
+	margin: 0 auto;
+}
+.group > .group-item > .tip {
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: space-between;
-}
-.index > .group > .group-item > .group-item-skelton {
-	margin-bottom: 24rpx;
-}
-.index > .notice {
-    width: 100%;
-    position: fixed;
-    bottom: 0;
+	flex-wrap: wrap;
 }

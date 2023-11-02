@@ -29,33 +29,13 @@ Component({
      * 组件的初始数据
      */
     data: {
-		swiperList: [],
-		loading: false
 	},
-    lifetimes: {
-        ready () {
-			if (this.data.list.length) {
-				this.setData({swiperList: this.data.list})
-				return
-			}
-			this.setData({loading: true})
-            request(url.getJavascriptSwiperList).then(res => {
-                this.setData({swiperList: res, loading: false})
-            })
-        }
-    },
     /**
      * 组件的方法列表
      */
     methods: {
         onImageClick (e) {
-            const item = this.data.swiperList[e.detail.index]
-            let left = item.lastIndexOf('/') + 1
-            let right = item.lastIndexOf('.')
-            let str = item.slice(left, right)
-            wx.navigateTo({
-                url: `/javascriptpackage/pages/canvas/canvas?url=${str}`,
-            })
+            this.triggerEvent('onImageClick', e.detail.index)
         }
     }
 })

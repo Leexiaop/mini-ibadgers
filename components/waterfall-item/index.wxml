@@ -1,6 +1,6 @@
 <!-- components/waterfall-item/waterfall-item.wxml -->
 <view class="w-item" wx:if="{{type === 2}}">{{itemData.title}}</view>
 <view class="w-item" wx:else>
-  <image src="{{itemData.imgUrl}}" style="height:{{itemData.imgHeight}}px" class="w-image"/>
+  <image src="{{itemData.imgUrl}}" mode="widthFix" style="height:{{itemData.imgHeight}}px" class="w-image"/>
   <view wx:if="{{itemData.text}}" class="w-text">{{itemData.text}}</view>
 </view>

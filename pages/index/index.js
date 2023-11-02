@@ -13,28 +13,31 @@ Page({
 		javascriptList: [],
 		shopList: [],
 		guitarList: [],
-		active: 1
+		active: 1,
+		visible: false,
+		loading: false,
+		rowCol1: [{width: '100%', height: '480rpx', borderRadius: '24rpx'}],
+		rowCol2: [{width: '686rpx', height: '480rpx', borderRadius: '24rpx'}]
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad() {
+		wx.showLoading({
+		  	title: '加载中...',
+		})
+		this.setData({loading: true})
 		request(url.getIndexList).then(res => {
 			this.setData({
 				navList: res.navList,
 				javascriptList: res.javascriptList,
-				shopList: res.shopList.map(shop => {
-					return {
-						imgUrl: shop.url,
-						text: shop.name,
-						id: shop.id,
-						code: shop.code
-					}
-				}),
+				shopList: res.shopList,
 				guitarList: res.guitarList.filter(guitar => guitar.type === 1),
-				copyGuitarList: res.guitarList
+				copyGuitarList: res.guitarList,
+				loading: false
 			})
+			wx.hideLoading()
 		})
 	},
 	onGuitarTabChange(e) {
@@ -55,7 +58,6 @@ Page({
 		})
 	},
 	onShopClick (e) {
-		console.log(e)
 		const {id} = e.currentTarget.dataset.item
 		wx.navigateTo({
 		  	url: `/shoppackage/pages/details/details?id=${id}`,
@@ -66,6 +68,12 @@ Page({
 		wx.navigateTo({
 		  	url: `/guitarpackage/pages/songs/songs?name=${name}&&type=${type}&&classify=${classify}`
 		})
+	},
+	onAdClick () {
+		this.setData({visible: false})
+	},
+	onLuckyLoad () {
+		this.setData({visible: true})
 	},
 	onShareAppMessage () {
         return {

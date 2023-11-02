@@ -8,6 +8,7 @@ export default {
 	getJavascriptResourcesList: url + 'mini/db/javascript/resources.json',
 	getJavascriptItemList: url + 'mini/db/javascript/',
 	getJavascriptDocList: url + 'mini/docs/',
+	getJavascriptAdvanceList: url + 'mini/db/javascript/advance.json',
 	getGuitarList: url + 'mini/db/guitar/index.json',
 	getGuitarSongCellList: url + 'mini/db/guitar/list.json',
 	getGuitarSongList: url + 'mini/db/guitar/songs.json',

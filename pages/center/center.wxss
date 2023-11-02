@@ -1,8 +1,10 @@
 /* pages/center/center.wxss */
 .center {
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
+	width: 100%;
+	min-height: 100vh;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
 }
 .center > .nav {
     height: 348rpx;
@@ -37,7 +39,8 @@
     margin-top: -24rpx;
     background-color: #e9e9e9;
     padding: 32rpx;
-    box-sizing: border-box;
+	box-sizing: border-box;
+	flex: 1;
 }
 .center > .content > .content-up {
 	background-color: #fff;
