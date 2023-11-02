@@ -57,7 +57,8 @@ Component({
     // 单次加载个数
     onceMaxNum: 4,
     // 正在插入中
-    appending: false,
+	appending: false,
+	waitAppendList: []
   },
 
   lifetimes: {
@@ -235,18 +236,18 @@ Component({
     },
     // 不按按顺序显示时，插入页面
     appendOutOfOrder(item) {
-      this.waitAppendList.push(item)
+      this.data.waitAppendList.push(item)
       if (!this.appending) {
-        let renderList = this.simpleClone(this.waitAppendList)
+        let renderList = this.simpleClone(this.data.waitAppendList)
         this.data.loadedList = [...this.data.loadedList, ...renderList]
-        this.waitAppendList = []
+        this.data.waitAppendList = []
         this.setData({
           loading: true
         })
         this._render(renderList, 0, () => {
-          let renderList2 = this.simpleClone(this.waitAppendList)
+          let renderList2 = this.simpleClone(this.data.waitAppendList)
           this.data.loadedList = [...this.data.loadedList, ...renderList2]
-          this.waitAppendList = []
+          this.data.waitAppendList = []
           if (renderList2.length > 0) {
             this._render(renderList2, 0, () => {
               this.checkOutOfOrderLoading()
@@ -334,7 +335,7 @@ Component({
       this.data.waitList = []
       this.data.thisTimeloadedList = []
       this.data.loadedList = []
-      this.waitAppendList = []
+      this.data.waitAppendList = []
       this.setData({
         loading: false,
         loadingList: []

@@ -24,7 +24,14 @@ Page({
 			this.setData({
 				navList: res.navList,
 				javascriptList: res.javascriptList,
-				shopList: res.shopList,
+				shopList: res.shopList.map(shop => {
+					return {
+						imgUrl: shop.url,
+						text: shop.name,
+						id: shop.id,
+						code: shop.code
+					}
+				}),
 				guitarList: res.guitarList.filter(guitar => guitar.type === 1),
 				copyGuitarList: res.guitarList
 			})

@@ -12,6 +12,13 @@
             "list": [
                 {
                     "name": "",
+                    "pathName": "pages/index/index",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
                     "pathName": "pages/guitar/guitar",
                     "query": "",
                     "launchMode": "default",
@@ -62,13 +69,6 @@
                 {
                     "name": "",
                     "pathName": "pages/resources/resources",
-                    "query": "",
-                    "launchMode": "default",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/list/list",
                     "query": "",
                     "launchMode": "default",
                     "scene": null
