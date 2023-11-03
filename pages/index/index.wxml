@@ -51,7 +51,7 @@
 	</view>
 	<t-popup visible="{{visible}}" bind:visible-change="onAdClick" placement="center">
 		<view class="block">
-			<t-image show-menu-by-longpress lazy src="https://leexiaop.github.io/static/mini/img/shop/lucky.jpg" mode="widthFix" shape="round" style="width: 100%;" aria-label="安达小铺" bind:load="onLuckyLoad"></t-image>
+			<t-image show-menu-by-longpress lazy src="https://leexiaop.github.io/static/mini/img/shop/lucky.jpg" mode="widthFix" shape="round" style="width: 100%;" aria-label="安达小铺"></t-image>
 			<t-icon t-class="close-btn" name="close-circle" size="32" color="#fff" bind:tap="onAdClick" />
 		</view>
 	</t-popup>

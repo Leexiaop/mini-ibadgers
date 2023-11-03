@@ -73,9 +73,6 @@ Page({
 	onAdClick () {
 		this.setData({visible: false})
 	},
-	onLuckyLoad () {
-		this.setData({visible: true})
-	},
 	onShareAppMessage () {
         return {
             title: 'Ibadgers前端练功房',

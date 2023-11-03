@@ -39,7 +39,7 @@
 			</view>
 		</view>
 	</block>
-	<view class="content">
+	<view class="content" wx:if="{{list.length}}">
 		<t-cell wx:for="{{list}}" bind:tap="onCellClick" data-item="{{item}}" bordered="{{index < list.length - 1}}" description="{{item.author}}" hover arrow>
 			<view slot="title">
 				{{item.name}}
@@ -52,6 +52,9 @@
 			<view wx:else slot="left-icon">{{index + 1}}.</view>
 			<t-tag slot="note" variant="outline" size="small" theme="{{item.classify === 1 ? 'primary' : 'warning'}}">{{item.classify === 1 ? '弹唱' : '指弹'}}</t-tag>
 		</t-cell>
+	</view>
+	<view class="empty" wx:else>
+		<t-empty icon="image-search" description="暂无内容"></t-empty>
 	</view>
 </view>
 <view wx:else>

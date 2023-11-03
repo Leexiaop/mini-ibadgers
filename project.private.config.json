@@ -12,6 +12,13 @@
             "list": [
                 {
                     "name": "",
+                    "pathName": "pages/index/index",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
                     "pathName": "guitarpackage/pages/singers/singers",
                     "query": "",
                     "launchMode": "default",
@@ -20,13 +27,6 @@
                 {
                     "name": "",
                     "pathName": "pages/guitar/guitar",
-                    "query": "",
-                    "launchMode": "default",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/shop/shop",
                     "query": "",
                     "launchMode": "default",
                     "scene": null

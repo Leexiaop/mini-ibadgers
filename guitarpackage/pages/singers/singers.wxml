@@ -1,7 +1,10 @@
 <!--guitarpackage/pages/singers/singers.wxml-->
 <view class="singers" wx:if="{{!loading}}">
-	<view class="content">
+	<view class="content" wx:if="{{list.length}}">
 		<mp-waterfall id="waterfall" generic:item="waterfall-item" list="{{list || []}}" idKey="id" imageKey="imgUrl" colNum="3" gutter="8rpx" bind:onItemClick="onSingerClick" order="{{false}}"></mp-waterfall>
+	</view>
+	<view class="empty" wx:else>
+		<t-empty icon="image-search" description="暂无内容"></t-empty>
 	</view>
 </view>
 <view class="group" wx:else>

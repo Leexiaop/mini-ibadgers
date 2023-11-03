@@ -2,7 +2,9 @@
 .index {
 	width: 100%;
 	box-sizing: border-box;
-	padding-bottom: 48rpx;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
 }
 .index > .container {
 	width: 686rpx;
@@ -12,6 +14,7 @@
 	border-radius: 24rpx;
 	border: 1rpx solid #eee;
 	overflow: hidden;
+	flex: 1;
 }
 .index > .container > .title {
 	width: 100%;
@@ -126,22 +129,6 @@
 	font-size: 24rpx;
 	color: #999;
 }
-/* .index > .overlay {
-	width: 100%;
-	height: 100vh;
-	position: fixed;
-	top: 0;
-	left: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	animation: zoomIn 1s 0s;
-}
-.index > .overlay > .close {
-	display: flex;
-	align-self: center;
-} */
 .block {
 	position: relative;
 	width: 240px;

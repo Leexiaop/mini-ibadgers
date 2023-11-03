@@ -1,8 +1,9 @@
 <!--shoppackage/pages/details/details.wxml-->
 <view class="details" wx:if="{{!loading}}">
 	<t-image
-		style="width: 100%;"
-		mode="aspectFill"
+		width="100%"
+		style="min-height: 360rpx;"
+		mode="widthFix"
 		src="{{item.url}}"
 	/>
 	<text decord="{{true}}" class="desc">{{item.desc}}</text>
