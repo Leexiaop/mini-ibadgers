@@ -1,8 +1,7 @@
 <!--pages/content/content.wxml-->
-<view class="content">
-	<towxml nodes="{{content}}" wx:if="{{!isLoading}}"/>
-	<view class="group" wx:else>
-		<t-skeleton wx:for="{{10}}" animation="flashed" class="group-content" rowCol="{{[1, {width: '50%'}]}}" loading></t-skeleton>
-		<t-loading theme="circular" size="40rpx" class="wrapper" />
-	</view>
+<view class="content" wx:if="{{!loading}}">
+	<towxml nodes="{{content}}"/>
+</view>
+<view class="group" wx:else>
+	<t-skeleton wx:for="{{12}}" animation="flashed" class="group-content" rowCol="{{[1, {width: '50%'}]}}" loading></t-skeleton>
 </view>

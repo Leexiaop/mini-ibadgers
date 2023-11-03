@@ -1,10 +1,12 @@
 <!--guitarpackage/pages/singers/singers.wxml-->
-<view class="singers">
-	<t-grid class="block" column="{{4}}">
-		<t-grid-item wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="index" bind:tap="onSingerClick" data-item="{{item}}">
-			<t-image src="{{item.avatar}}" width="72" mode="aspectFill" height="72" shape="round" aria-label="{{item.author}}" />
-			<view slot="text">{{item.author}}</view>
-		</t-grid-item>
-	</t-grid>
-	<t-divider style="width: 686rpx;margin: 0 auto;" content="我也是有底线的" />
+<view class="singers" wx:if="{{!loading}}">
+	<view class="content">
+		<mp-waterfall id="waterfall" generic:item="waterfall-item" list="{{list || []}}" idKey="id" imageKey="imgUrl" colNum="3" gutter="8rpx" bind:onItemClick="onSingerClick" order="{{false}}"></mp-waterfall>
+	</view>
 </view>
+<view class="group" wx:else>
+	<view style="margin-bottom: 24rpx;" wx:for="{{9}}">
+		<t-skeleton rowCol="{{[{width: '220rpx', height: '360rpx' }]}}" animation="gradient" loading></t-skeleton>
+	</view>
+</view>
+<t-divider content="我也是有底线的" />

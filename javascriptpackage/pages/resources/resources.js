@@ -78,14 +78,15 @@ Page({
      */
     onShareAppMessage() {
         return {
-            title: 'Ibadgers前端练功房',
+            title: 'Ibadgers前端练功房--资源下载',
             imageUrl: 'https://leexiaop.github.io/static/ibadgers/logo.png',
             path: '/javascriptpackage/pages/resources/resources'
         }
 	},
 	onShareTimeline () {
         return {
-            title: '代码改变世界，我删库跑路！'
+			title: 'Ibadgers前端练功房--资源下载',
+            imageUrl: 'https://leexiaop.github.io/static/ibadgers/logo.png'
         }
     }
 })

@@ -69,7 +69,7 @@ Page({
     },
     onShareTimeline () {
         return {
-			title: '上语文课老师说，其实结婚的人不一定要是相爱的两个人，我们在下面拼命摇头说不是的。他看着我们，轻轻一笑，感叹年轻真好！',
+			title: '你是我患得患失的梦我是你可有可无的人！',
 			imageUrl: 'http://127.0.0.1:5500/mini/img/guitar/mingyao.jpg',
         }
     }

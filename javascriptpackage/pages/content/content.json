@@ -2,7 +2,6 @@
     "navigationBarBackgroundColor": "#000",
     "navigationBarTextStyle": "white",
     "usingComponents": {
-		"towxml":"../../towxml/towxml",
-		"t-loading": "tdesign-miniprogram/loading/loading"
+		"towxml":"../../towxml/towxml"
     }
 }

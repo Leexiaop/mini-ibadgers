@@ -35,7 +35,8 @@ Page({
 				shopList: res.shopList,
 				guitarList: res.guitarList.filter(guitar => guitar.type === 1),
 				copyGuitarList: res.guitarList,
-				loading: false
+				loading: false,
+				visible: res.visible
 			})
 			wx.hideLoading()
 		})

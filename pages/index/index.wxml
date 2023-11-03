@@ -49,12 +49,12 @@
 			</view>
 		</view>
 	</view>
-	<view class="overlay" style="display: {{!visible?'none':'flex'}};">
-		<t-image show-menu-by-longpress lazy src="https://leexiaop.github.io/static/mini/img/shop/lucky.jpg" mode="widthFix" shape="round" aria-label="安达小铺" bind:load="onLuckyLoad"></t-image>
-		<text decode="{{true}}">&nbsp;</text>
-		<text decode="{{true}}">&nbsp;</text>
-		<t-icon name="close-circle" class="close" size="48" data-name="more" color="#999" bind:tap="onAdClick" />
-	</view>
+	<t-popup visible="{{visible}}" bind:visible-change="onAdClick" placement="center">
+		<view class="block">
+			<t-image show-menu-by-longpress lazy src="https://leexiaop.github.io/static/mini/img/shop/lucky.jpg" mode="widthFix" shape="round" style="width: 100%;" aria-label="安达小铺" bind:load="onLuckyLoad"></t-image>
+			<t-icon t-class="close-btn" name="close-circle" size="32" color="#fff" bind:tap="onAdClick" />
+		</view>
+	</t-popup>
 </view>
 <view wx:else class="group">
 	<t-skeleton rowCol="{{rowCol1}}" animation="gradient" loading></t-skeleton>

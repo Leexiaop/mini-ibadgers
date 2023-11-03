@@ -1,7 +1,7 @@
 <!--indeppackage/ad/ad.wxml-->
-<view class="shop">
-	<nav-swiper wx:if="{{!loading}}" height="480" list="{{navList}}"></nav-swiper>
-	<view class="content">
+<view class="shop" wx:if="{{!loading}}">
+	<nav-swiper wx:if="{{navList.length}}" height="480" list="{{navList}}"></nav-swiper>
+	<view class="content" wx:if="{{contentList.length}}">
 		<block wx:for="{{contentList}}" wx:for-item="content" wx:key="index">
 			<view class="content-item" wx:if="{{content.children.length}}">
 				<view class="title" wx:if="{{content.children.length}}">
@@ -22,3 +22,21 @@
 		</block>
 	</view>
 </view>
+<view wx:else class="group">
+	<t-skeleton rowCol="{{[{width: '686rpx', height: '360rpx', borderRadius: '24rpx'}]}}" animation="gradient" loading></t-skeleton>
+	<text decode="{{true}}">&nbsp;</text>
+	<view class="content">
+		<t-skeleton animation="flashed" rowCol="{{[{width: '343rpx', height: '48rpx'}]}}" loading></t-skeleton>
+		<text decode="{{true}}">&nbsp;</text>
+		<view class="item">
+			<t-skeleton  wx:for="{{3}}" animation="flashed" rowCol="{{[{width: '220rpx', height: '88rpx', borderRadius: '24rpx'}]}}" loading></t-skeleton>
+		</view>
+	</view>
+	<text decode="{{true}}">&nbsp;</text>
+	<view class="content">
+		<t-skeleton animation="flashed" rowCol="{{[{width: '343rpx', height: '48rpx'}]}}" loading></t-skeleton>
+		<text decode="{{true}}">&nbsp;</text>
+		<t-skeleton rowCol="{{[{width: '686rpx', height: '686rpx', borderRadius: '24rpx'}]}}" animation="gradient" loading></t-skeleton>
+	</view>
+</view>
+<copy-right></copy-right>

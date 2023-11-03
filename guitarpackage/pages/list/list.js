@@ -11,21 +11,27 @@ Page({
 		copyList: [],
 		isAuthor: false,
 		authorInfo: null,
-		active: 1
+		active: 1,
+		loading: false
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
+		wx.showLoading({
+		  	title: '加载中...'
+		})
+		this.setData({loading: true})
 		request(url.getGuitarSongCellList).then(res => {
 			if (!options.author) {
 				const data = wx._.cloneDeep(res)
-				this.setData({isAuthor: false, list: res.filter(item => item.type === this.data.active), copyList: data})
+				this.setData({isAuthor: false, list: res.filter(item => item.type === this.data.active), copyList: data, loading: false})
 			} else {
 				const data = res.filter(item => item.author === options.author)
-				this.setData({isAuthor: true, list: data, authorInfo: data[0]})
+				this.setData({isAuthor: true, list: data, authorInfo: data[0], loading: false})
 			}
+			wx.hideLoading()
 		})
 	},
 	onTabClick(e) {
@@ -51,7 +57,17 @@ Page({
     /**
      * 用户点击右上角分享
      */
-    onShareAppMessage() {
-
+	onShareAppMessage() {
+        return {
+            title: this.data.isAuthor? this.data.authorInfo.author : '民谣小馆',
+            imageUrl: 'http://127.0.0.1:5500/mini/img/guitar/mingyao.jpg',
+            path: '/pages/guitar/guitar'
+        }
+    },
+    onShareTimeline () {
+        return {
+			title: this.data.isAuthor? this.data.authorInfo.author : '你是我患得患失的梦我是你可有可无的人！',
+			imageUrl: 'http://127.0.0.1:5500/mini/img/guitar/mingyao.jpg',
+        }
     }
 })

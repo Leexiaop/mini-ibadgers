@@ -8,7 +8,9 @@ Page({
     data: {
 		navList: [],
 		contentList: [],
-		loading: false
+		loading: false,
+		rowCol: [{width: '686rpx', height: '360rpx', borderRadius: '24rpx'}],
+		rowCol1: [{width: '210rpx', height: '360rpx', borderRadius: '24rpx'}]
     },
 
     /**
@@ -54,14 +56,14 @@ Page({
     onShareAppMessage() {
 		return {
             title: '安达小铺',
-            imageUrl: 'https://leexiaop.github.io/static/mini/img/shop/anda.jpg',
+            imageUrl: 'https://leexiaop.github.io/static/mini/img/shop/logo.jpg',
             path: '/pages/shop/shop'
         }
 	},
 	onShareTimeline () {
         return {
-			title: '安达小铺，休闲时的好陪伴！',
-			imageUrl: 'https://leexiaop.github.io/static/mini/img/shop/anda.jpg'
+			title: '你的零食，我的关怀，安达小铺！',
+			imageUrl: 'https://leexiaop.github.io/static/mini/img/shop/logo.jpg'
         }
     }
 })

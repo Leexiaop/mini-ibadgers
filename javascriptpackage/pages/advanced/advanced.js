@@ -38,14 +38,15 @@ Page({
      */
     onShareAppMessage() {
         return {
-            title: 'Ibadgers前端练功房',
+            title: 'Ibadgers前端练功房--' + this.data.advanceList[this.data.active]?.title,
             imageUrl: 'https://leexiaop.github.io/static/ibadgers/logo.png',
             path: '/pages/advanced/advanced'
         }
     },
     onShareTimeline () {
         return {
-            title: '代码改变世界，我删库跑路！'
+			title: 'Ibadgers前端练功房--' + this.data.advanceList[this.data.active]?.title || '代码改变世界，我删库跑路！',
+			imageUrl: 'https://leexiaop.github.io/static/ibadgers/logo.png'
         }
     }
 })

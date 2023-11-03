@@ -1,5 +1,6 @@
 {
     "usingComponents": {
+		"t-divider": "tdesign-miniprogram/divider/divider",
 		"mp-waterfall": "../../../components/mp-waterfall",
 		"waterfall-item": "../../../components/waterfall-item"
 	}

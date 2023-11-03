@@ -9,7 +9,7 @@ Page({
     data: {
         towxml: require('../../towxml/index'),
         content: [],
-        isLoading: false,
+        loading: false,
         options: null
     },
 
@@ -19,27 +19,31 @@ Page({
     onLoad(options) {
         wx.setNavigationBarTitle({
             title: options.url === 'index' ? '概览' : options.url
-        })
-        this.setData({isLoading: true, options})
+		})
+		wx.showLoading({
+		  	title: '加载中...'
+		})
+        this.setData({loading: true, options})
         request(`${url.getJavascriptDocList}${options.path}/${options.url}.md.i`).then(res => {
             if (res) {
 				const content = this.data.towxml(res,'markdown', {
 					theme: 'dark'
                 });
-				this.setData({content, isLoading: false});
+				this.setData({content, loading: false});
+				wx.hideLoading()
 			};
         })
 	},
 	onShareAppMessage () {
 		 return {
-            title: 'Ibadgers前端练功房',
+            title: this.data.options.url === 'index' ? '概览' : this.data.options.url || 'Ibadgers前端练功房',
             imageUrl: 'https://leexiaop.github.io/static/ibadgers/logo.png',
             path: `/javascriptpackage/pages/content/content?url=${this.data.options.url}&&path=${this.data.options.path}`
         }
 	},
     onShareTimeline () {
         return {
-			title: '代码改变世界，我删库跑路！',
+			title: this.data.options.url === 'index' ? '概览' : this.data.options.url || '代码改变世界，我删库跑路！',
 			path: `url=${this.data.options.url}&&path=${this.data.options.path}`
         }
     }

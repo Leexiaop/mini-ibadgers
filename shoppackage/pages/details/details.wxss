@@ -30,3 +30,7 @@
 	display: flex;
 	margin-top: 48rpx;
 }
+.tip {
+	width: 686rpx;
+	margin: 24rpx auto;
+}

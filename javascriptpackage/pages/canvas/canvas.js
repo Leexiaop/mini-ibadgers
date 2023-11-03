@@ -59,16 +59,10 @@ Page({
     touchEnd(e) {
         THREE.global.touchEventHandlerFactory('canvas', 'touchend')(e)
 	},
-	onShareAppMessage() {
-        return {
-            title: 'Ibadgers前端练功房',
-            imageUrl: 'https://leexiaop.github.io/static/ibadgers/logo.png',
-            path: '/pages/advanced/advanced'
-        }
-    },
     onShareTimeline () {
         return {
-			title: '代码改变世界，我删库跑路！',
+			title: this.data.url.split('_').join(' '),
+            imageUrl: 'https://leexiaop.github.io/static/ibadgers/logo.png',
 			query: `url=${this.data.url}`
 		}
     }

@@ -8,19 +8,25 @@ Page({
      */
     data: {
 		show: false,
-		item: null
+		item: null,
+		loading: false
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
+		wx.showLoading({
+		  	title: '加载中...'
+		})
+		this.setData({loading: false})
 		request(url.getProvinceShopList).then(res => {
 			const item = res.find(obj => obj.id === options.id - 0)
 			wx.setNavigationBarTitle({
 				title: item.name
 			})
-			this.setData({item})
+			this.setData({item, loading: false})
+			wx.hideLoading()
 		})
     },
 	onBuyClick () {
@@ -35,15 +41,15 @@ Page({
      */
     onShareAppMessage() {
 		return {
-            title: '安达小铺',
-            imageUrl: 'https://leexiaop.github.io/static/mini/img/shop/anda.jpg',
+            title: this.data.item.name || '安达小铺',
+            imageUrl: 'https://leexiaop.github.io/static/mini/img/shop/logo.jpg',
             path: `/shoppackage/pages/details/details?id=${this.data.item.id}`
         }
 	},
 	onShareTimeline () {
         return {
-			title: '安达小铺，休闲时的好陪伴！',
-			imageUrl: 'https://leexiaop.github.io/static/mini/img/shop/anda.jpg'
+			title: '你的零食，我的关怀，安达小铺！',
+			imageUrl: 'https://leexiaop.github.io/static/mini/img/shop/logo.jpg'
         }
     }
 })

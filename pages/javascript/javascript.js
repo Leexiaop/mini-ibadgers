@@ -12,22 +12,11 @@ Page({
 		loading: false,
 		marquee: {speed: 60, loop: -1, delay: 0},
 		rowCol: [{ size: '327rpx', borderRadius: '24rpx' }],
-		grid: [
-			[
-			  { width: '96rpx', height: '96rpx', borderRadius: '12rpx' },
-			  { width: '96rpx', height: '96rpx', borderRadius: '12rpx' },
-			  { width: '96rpx', height: '96rpx', borderRadius: '12rpx' },
-			  { width: '96rpx', height: '96rpx', borderRadius: '12rpx' },
-			  { width: '96rpx', height: '96rpx', borderRadius: '12rpx' },
-			],
-			[
-			  { width: '96rpx', height: '32rpx', borderRadius: '6rpx' },
-			  { width: '96rpx', height: '32rpx', borderRadius: '6rpx' },
-			  { width: '96rpx', height: '32rpx', borderRadius: '6rpx' },
-			  { width: '96rpx', height: '32rpx', borderRadius: '6rpx' },
-			  { width: '96rpx', height: '32rpx', borderRadius: '6rpx' },
-			]
-		]
+		grid: Array.from({length: 2}, () => {
+			return Array.from({length: 5}, () => {
+				return { width: '96rpx', height: '96rpx', borderRadius: '12rpx' }
+			})
+		})
     },
     // 事件处理函数
 

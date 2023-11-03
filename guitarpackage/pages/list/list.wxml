@@ -1,5 +1,5 @@
 <!--guitarpackage/pages/list/list.wxml-->
-<view class="list">
+<view class="list" wx:if="{{!loading}}">
 	<block wx:if="{{isAuthor}}">
 		<view class="nav" style="background: url({{authorInfo.avatar}}) no-repeat; background-size: 100%;">
 			<view class="singer">
@@ -53,5 +53,10 @@
 			<t-tag slot="note" variant="outline" size="small" theme="{{item.classify === 1 ? 'primary' : 'warning'}}">{{item.classify === 1 ? '弹唱' : '指弹'}}</t-tag>
 		</t-cell>
 	</view>
-	<t-divider style="width: 686rpx;margin: 0 auto;" content="我也是有底线的" />
 </view>
+<view wx:else>
+	<t-skeleton animation="flashed" class="group-content" rowCol="{{[{height: '260rpx'}]}}" loading></t-skeleton>
+	<text decode="{{true}}">&nbsp;</text>
+	<t-skeleton wx:for="{{8}}" animation="flashed" class="group-content" rowCol="{{[{width: '686rpx', height: '88rpx', margin: '24rpx auto'}]}}" loading></t-skeleton>
+</view>
+<t-divider content="我也是有底线的" />

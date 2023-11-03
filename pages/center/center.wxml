@@ -13,32 +13,20 @@
         </view>
     </view>
     <view class="content">
-		<view class="content"></view>
-        <!-- <view class="content-up">
-            <nav-swiper></nav-swiper>
-        </view> -->
-        <!-- <view class="content-middle">
-			<t-cell-group theme="card">
-				<t-cell title="关于我们" leftIcon="user-list" hover arrow bind:click="onCellClick" data-type="1"/>
-				<t-cell title="海报分享" leftIcon="book-open" hover arrow bind:click="onCellClick" data-type="2"/>
-				<t-cell title="CSDN" leftIcon="letters-c" hover arrow bind:click="onCellClick" data-type="4"/>
-				<t-cell title="Lee前端技术栈" leftIcon="letters-l" hover arrow bind:click="onCellClick" data-type="5"/>
-				<t-cell title="Ibadgers" leftIcon="internet" hover arrow bind:click="onCellClick" data-type="6"/>
-				<t-cell title="Github" leftIcon="logo-github" hover arrow bind:click="onCellClick" data-type="7"/>
-			</t-cell-group>
-        </view>
-        <view class="content-down">
-			<t-cell-group theme="card">
-				<t-cell title="联系微信" leftIcon="logo-wechat-stroke" hover arrow bind:click="onCellClick" data-type="8"/>
-				<t-cell title="版本信息" leftIcon="system-sum" note="v3.0.0.0"/>
-			</t-cell-group>
-        </view> -->
+		<t-grid column="{{4}}">
+			<t-grid-item text="Ibadgers" icon="support" data-type="{{1}}" bind:tap="onCellClick"/>
+			<t-grid-item text="Lee前端技术栈" icon="map-blocked" data-type="{{2}}" bind:tap="onCellClick" />
+			<t-grid-item text="Github" icon="logo-github" data-type="{{3}}" bind:tap="onCellClick" />
+			<t-grid-item text="CSDN" icon="ipod" data-type="{{4}}" bind:tap="onCellClick"/>
+			<t-grid-item text="关于我" icon="user-unknown" data-type="{{5}}" bind:tap="onCellClick"/>
+			<t-grid-item text="微信联系" icon="logo-wechat-stroke" data-type="{{6}}" bind:tap="onCellClick" />
+			<t-grid-item text="分享海报" icon="user-list" data-type="{{7}}" bind:tap="onCellClick" />
+		</t-grid>
     </view>
-	<t-dialog id="t-dialog" />
 	<t-dialog
 		visible="{{show}}"
 		confirm-btn="{{ {content: '确定', variant: 'base' } }}"
-		close-btn="{{true}}"
+		close-btn="{{false}}"
 		bind:confirm="closeDialog"
 		bind:cancel="closeDialog"
 		close-on-overlay-click="{{true}}"
@@ -51,5 +39,20 @@
 			src="https://leexiaop.github.io/static/mini/img/poster.jpg"
 		/>
 	</t-dialog>
+	<t-popup visible="{{visible}}" bind:visible-change="onVisibleChange" placement="bottom">
+		<view class="block">
+			<view class="header">
+				<view class="btn btn--cancel" aria-role="button" bind:tap="onVisibleChange">取消</view>
+				<view class="title">关于我</view>
+				<view class="btn btn--confirm" aria-role="button" bind:tap="onVisibleChange">确定</view>
+			</view>
+			<view class="info">
+				<text>2016年正式开启前端程序猿生涯，一路走来这已经是第七个年头，未来这个时间也许还会增加，所以，学习前进的脚步不能停止。</text>
+				<text>这7年来，经历过小作坊的无知，见过中型厂的快节奏，同样也卷过大厂，一直到现在自认为较为舒适的类国企。总发现，自己敲的代码，还差的很远很远。所以，能在有限的空余时间，将自己的工作，学习，生活，融入到一个小程序。供大家一起学习。</text>
+				<text>在此也特别感谢提供资料的各位机构和个人，如有冒犯，请联系删除内容。</text>
+				<text style="text-align: right;">2023-11-03 Lee</text>
+			</view>
+		</view>
+	</t-popup>
 	<copy-right></copy-right>
 </view>

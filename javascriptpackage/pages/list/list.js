@@ -5,18 +5,22 @@ Page({
     data: {
         list: [],
 		options: null,
-		isLoading: false,
+		loading: false,
 		title: '',
 		towxml: require('../../towxml/index'),
 		copyList: []
     },
     onLoad(options) {
-        this.setData({options, isLoading: true})
+		wx.showLoading({
+		  	title: '加载中...'
+		})
+        this.setData({options, loading: true})
         wx.setNavigationBarTitle({
             title: options.title,
         })
         request(`${url.getJavascriptItemList}${options.url}.json`).then(res => {
-            this.setData({list: res, copyList: wx._.cloneDeep(res), isLoading: false})
+			this.setData({list: res, copyList: wx._.cloneDeep(res), loading: false})
+			wx.hideLoading()
         })
 	},
 	onInputChange (e) {
@@ -57,14 +61,14 @@ Page({
     },
     onShareAppMessage () {
         return {
-            title: 'IbadIbadgers前端练功房',
+            title: this.data.options.title || 'IbadIbadgers前端练功房',
             imageUrl: 'https://leexiaop.github.io/static/ibadgers/logo.png',
             path: `/javascriptpackage/pages/list/list?url=${this.data.options.url}&&title=${this.data.options.title}`
         }
     },
     onShareTimeline () {
         return {
-			title: '代码改变世界，我删库跑路！',
+			title: this.data.options.title || '代码改变世界，我删库跑路！',
 			query: `url=${this.data.options.url}&&title=${this.data.options.title}`
         }
     }

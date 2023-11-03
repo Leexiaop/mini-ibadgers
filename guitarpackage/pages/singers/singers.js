@@ -7,71 +7,52 @@ Page({
      * 页面的初始数据
      */
     data: {
-		list: []
+		list: [],
+		loading: false
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad() {
+		wx.showLoading({
+		  	title: '加载中...'
+		})
+		this.setData({loading: true})
 		request(url.getGuitarSongCellList).then(res => {
-			this.setData({list: wx._.uniqBy(res, 'author')})
+			this.setData({list: wx._.uniqBy(res, 'author').map(singer => {
+				return {
+					imgUrl: singer.avatar,
+					text: singer.author,
+					id: singer.id,
+					...singer
+				}
+			}), loading: false})
+			wx.hideLoading()
 		})
 	},
 	
 	onSingerClick(e) {
-		const {author} = e.currentTarget.dataset.item
+		const {author} = e.detail
 		wx.navigateTo({
 		  	url: `/guitarpackage/pages/list/list?author=${author}`
 		})
 	},
 
     /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload() {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh() {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom() {
-
-    },
-
-    /**
      * 用户点击右上角分享
      */
-    onShareAppMessage() {
-
+	onShareAppMessage() {
+        return {
+            title: '民谣小馆',
+            imageUrl: 'http://127.0.0.1:5500/mini/img/guitar/mingyao.jpg',
+            path: '/guitarpackage/pages/singers/singers'
+        }
+    },
+    onShareTimeline () {
+        return {
+			title: '你是我患得患失的梦我是你可有可无的人！',
+			imageUrl: 'http://127.0.0.1:5500/mini/img/guitar/mingyao.jpg',
+        }
     }
 })

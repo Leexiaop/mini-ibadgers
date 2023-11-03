@@ -1,5 +1,5 @@
 <!--shoppackage/pages/details/details.wxml-->
-<view class="details">
+<view class="details" wx:if="{{!loading}}">
 	<t-image
 		style="width: 100%;"
 		mode="aspectFill"
@@ -17,10 +17,17 @@
 		<t-image
 			slot="middle"
 			width="228"
+			mode="widthFix"
 			t-class="image-host dialog-image"
 			show-menu-by-longpress
 			src="https://leexiaop.github.io/static/mini/img/shop/anda.jpg"
 		/>
 	</t-dialog>
 	<t-button theme="primary" size="large" shape="round" block bind:tap="onBuyClick">立即查看</t-button>
+</view>
+<view wx:else class="group">
+	<t-skeleton rowCol="{{[{height: '340rpx'}]}}" animation="gradient" loading></t-skeleton>
+	<view wx:for="{{18}}" class="tip">
+		<t-skeleton rowCol="{{[1]}}" animation="gradient" loading></t-skeleton>
+	</view>
 </view>

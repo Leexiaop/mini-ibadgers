@@ -126,7 +126,7 @@
 	font-size: 24rpx;
 	color: #999;
 }
-.index > .overlay {
+/* .index > .overlay {
 	width: 100%;
 	height: 100vh;
 	position: fixed;
@@ -141,7 +141,20 @@
 .index > .overlay > .close {
 	display: flex;
 	align-self: center;
-}
+} */
+.block {
+	position: relative;
+	width: 240px;
+	background: #fff;
+	border-radius: 12rpx;
+  }
+  
+  .close-btn {
+	position: absolute;
+	left: 50%;
+	margin-left: -32rpx;
+	bottom: calc(-1 * (48rpx + 64rpx));
+  }
 .group {
 	width: 100%;
 	display: flex;

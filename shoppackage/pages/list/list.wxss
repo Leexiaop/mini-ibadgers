@@ -1,16 +1,15 @@
 /* shoppackage/pages/list/list.wxss */
 .list {
 	padding: 24rpx;
+	display: flex;
+	min-height: 90vh;
 	box-sizing: border-box;
 }
-.wrap{
-	margin: 0 20rpx;
+.content {
+	flex: 1;
 }
-.load-tips{
-	text-align: center;
-	line-height: 2;
-	font-size: 28rpx;
-	color: #666;
-	line-height: 1.5;
-	padding: 20rpx 0;
+.group {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }

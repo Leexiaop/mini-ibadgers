@@ -7,7 +7,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-		imgList: []
+		imgList: [],
+		options: null
     },
 
     /**
@@ -17,9 +18,13 @@ Page({
 		wx.setNavigationBarTitle({
 		  	title: options.name
 		})
+		wx.showLoading({
+		  	title: '加载中...'
+		})
 		request(url.getGuitarSongList).then(res => {
 			const img = res.find(item => item.name === options.name && item.type === options.type - 0 && item.classify === options.classify - 0)
-			this.setData({imgList: img?.images || []})
+			this.setData({imgList: img?.images || [], options})
+			wx.hideLoading()
 		})
 	},
 	
@@ -31,14 +36,24 @@ Page({
 
 	onBackClick () {
 		wx.navigateTo({
-		  url: '/guitarpackage/pages/list/list',
+		  	url: '/guitarpackage/pages/list/list',
 		})
 	},
 
     /**
      * 用户点击右上角分享
      */
-    onShareAppMessage() {
-
+	onShareAppMessage() {
+        return {
+            title: this.data.options.name,
+            imageUrl: 'http://127.0.0.1:5500/mini/img/guitar/mingyao.jpg',
+            path: '/guitarpackage/pages/songs/songs'
+        }
+    },
+    onShareTimeline () {
+        return {
+			title: this.data.options.name,
+			imageUrl: 'http://127.0.0.1:5500/mini/img/guitar/mingyao.jpg',
+        }
     }
 })

@@ -12,7 +12,7 @@
             "list": [
                 {
                     "name": "",
-                    "pathName": "pages/center/center",
+                    "pathName": "guitarpackage/pages/singers/singers",
                     "query": "",
                     "launchMode": "default",
                     "scene": null

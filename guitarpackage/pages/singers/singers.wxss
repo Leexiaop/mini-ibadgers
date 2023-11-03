@@ -1,9 +1,17 @@
 /* guitarpackage/pages/singers/singers.wxss */
 .singers {
-	min-height: 100vh;
+	min-height: 90vh;
 	box-sizing: border-box;
 	padding-bottom: 32rpx;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
+}
+.singers > .content {
+	flex: 1;
+}
+.group {
+	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 }
