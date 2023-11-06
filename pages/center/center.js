@@ -10,7 +10,10 @@ Page({
 		userInfo: app.globalData.userInfo,
 		show: false,
 		visible: false
-    },
+	},
+	onLoad () {
+		this.setData({userInfo: app.globalData.userInfo})
+	},
 	closeDialog () {
 		this.setData({show: false})
 	},
