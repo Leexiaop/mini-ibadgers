@@ -1,5 +1,5 @@
 <!--javascript.wxml-->
-<view class="index" wx:if="{{!loading}}">
+<view class="javascript" wx:if="{{!loading}}">
 	<t-sticky>
 		<t-notice-bar
 			visible="{{noticeContent}}"
@@ -31,7 +31,7 @@
                 wx:for-item="item"
                 bind:tap="onCellClick"
                 data-item="{{item}}"
-            >
+            >				
                 <view class="tag" wx:if="{{item.disabled}}">建设中</view>
                 <view class="title">
 					<t-icon name="{{'letters-' + item.icon}}" size="48rpx"/>

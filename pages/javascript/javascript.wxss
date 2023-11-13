@@ -1,22 +1,22 @@
 /**javascript.wxss**/
-.index {
+.javascript {
     width: 100%;
     box-sizing: border-box;
 	min-height: 100vh;
 }
-.index > .nav {
+.javascript > .nav {
     width: 686rpx;
     margin: 0 auto;
 	border-radius: 8rpx;
 	margin-top: 24rpx;
     overflow: hidden;
 }
-.index > .content {
+.javascript > .content {
     width: 100%;
     padding: 16rpx;
     box-sizing: border-box;
 }
-.index > .content > .content-title {
+.javascript > .content > .content-title {
     width: 100%;
     box-sizing: border-box;
     font-size: 36rpx;
@@ -27,20 +27,20 @@
     display: flex;
     align-items: center;
 }
-.index > .content > .content-title > .icon {
+.javascript > .content > .content-title > .icon {
     width: 0;
     border-left: 8rpx solid #0819e4;
     height: 36rpx;
     margin-right: 16rpx;
 }
-.index > .content > .content-item {
+.javascript > .content > .content-item {
     width: 100%;
     box-sizing: border-box;
     font-size: 32rpx;
     column-count: 2;
     column-gap: 16rpx;
 }
-.index > .content > .content-item > .item {
+.javascript > .content > .content-item > .item {
     display: inline-block;
     width: 100%;
     margin-bottom: 24rpx;
@@ -51,10 +51,10 @@
     break-inside: avoid;
     overflow: hidden;
     position: relative;
-    box-shadow: 16rpx 16rpx 16rpx #999;
+    box-shadow: 0rpx 0rpx 6rpx 2rpx #999 inset;
 }
 
-.index > .content > .content-item > .item > .tag {
+.javascript > .content > .content-item > .item > .tag {
     position: absolute;
     background-color: #e4393c;
     top: 0;
@@ -64,18 +64,18 @@
     padding: 8rpx;
     font-size: 14rpx;
 }
-.index > .content > .content-item > .item > .title {
+.javascript > .content > .content-item > .item > .title {
     color: #666;
 	margin-bottom: 8rpx;
 	display: flex;
 }
-.index > .content > .content-item > .item > .motto {
+.javascript > .content > .content-item > .item > .motto {
     font-size: 24rpx;
     color: #999;
     margin-bottom: 8rpx;
     text-align: justify;
 }
-.index > .content > .content-item > .item > .img {
+.javascript > .content > .content-item > .item > .img {
 	margin: 0 auto;
 	width: 128rpx;
 }
