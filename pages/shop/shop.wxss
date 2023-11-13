@@ -42,7 +42,6 @@
 	border-radius: 24rpx;
 	overflow: hidden;
 	column-count: 3;
-    column-gap: 4rpx;
 }
 .group {
 	width: 100%;

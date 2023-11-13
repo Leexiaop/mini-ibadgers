@@ -1,5 +1,5 @@
-const url = __wxConfig.envVersion === 'develop' ? 'http://127.0.0.1:5500/' : 'https://leexiaop.github.io/static/'
-// const url = 'https://leexiaop.github.io/static/'
+// const url = __wxConfig.envVersion === 'develop' ? 'http://127.0.0.1:5500/' : 'https://leexiaop.github.io/static/'
+const url = 'https://leexiaop.github.io/static/'
 export default {
 	getIndexList: url + 'mini/db/index.json',
 	getJavascriptList: url + 'mini/db/javascript/index.json',

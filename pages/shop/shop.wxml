@@ -15,7 +15,7 @@
 				</view>
 				<view class="content-card" wx:if="{{index && content.children.length}}">
 					<block wx:for="{{content.children}}" wx:for-item="child" wx:for-index="idx" wx:key="idx">
-						<t-image bind:tap="onDetailClick" data-item="{{child}}" class="img" src="{{child.url}}" mode="aspectFill" width="120" height="120" aria-label="图" />
+						<t-image bind:tap="onDetailClick" data-item="{{child}}" class="img" src="{{child.url}}" mode="aspectFill" width="126" height="126" aria-label="图" />
 					</block>
 				</view>
 			</view>
