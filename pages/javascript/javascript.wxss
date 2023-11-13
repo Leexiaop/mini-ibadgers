@@ -52,6 +52,8 @@
     overflow: hidden;
     position: relative;
     box-shadow: 0rpx 0rpx 6rpx 2rpx #999 inset;
+    -webkit-box-shadow: 0rpx 0rpx 6rpx 2rpx #999 inset;
+    -moz-box-shadow: 0rpx 0rpx 6rpx 2rpx #999 inset;
 }
 
 .javascript > .content > .content-item > .item > .tag {
