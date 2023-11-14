@@ -36,7 +36,7 @@ Page({
 	},
 	onShareAppMessage () {
 		 return {
-            title: this.data.options.url === 'index' ? '概览' : this.data.options.url || 'Ibadgers前端练功房',
+			title: this.data.options.url === 'index' ? '概览' : this.data.options.url || 'Ibadgers前端练功房',
             imageUrl: 'https://leexiaop.github.io/static/ibadgers/logo.png',
             path: `/javascriptpackage/pages/content/content?url=${this.data.options.url}&&path=${this.data.options.path}`
         }
