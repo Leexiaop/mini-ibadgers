@@ -11,11 +11,11 @@
 			wx:key="idx"
 			wx:for-item="child"
 			wx:for-index="idx"
-			title="{{child.name || (child === 'index' ? '概要' : child)}}"
 			bind:tap="onCellClick"
 			data-cell="{{child}}"
 			bordered="{{idx < list.length - 1}}"
 		>
+			<view slot="title">{{idx + 1}}.{{child.name || (child === 'index' ? '概要' : child)}}</view>
 		</t-cell>
 	</view>
 </view>

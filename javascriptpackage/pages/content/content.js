@@ -32,7 +32,9 @@ Page({
 				this.setData({content, loading: false});
 				wx.hideLoading()
 			};
-        })
+        }).catch(() => {
+			this.setData({loading: false})
+		})
 	},
 	onShareAppMessage () {
 		 return {

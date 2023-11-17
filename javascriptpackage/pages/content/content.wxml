@@ -1,6 +1,7 @@
 <!--pages/content/content.wxml-->
 <view class="content" wx:if="{{!loading}}">
-	<towxml nodes="{{content}}"/>
+	<towxml nodes="{{content}}" wx:if="{{content}}"/>
+	<t-empty icon="chat-clear" wx:else description="暂无内容" />
 </view>
 <view class="group" wx:else>
 	<t-skeleton wx:for="{{12}}" animation="flashed" class="group-content" rowCol="{{[1, {width: '50%'}]}}" loading></t-skeleton>

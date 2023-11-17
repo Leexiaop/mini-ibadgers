@@ -5,6 +5,7 @@
 		"t-icon": "tdesign-miniprogram/icon/icon",
 		"t-image": "tdesign-miniprogram/image/image",
 		"t-tag": "tdesign-miniprogram/tag/tag",
-		"t-popup": "tdesign-miniprogram/popup/popup"
+		"t-popup": "tdesign-miniprogram/popup/popup",
+		"t-notice-bar": "tdesign-miniprogram/notice-bar/notice-bar"
 	}
 }
