@@ -22,6 +22,7 @@
 			<t-grid-item text="微信联系" icon="logo-wechat-stroke" data-type="{{6}}" bind:tap="onCellClick" />
 			<t-grid-item text="分享海报" icon="user-list" data-type="{{7}}" bind:tap="onCellClick" />
 		</t-grid>
+		<ad-custom unit-id="adunit-eae2abe8aa1ec71b"></ad-custom>
     </view>
 	<t-dialog
 		visible="{{show}}"

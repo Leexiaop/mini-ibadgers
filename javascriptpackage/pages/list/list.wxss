@@ -23,3 +23,9 @@
 .divider {
 	padding: 36rpx 0;
 }
+.ad {
+	position: fixed;
+	right: 0;
+	bottom: 98rpx;
+	width: 150rpx;
+}

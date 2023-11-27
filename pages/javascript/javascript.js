@@ -2,6 +2,7 @@
 // 获取应用实例
 import request from '../../utils/request'
 import url from '../../assets/api/url'
+let interstitialAd = null;
 
 Page({
     data: {
@@ -21,6 +22,25 @@ Page({
     // 事件处理函数
 
     onLoad() {
+		if (wx.createInterstitialAd) {
+			interstitialAd = wx.createInterstitialAd({
+				adUnitId: 'adunit-79bde4a33ee50c05'
+			})
+			interstitialAd.onLoad();
+			interstitialAd.onError((err) => {
+				console.error('插屏广告加载失败', err)
+			});
+			interstitialAd.onClose(() => {
+			});
+		}
+		
+		// 在适合的场景显示插屏广告
+		if (interstitialAd) {
+			interstitialAd.show().catch((err) => {
+				console.error('插屏广告显示失败', err)
+			});
+		}
+		
 		wx.showLoading({
 		  	title: '加载中...'
 		})

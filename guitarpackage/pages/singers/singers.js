@@ -20,7 +20,6 @@ Page({
 		})
 		this.setData({loading: true})
 		request(url.getGuitarSongCellList).then(res => {
-			console.log(res)
 			this.setData({list: wx._.uniqBy(res, 'author').map(singer => {
 				return {
 					imgUrl: singer.avatar,

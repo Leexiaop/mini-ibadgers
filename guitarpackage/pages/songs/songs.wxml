@@ -1,11 +1,14 @@
 <!--guitarpackage/pages/songs/songs.wxml-->
-<swiper wx:if="{{imgList.length}}">
-	<swiper-item wx:for="{{imgList}}" catch:tap="onImageClick" wx:for-item="img" wx:for-index="index" wx:key="index">
-		<t-image src="{{img}}" show-menu-by-longpress="{{true}}" mode="widthFix" width="100%" height="100%" aria-label="" />
-	</swiper-item>
-</swiper>
-<view wx:else class="empty">
-	<t-empty icon="image-search" description="暂无曲谱,请查看其他曲谱">
-		<t-button slot="action" bind:tap="onBackClick" theme="primary" size="small">返回</t-button>
-	</t-empty>
+<view class="song">
+	<swiper wx:if="{{imgList.length}}">
+		<swiper-item wx:for="{{imgList}}" catch:tap="onImageClick" wx:for-item="img" wx:for-index="index" wx:key="index">
+			<t-image src="{{img}}" show-menu-by-longpress="{{true}}" mode="widthFix" width="100%" height="100%" aria-label="" />
+		</swiper-item>
+	</swiper>
+	<view wx:else class="empty">
+		<t-empty icon="image-search" description="暂无曲谱,请查看其他曲谱">
+			<t-button slot="action" bind:tap="onBackClick" theme="primary" size="small">返回</t-button>
+		</t-empty>
+	</view>
+	<ad unit-id="adunit-1398bc2f349ace98"></ad>
 </view>

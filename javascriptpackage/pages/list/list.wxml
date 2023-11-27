@@ -22,4 +22,7 @@
 <view class="group" wx:else>
 	<t-skeleton wx:for="{{30}}" animation="flashed" class="group-content" rowCol="{{[1]}}" loading></t-skeleton>
 </view>
+<view class="ad">
+	<ad-custom unit-id="adunit-3c4e0e77193f4a6c" style="width: 146rpx;"></ad-custom>
+</view>
 <t-divider class="divider" content="我也是有底线的" />
