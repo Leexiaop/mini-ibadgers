@@ -19,7 +19,6 @@
 .center > .nav > .info {
     width: 572rpx;
     color: #fff;
-    margin-left: 32rpx;
 }
 .center > .nav > .info > .name {
     width: 100%;

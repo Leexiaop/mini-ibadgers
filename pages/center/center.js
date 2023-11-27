@@ -1,18 +1,17 @@
 // pages/center/center.js
-import Dialog from 'tdesign-miniprogram/dialog/index';
-const app = getApp()
+import { randomString } from '../../utils/util';
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-		userInfo: app.globalData.userInfo,
+		userInfo: {},
 		show: false,
 		visible: false
 	},
 	onLoad () {
-		this.setData({userInfo: app.globalData.userInfo})
+		this.setData({userInfo: {nickName: randomString()}})
 	},
 	closeDialog () {
 		this.setData({show: false})
