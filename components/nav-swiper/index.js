@@ -1,7 +1,4 @@
 // components/nav-swiper.js
-import request from '../../utils/request'
-import url from '../../assets/api/url'
-
 Component({
     /**
      * 组件的属性列表

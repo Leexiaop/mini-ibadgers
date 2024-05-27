@@ -102,7 +102,7 @@
     },
     "usingComponents": {
 		"t-skeleton": "tdesign-miniprogram/skeleton/skeleton",
-		"copy-right":  "../../components/copy-right/index"
+		"copy-right":  "./components/copy-right/index"
     },
     "lazyCodeLoading": "requiredComponents",
     "sitemapLocation": "sitemap.json"
