@@ -47,10 +47,10 @@
         "tabIndent": "insertSpaces",
         "tabSize": 4
     },
+    "simulatorPluginLibVersion": {},
     "packOptions": {
         "ignore": [],
         "include": []
     },
-    "appid": "wx35c4f22b6ed1f6b4",
-    "simulatorPluginLibVersion": {}
+    "appid": "wx35c4f22b6ed1f6b4"
 }

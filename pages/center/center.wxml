@@ -1,59 +1,45 @@
 <!--pages/center/center.wxml-->
 <view class="center">
     <view class="nav">
-		<t-image
-			width="72"
-			height="72"
-			shape="circle"
-			src="https://leexiaop.github.io/static/ibadgers/logo2.png"
-		/>
+        <t-image width="72" height="72" shape="circle" src="https://leexiaop.github.io/static/ibadgers/logo2.png" />
         <view class="info">
             <view class="name">{{userInfo.nickName}}</view>
             <view class="motto">拼搏到无能为力 坚持到感动自己</view>
         </view>
     </view>
     <view class="content">
-		<t-grid column="{{4}}">
-			<t-grid-item text="Ibadgers" icon="support" data-type="{{1}}" bind:tap="onCellClick"/>
-			<t-grid-item text="Lee前端技术栈" icon="map-blocked" data-type="{{2}}" bind:tap="onCellClick" />
-			<t-grid-item text="Github" icon="logo-github" data-type="{{3}}" bind:tap="onCellClick" />
-			<t-grid-item text="CSDN" icon="ipod" data-type="{{4}}" bind:tap="onCellClick"/>
-			<t-grid-item text="关于我" icon="user-unknown" data-type="{{5}}" bind:tap="onCellClick"/>
-			<t-grid-item text="微信联系" icon="logo-wechat-stroke" data-type="{{6}}" bind:tap="onCellClick" />
-			<t-grid-item text="分享海报" icon="user-list" data-type="{{7}}" bind:tap="onCellClick" />
-		</t-grid>
-		<ad-custom unit-id="adunit-eae2abe8aa1ec71b"></ad-custom>
+        <t-grid column="{{4}}">
+            <t-grid-item text="Ibadgers" icon="support" data-type="{{1}}" bind:tap="onCellClick" />
+            <t-grid-item text="Lee前端技术栈" icon="map-blocked" data-type="{{2}}" bind:tap="onCellClick" />
+            <t-grid-item text="Github" icon="logo-github" data-type="{{3}}" bind:tap="onCellClick" />
+            <t-grid-item text="CSDN" icon="ipod" data-type="{{4}}" bind:tap="onCellClick" />
+            <t-grid-item text="关于我" icon="user-unknown" data-type="{{5}}" bind:tap="onCellClick" />
+            <t-grid-item text="微信联系" icon="logo-wechat-stroke" data-type="{{6}}" bind:tap="onCellClick" />
+            <t-grid-item text="分享海报" icon="user-list" data-type="{{7}}" bind:tap="onCellClick" />
+        </t-grid>
+        <t-cell-group>
+            <t-cell title="安达小铺" leftIcon="shop-4" hover arrow bind:tap="onCellClick" data-type="{{8}}" />
+            <t-cell title="Guitar/Ukulele" leftIcon="guitar" hover arrow bind:tap="onCellClick" data-type="{{9}}"/>
+        </t-cell-group>
+        <ad-custom unit-id="adunit-eae2abe8aa1ec71b"></ad-custom>
     </view>
-	<t-dialog
-		visible="{{show}}"
-		confirm-btn="{{ {content: '确定', variant: 'base' } }}"
-		close-btn="{{false}}"
-		bind:confirm="closeDialog"
-		bind:cancel="closeDialog"
-		close-on-overlay-click="{{true}}"
-	>
-		<t-image
-			slot="middle"
-			width="228"
-			t-class="image-host dialog-image"
-			show-menu-by-longpress
-			src="https://leexiaop.github.io/static/mini/img/poster.jpg"
-		/>
-	</t-dialog>
-	<t-popup visible="{{visible}}" bind:visible-change="onVisibleChange" placement="bottom">
-		<view class="block">
-			<view class="header">
-				<view class="btn btn--cancel" aria-role="button" bind:tap="onVisibleChange">取消</view>
-				<view class="title">关于我</view>
-				<view class="btn btn--confirm" aria-role="button" bind:tap="onVisibleChange">确定</view>
-			</view>
-			<view class="info">
-				<text>2016年正式开启前端程序猿生涯，一路走来这已经是第七个年头，未来这个时间也许还会增加，所以，学习前进的脚步不能停止。</text>
-				<text>这7年来，经历过小作坊的无知，见过中型厂的快节奏，同样也卷过大厂，一直到现在自认为较为舒适的类国企。总发现，自己敲的代码，还差的很远很远。所以，能在有限的空余时间，将自己的工作，学习，生活，融入到一个小程序。供大家一起学习。</text>
-				<text>在此也特别感谢提供资料的各位机构和个人，如有冒犯，请联系删除内容。</text>
-				<text style="text-align: right;">2023-11-03 Lee</text>
-			</view>
-		</view>
-	</t-popup>
-	<copy-right></copy-right>
+    <t-dialog visible="{{show}}" confirm-btn="{{ {content: '确定', variant: 'base' } }}" close-btn="{{false}}" bind:confirm="closeDialog" bind:cancel="closeDialog" close-on-overlay-click="{{true}}">
+        <t-image slot="middle" width="228" t-class="image-host dialog-image" show-menu-by-longpress src="https://leexiaop.github.io/static/mini/img/poster.jpg" />
+    </t-dialog>
+    <t-popup visible="{{visible}}" bind:visible-change="onVisibleChange" placement="bottom">
+        <view class="block">
+            <view class="header">
+                <view class="btn btn--cancel" aria-role="button" bind:tap="onVisibleChange">取消</view>
+                <view class="title">关于我</view>
+                <view class="btn btn--confirm" aria-role="button" bind:tap="onVisibleChange">确定</view>
+            </view>
+            <view class="info">
+                <text>2016年正式开启前端程序猿生涯，一路走来这已经是第七个年头，未来这个时间也许还会增加，所以，学习前进的脚步不能停止。</text>
+                <text>这7年来，经历过小作坊的无知，见过中型厂的快节奏，同样也卷过大厂，一直到现在自认为较为舒适的类国企。总发现，自己敲的代码，还差的很远很远。所以，能在有限的空余时间，将自己的工作，学习，生活，融入到一个小程序。供大家一起学习。</text>
+                <text>在此也特别感谢提供资料的各位机构和个人，如有冒犯，请联系删除内容。</text>
+                <text style="text-align: right;">2023-11-03 Lee</text>
+            </view>
+        </view>
+    </t-popup>
+    <copy-right></copy-right>
 </view>

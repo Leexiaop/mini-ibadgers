@@ -1,6 +1,6 @@
 // pages/guitar/guitar.js
-import request from '../../utils/request'
-import url from '../../assets/api/url'
+import request from '../../../utils/request'
+import url from '../../../assets/api/url'
 
 const count = 4
 Page({

@@ -3,84 +3,53 @@
 import request from '../../utils/request'
 import url from '../../assets/api/url'
 let interstitialAd = null;
-
+const image = 'https://tdesign.gtimg.com/mobile/demos/example2.png';
+const items = new Array(12).fill({ label: '标题文字', image }, 0, 12);
 Page({
+    offsetTopList: [],
     data: {
-		navList: [],
-		noticeContent: '',
-        contentList: [],
-		swiperList: [],
-		loading: false,
-		marquee: {speed: 60, loop: -1, delay: 0},
-		rowCol: [{ size: '327rpx', borderRadius: '24rpx' }],
-		grid: Array.from({length: 2}, () => {
-			return Array.from({length: 5}, () => {
-				return { width: '96rpx', height: '96rpx', borderRadius: '12rpx' }
-			})
-		})
+      sideBarIndex: 1,
+      scrollTop: 0,
+      categories: [],
+      navbarHeight: 0,
     },
     // 事件处理函数
 
     onLoad() {
-		if (wx.createInterstitialAd) {
-			interstitialAd = wx.createInterstitialAd({
-				adUnitId: 'adunit-79bde4a33ee50c05'
-			})
-			interstitialAd.onLoad();
-			interstitialAd.onError((err) => {
-				console.error('插屏广告加载失败', err)
-			});
-			interstitialAd.onClose(() => {
-			});
-		}
-		
-		// 在适合的场景显示插屏广告
-		if (interstitialAd) {
-			interstitialAd.show().catch((err) => {
-				console.error('插屏广告显示失败', err)
-			});
-		}
-		
-		wx.showLoading({
-		  	title: '加载中...'
-		})
-		this.setData({loading: true})
-		request(url.getJavascriptSwiperList).then(res => {
-			this.setData({navList: res})
-		   return request(url.getJavascriptList) 
-		}).then(res => {
-			this.setData({contentList: res})
-			return request(url.getJavascriptNoticeList)
-        }).then(res => {
-			this.setData({noticeContent: res.content, loading: false})
-			wx.hideLoading()
-		})
-	},
-    onCellClick (e) {
-        const {item} = e.currentTarget.dataset
-        if (item.disabled) {
-            wx.showToast({
-                icon: 'none',
-                title: '正在建设中，敬请期待...'
-            })
-            return
-        }
-        wx.navigateTo({
-            url: `/javascriptpackage/pages/list/list?url=${item.url}&&title=${item.title}`
+        request(url.getJavascriptData).then(res => {
+            this.setData({categories: res})
+            const query = wx.createSelectorQuery().in(this);
+            const { sideBarIndex } = this.data;
+            query.selectAll('.title').boundingClientRect();
+            query.select('.custom-navbar').boundingClientRect();
+            query.exec((res) => {
+            const [rects, { height: navbarHeight }] = res;
+            this.offsetTopList = rects.map((item) => item.top - navbarHeight);
+                this.setData({ navbarHeight, scrollTop: this.offsetTopList[sideBarIndex] });
+            });
         })
-	},
-	onTipClick (e) {
-		const {index} = e.currentTarget.dataset
-		if (index === 4) {
-			wx.navigateTo({
-				url: `/javascriptpackage/pages/resources/resources`
-		  	})
-			return
-		}
-		wx.navigateTo({
-		  	url: `/javascriptpackage/pages/advanced/advanced?idx=${index}`
-		})
-	},
+      },
+    
+      onSideBarChange(e) {
+        const { value } = e.detail;
+    
+        this.setData({ sideBarIndex: value, scrollTop: this.offsetTopList[value] });
+      },
+      onScroll(e) {
+        const { scrollTop } = e.detail;
+        const threshold = 50; // 下一个标题与顶部的距离
+    
+        if (scrollTop < threshold) {
+          this.setData({ sideBarIndex: 0 });
+          return;
+        }
+    
+        const index = this.offsetTopList.findIndex((top) => top > scrollTop && top - scrollTop <= threshold);
+    
+        if (index > -1) {
+          this.setData({ sideBarIndex: index });
+        }
+      },
     onShareAppMessage () {
         return {
             title: 'Ibadgers前端练功房',

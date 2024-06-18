@@ -3,12 +3,9 @@
         "pages/index/index",
         "pages/javascript/javascript",
         "pages/center/center",
-        "pages/login/login",
-        "pages/guitar/guitar",
-        "pages/shop/shop"
+        "pages/login/login"
     ],
-    "subpackages": [
-        {
+    "subpackages": [{
             "root": "javascriptpackage",
             "name": "javascriptpackage",
             "pages": [
@@ -24,6 +21,7 @@
             "name": "shoppackage",
             "pages": [
                 "pages/list/list",
+                "pages/shop/shop",
                 "pages/details/details"
             ]
         },
@@ -31,6 +29,7 @@
             "root": "guitarpackage",
             "name": "guitarpackage",
             "pages": [
+                "pages/guitar/guitar",
                 "pages/songs/songs",
                 "pages/singers/singers",
                 "pages/list/list"
@@ -43,16 +42,11 @@
             "packages": [
                 "javascriptpackage"
             ]
-		},
-		"pages/guitar/guitar": {
+        },
+        "pages/center/center": {
             "network": "all",
             "packages": [
-                "guitarpackage"
-            ]
-		},
-		"pages/shop/shop": {
-            "network": "all",
-            "packages": [
+                "guitarpackage",
                 "shoppackage"
             ]
         }
@@ -67,8 +61,7 @@
         "color": "#fff",
         "selectedColor": "#0061b2",
         "backgroundColor": "#000000",
-        "list": [
-            {
+        "list": [{
                 "pagePath": "pages/index/index",
                 "text": "Home",
                 "iconPath": "./assets/img/home.png",
@@ -81,18 +74,6 @@
                 "selectedIconPath": "./assets/img/javascript_s.png"
             },
             {
-                "pagePath": "pages/guitar/guitar",
-                "text": "Guitar",
-                "iconPath": "./assets/img/guitar.png",
-                "selectedIconPath": "./assets/img/guitar_s.png"
-            },
-            {
-                "pagePath": "pages/shop/shop",
-                "text": "Shop",
-                "iconPath": "./assets/img/shop.png",
-                "selectedIconPath": "./assets/img/shop_s.png"
-            },
-            {
                 "pagePath": "pages/center/center",
                 "text": "Center",
                 "iconPath": "./assets/img/center.png",
@@ -101,8 +82,8 @@
         ]
     },
     "usingComponents": {
-		"t-skeleton": "tdesign-miniprogram/skeleton/skeleton",
-		"copy-right":  "./components/copy-right/index"
+        "t-skeleton": "tdesign-miniprogram/skeleton/skeleton",
+        "copy-right": "./components/copy-right/index"
     },
     "lazyCodeLoading": "requiredComponents",
     "sitemapLocation": "sitemap.json"

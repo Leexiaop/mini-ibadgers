@@ -1,5 +1,5 @@
-import request from '../../utils/request'
-import url from '../../assets/api/url'
+import request from '../../../utils/request'
+import url from '../../../assets/api/url'
 Page({
 
     /**
