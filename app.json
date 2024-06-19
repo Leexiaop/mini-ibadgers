@@ -1,7 +1,6 @@
 {
     "pages": [
         "pages/index/index",
-        "pages/javascript/javascript",
         "pages/center/center",
         "pages/login/login"
     ],
@@ -9,6 +8,7 @@
             "root": "javascriptpackage",
             "name": "javascriptpackage",
             "pages": [
+                "pages/javascript/javascript",
                 "pages/list/list",
                 "pages/canvas/canvas",
                 "pages/content/content",
@@ -66,12 +66,6 @@
                 "text": "Home",
                 "iconPath": "./assets/img/home.png",
                 "selectedIconPath": "./assets/img/home_s.png"
-            },
-            {
-                "pagePath": "pages/javascript/javascript",
-                "text": "Javascript",
-                "iconPath": "./assets/img/javascript.png",
-                "selectedIconPath": "./assets/img/javascript_s.png"
             },
             {
                 "pagePath": "pages/center/center",

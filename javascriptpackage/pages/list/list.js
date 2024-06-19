@@ -44,7 +44,7 @@ Page({
             })
             return
         }
-        if (this.data.options.url !== 'threejs_case') {
+        if (this.data.options.url !== 'threeJS') {
             wx.navigateTo({
                 url: `/javascriptpackage/pages/content/content?url=${cell}&&path=${this.data.options.url}`,
             })

@@ -1,9 +1,15 @@
 // const url = __wxConfig.envVersion === 'develop' ? 'http://127.0.0.1:5500/' : 'https://leexiaop.github.io/static/'
 // const url = 'https://leexiaop.github.io/static/'
-const url = "http://127.0.0.1:5500/";
+const url = 'https://leexiaop.github.io/mini/'
+// const url = "http://127.0.0.1:5500/";
 export default {
-    getHomeData: url + "database/home.json",
-    getJavascriptData: url + "database/javascript.json"
+	getHomeData: url + "database/home.json",
+	getJavascriptData: url + "database/javascript.json",
+	getJavascriptResourcesList: url + "database/resources.json",
+	getJavascriptAdvanceList: url + "database/advance.json",
+	getJavascriptItemList: url + "database/",
+	getJavascriptDocList: url + "resources/doc/",
+
 	// getIndexList: url + 'mini/db/index.json',
 	// getJavascriptList: url + 'mini/db/javascript/index.json',
 	// getJavascriptSwiperList: url + 'mini/db/javascript/swiper.json',

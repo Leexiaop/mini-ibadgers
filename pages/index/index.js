@@ -8,11 +8,8 @@ Page({
 	data: {
 		navList: [],
 		list: [],
-		noticeList: [],
 		navigation: { type: "dots-bar" },
 		loading: true,
-		rowCol1: [{ width: "100%", height: "480rpx", borderRadius: "16rpx" }],
-		rowCol2: [{ width: "120rpx", height: "90rpx", borderRadius: "16rpx" }],
 	},
 
 	/**
@@ -27,12 +24,49 @@ Page({
 			this.setData({
 				navList: res?.swiperList,
 				list: res?.list,
-				noticeList: res?.noticeList,
 				loading: false,
 			});
 			wx.hideLoading();
 		});
 	},
+	onTipClick(e) {
+		const { index } = e.currentTarget.dataset;
+		switch (index) {
+			case 0:
+			case 1:
+				wx.navigateTo({
+					url: `/javascriptpackage/pages/advanced/advanced?idx=${index}`,
+				});
+				break;
+			case 2:
+				wx.navigateTo({
+					url: "/javascriptpackage/pages/javascript/javascript",
+				});
+				break;
+			case 3:
+				wx.navigateTo({
+					url: `/javascriptpackage/pages/list/list?url=company&&title=企业真题`,
+				});
+				break;
+			case 4:
+				wx.navigateTo({
+					url: `/javascriptpackage/pages/resources/resources`,
+				});
+		}
+    },
+    onCellClick(e) {
+        const {item} = e.currentTarget.dataset
+        if (item.disabled) {
+            wx.showToast({
+                icon: 'none',
+                title: '正在建设中，敬请期待...'
+            })
+            return
+        }
+        wx.navigateTo({
+            url: `/javascriptpackage/pages/list/list?url=${item.url}&&title=${item.title}`
+        })
+    },
 	onShareAppMessage() {
 		return {
 			title: "Ibadgers前端练功房",
