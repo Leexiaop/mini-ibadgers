@@ -3,4 +3,6 @@
     <t-tab-panel wx:for="{{tabList}}" wx:key="idx" wx:for-item="tab" wx:for-index="idx" label="{{tab.label}}" value="{{idx + 1}}" />
 </t-tabs>
 
-<t-cell wx:for="{{list}}" wx:key="idx" wx:for-item="item" wx:for-index="idx" title="{{item.label}}" description="{{item.desc}}" hover arrow/>
+<t-cell wx:for="{{list}}" wx:key="idx" wx:for-item="item" wx:for-index="idx" title="{{item.label}}" description="{{item.desc}}" hover arrow bind:tap="onCellClick" data-item="{{item}}">
+    <t-badge count="{{item.disabled && '建设中'}}" slot="note" />
+</t-cell>

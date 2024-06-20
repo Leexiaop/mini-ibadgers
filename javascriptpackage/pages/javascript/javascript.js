@@ -23,7 +23,20 @@ Page({
 	onTabsClick(e) {
 		const { value } = e.detail;
 		this.setData({ list: this.data.tabList[value - 1]?.items });
-	},
+    },
+    onCellClick(e) {
+        const {item} = e.currentTarget.dataset
+        if (item.disabled) {
+            wx.showToast({
+                icon: 'none',
+                title: '正在建设中，敬请期待...'
+            })
+            return
+        }
+        wx.navigateTo({
+            url: `/javascriptpackage/pages/list/list?url=${item.url}&&title=${item.label}`
+        })
+    },
 	onShareAppMessage() {
 		return {
 			title: "Ibadgers前端练功房",

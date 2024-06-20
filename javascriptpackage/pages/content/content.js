@@ -22,7 +22,7 @@ Page({
 		})
 		wx.showLoading({
 		  	title: '加载中...'
-		})
+        })
         this.setData({loading: true, options})
         request(`${url.getJavascriptDocList}${options.path}/${options.url}.md`).then(res => {
             if (res) {
