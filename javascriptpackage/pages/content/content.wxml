@@ -1,8 +1,13 @@
 <!--pages/content/content.wxml-->
+<ad unit-id="adunit-1398bc2f349ace98"></ad>
 <view class="content" wx:if="{{!loading}}">
-	<towxml nodes="{{content}}" wx:if="{{content}}"/>
-	<t-empty icon="chat-clear" wx:else description="暂无内容" />
+    <towxml nodes="{{content}}" wx:if="{{content}}" />
+    <t-empty icon="chat-clear" wx:else description="暂无内容" />
+    <t-button theme="primary" bind:tap="onBtnClick" class="btn" variant="outline" shape="round" size="extra-small">我要打赏</t-button>
 </view>
 <view class="group" wx:else>
-	<t-skeleton wx:for="{{12}}" animation="flashed" class="group-content" rowCol="{{[1, {width: '50%'}]}}" loading></t-skeleton>
+    <t-skeleton wx:for="{{12}}" wx:for-index="index" wx:key="index" animation="flashed" class="group-content" rowCol="{{[1, {width: '50%'}]}}" loading></t-skeleton>
 </view>
+<t-dialog visible="{{show}}" confirm-btn="{{ {content: '确定', variant: 'base' } }}" close-btn="{{false}}" bind:confirm="closeDialog" bind:cancel="closeDialog" close-on-overlay-click="{{true}}" title="打赏">
+    <t-image src="../../../assets/img/pay.jpg" slot="middle" mode="heightFix" width="100%" height="440" aria-label="打赏二维码" />
+</t-dialog>

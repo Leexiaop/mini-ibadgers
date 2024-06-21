@@ -1,5 +1,5 @@
 <!--list.wxml-->
-<view class="list" wx:if="{{!loading}}">
+<view wx:if="{{!loading}}">
 	<t-sticky>
 		<t-search shape="round" style="width: 686rpx;margin: 0 auto;padding: 32rpx 0;" placeholder="请输入搜索的内容" bind:change="onInputChange" />
 	</t-sticky>
@@ -9,8 +9,8 @@
 			arrow
 			wx:for="{{list}}"
 			wx:key="idx"
+            wx:for-index="idx"
 			wx:for-item="child"
-			wx:for-index="idx"
 			bind:tap="onCellClick"
 			data-cell="{{child}}"
 			bordered="{{idx < list.length - 1}}"
@@ -20,9 +20,6 @@
 	</view>
 </view>
 <view class="group" wx:else>
-	<t-skeleton wx:for="{{30}}" animation="flashed" class="group-content" rowCol="{{[1]}}" loading></t-skeleton>
-</view>
-<view class="ad">
-	<ad-custom unit-id="adunit-3c4e0e77193f4a6c" style="width: 146rpx;"></ad-custom>
+	<t-skeleton wx:for="{{30}}" wx:key="index" wx:for-index="index" animation="flashed" class="group-content" rowCol="{{[1]}}" loading></t-skeleton>
 </view>
 <t-divider class="divider" content="我也是有底线的" />

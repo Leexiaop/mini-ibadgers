@@ -3,6 +3,9 @@
     "navigationBarTextStyle": "white",
     "usingComponents": {
 		"towxml":"../../towxml/towxml",
-		"t-empty": "tdesign-miniprogram/empty/empty"
+        "t-empty": "tdesign-miniprogram/empty/empty",
+        "t-button": "tdesign-miniprogram/button/button",
+        "t-dialog": "tdesign-miniprogram/dialog/dialog",
+        "t-image": "tdesign-miniprogram/image/image"
     }
 }

@@ -10,7 +10,8 @@ Page({
         towxml: require('../../towxml/index'),
         content: [],
         loading: false,
-        options: null
+        options: null,
+        show: false
     },
 
     /**
@@ -35,7 +36,13 @@ Page({
         }).catch(() => {
 			this.setData({loading: false})
 		})
-	},
+    },
+    onBtnClick() {
+        this.setData({show: true})
+    },
+    closeDialog() {
+        this.setData({show: false})
+    },
 	onShareAppMessage () {
 		 return {
 			title: this.data.options.url === 'index' ? '概览' : this.data.options.url || 'Ibadgers前端练功房',

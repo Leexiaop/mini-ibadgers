@@ -2,7 +2,16 @@
 .content {
     box-sizing: border-box;
     height: 100vh;
-	overflow: auto;
+    padding-bottom: 88rpx;
+    background-color: #000;
+    overflow: auto;
+}
+.btn {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0);
+    z-index: 1000000000;
 }
 .group {
 	padding: 24rpx;
