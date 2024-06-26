@@ -17,9 +17,10 @@
             <t-grid-item text="微信联系" icon="logo-wechat-stroke" data-type="{{6}}" bind:tap="onCellClick" />
             <t-grid-item text="分享海报" icon="user-list" data-type="{{7}}" bind:tap="onCellClick" />
         </t-grid>
-        <t-cell-group>
-            <t-cell title="安达小铺" leftIcon="shop-4" hover arrow bind:tap="onCellClick" data-type="{{8}}" />
-            <t-cell title="Guitar/Ukulele" leftIcon="guitar" hover arrow bind:tap="onCellClick" data-type="{{9}}"/>
+        <t-cell-group wx:if="{{thirdPartyList.length}}">
+            <t-cell wx:for="{{thirdPartyList}}" wx:key="idx" wx:for-index="idx" wx:for-item="party" title="{{party.title}}" leftIcon="{{party.icon}}" hover arrow bind:tap="onCellClick" data-type="{{party.id}}" />
+            <!-- <t-cell title="安达小铺" leftIcon="shop-4" hover arrow bind:tap="onCellClick" data-type="{{8}}" />
+            <t-cell title="Guitar/Ukulele" leftIcon="guitar" hover arrow bind:tap="onCellClick" data-type="{{9}}"/> -->
         </t-cell-group>
         <ad-custom unit-id="adunit-eae2abe8aa1ec71b"></ad-custom>
     </view>

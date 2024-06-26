@@ -1,17 +1,22 @@
 // pages/center/center.js
 import { randomString } from "../../utils/util";
+import request from "../../utils/request";
+import url from "../../assets/api/url";
 Page({
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
+        thirdPartyList: [],
 		userInfo: {},
 		show: false,
 		visible: false,
 	},
 	onLoad() {
-		this.setData({ userInfo: { nickName: randomString() } });
-	},
+        request(url.getThirdPartyList).then((res) => {
+		    this.setData({ userInfo: { nickName: randomString() }, thirdPartyList: res });
+        })
+    },
 	closeDialog() {
 		this.setData({ show: false });
 	},
