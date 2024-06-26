@@ -9,24 +9,7 @@ Page({
 		navList: [],
 		list: [],
 		navigation: { type: "dots-bar" },
-		loading: true,
-		rowCol1: [{ width: "100%", height: "500rpx", borderRadius: "24rpx" }],
-		grid: [
-			[
-				{ width: "96rpx", height: "96rpx", borderRadius: "12rpx" },
-				{ width: "96rpx", height: "96rpx", borderRadius: "12rpx" },
-				{ width: "96rpx", height: "96rpx", borderRadius: "12rpx" },
-				{ width: "96rpx", height: "96rpx", borderRadius: "12rpx" },
-				{ width: "96rpx", height: "96rpx", borderRadius: "12rpx" },
-			],
-			[
-				{ width: "96rpx", height: "32rpx", borderRadius: "6rpx" },
-				{ width: "96rpx", height: "32rpx", borderRadius: "6rpx" },
-				{ width: "96rpx", height: "32rpx", borderRadius: "6rpx" },
-				{ width: "96rpx", height: "32rpx", borderRadius: "6rpx" },
-				{ width: "96rpx", height: "32rpx", borderRadius: "6rpx" },
-			],
-		],
+		loading: true
 	},
 
 	/**

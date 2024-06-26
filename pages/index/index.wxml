@@ -16,8 +16,6 @@
     </t-grid>
     <copy-right></copy-right>
 </view>
-<view wx:else>
-    <t-skeleton theme="image" rowCol="{{rowCol1}}"></t-skeleton>
-    <text decode="{{true}}">&nbsp;</text>
-    <t-skeleton rowCol="{{grid}}" loading></t-skeleton>
+<view wx:else style="height: 100vh;">
+    <ad-custom unit-id="adunit-c99a23c26d9e4c9a" style="height: 100vh;"></ad-custom>
 </view>
