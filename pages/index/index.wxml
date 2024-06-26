@@ -12,7 +12,12 @@
         <view slot="content" class="title">必读八股文</view>
     </t-divider>
     <t-grid column="{{4}}">
-        <t-grid-item wx:for="{{list}}" wx:key="title" wx:item="{{item}}" text="{{item.title}}" image="{{item.icon}}" bind:tap="onCellClick" data-item="{{item}}" badge-props="{{ item.disabled ? { count: '建设中...' } : null }}"/>
+        <t-grid-item wx:for="{{list}}" wx:key="title" wx:item="{{item}}" text="{{item.title}}" image="{{item.icon}}" bind:tap="onCellClick" data-item="{{item}}" badge-props="{{ item.disabled ? { count: '建设中...' } : null }}" />
     </t-grid>
     <copy-right></copy-right>
+</view>
+<view wx:else>
+    <t-skeleton theme="image" rowCol="{{rowCol1}}"></t-skeleton>
+    <text decode="{{true}}">&nbsp;</text>
+    <t-skeleton rowCol="{{grid}}" loading></t-skeleton>
 </view>
