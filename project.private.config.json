@@ -11,6 +11,13 @@
         "miniprogram": {
             "list": [
                 {
+                    "name": "guitarpackage/pages/list/list",
+                    "pathName": "guitarpackage/pages/list/list",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
                     "name": "guitarpackage/pages/songs/songs",
                     "pathName": "guitarpackage/pages/list/list",
                     "query": "",
@@ -42,13 +49,6 @@
                     "name": "",
                     "pathName": "pages/guitar/guitar",
                     "query": "",
-                    "launchMode": "default",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "guitarpackage/pages/songs/songs",
-                    "query": "name=光阴的故事&type=1&classify=1",
                     "launchMode": "default",
                     "scene": null
                 },

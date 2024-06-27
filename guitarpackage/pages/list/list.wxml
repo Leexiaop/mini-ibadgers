@@ -17,7 +17,7 @@
 	</block>
 	<block wx:else>
 		<view class="song" wx:if="{{list.length}}">
-			<t-search class="list-input" shape="round" placeholder="请输入搜索的歌名/歌手名称" bind:change="onInputChange" />
+			<t-search class="list-input" shape="round" placeholder="请输入搜索的内容" bind:change="onInputChange" />
 			<view class="tab">
 				<view class="left" bind:tap="onTabClick" data-tab="{{1}}" style="color: {{active === 1 ? 'pink' : '#999'}};">
 					<t-icon name="microphone" size="24" data-name="microphone" />
