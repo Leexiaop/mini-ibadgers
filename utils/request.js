@@ -1,7 +1,7 @@
 const baseUrl =
 	__wxConfig.envVersion === "develop"
 		? "http://127.0.0.1:5500/"
-        : "https://leexiaop.github.io/";
+		: "https://leexiaop.github.io/";
 
 module.exports = (url) => {
 	if (__wxConfig.envVersion === "develop" && url.indexOf("mini/") !== -1) {

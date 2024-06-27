@@ -11,6 +11,13 @@
         "miniprogram": {
             "list": [
                 {
+                    "name": "guitarpackage/pages/songs/songs",
+                    "pathName": "guitarpackage/pages/list/list",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
                     "name": "",
                     "pathName": "pages/index/index",
                     "query": "",
@@ -27,13 +34,6 @@
                 {
                     "name": "",
                     "pathName": "pages/index/index",
-                    "query": "",
-                    "launchMode": "default",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "guitarpackage/pages/singers/singers",
                     "query": "",
                     "launchMode": "default",
                     "scene": null
